@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793994113}
   m_Layer: 0
-  m_Name: "\u2501\u2501\u2501\u2501 BACK END \u2501\u2501\u2501\u2501"
+  m_Name: "\u2501\u2501\u2501\u2501\u2501 BACK END \u2501\u2501\u2501\u2501\u2501"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,7 +728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581623392}
   m_Layer: 0
-  m_Name: "\u2501\u2501 ENVIRONMENT \u2501\u2501"
+  m_Name: "\u2501\u2501\u2501 ENVIRONMENT \u2501\u2501\u2501"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
