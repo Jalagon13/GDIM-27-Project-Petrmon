@@ -8,6 +8,6 @@ namespace ProjectPetrmon
     [CreateAssetMenu(fileName = "[Party] ", menuName = "Petrmon System/New Party")]
     public class PartyObject : ScriptableObject
     {
-        [SerializeField] private Dictionary<PetrmonObject, int> _party;
+        [SerializeField] private List<PetrmonObject> _party;
     }
 }

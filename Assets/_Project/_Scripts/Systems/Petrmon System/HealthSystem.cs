@@ -7,7 +7,7 @@ namespace ProjectPetrmon
 {
     public class HealthSystem 
     {
-        public event Action Fainted; 
+        public static event Action Fainted; 
 
         private readonly Action _onFaint;
         private readonly int _maxHp;
