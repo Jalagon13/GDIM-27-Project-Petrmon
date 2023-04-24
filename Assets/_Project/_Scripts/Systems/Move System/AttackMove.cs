@@ -14,7 +14,7 @@ namespace ProjectPetrmon
             if (base.Execute(targetPetrmon))
                 targetPetrmon.HealthSystem.TakeDamage(_damageAmount);
 
-            return true;
+            return default;
         }
     }
 }

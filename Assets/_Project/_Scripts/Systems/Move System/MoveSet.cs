@@ -10,12 +10,13 @@ namespace ProjectPetrmon
     {
         public List<Move> Set;
 
-        private readonly static int _setAmount = 4;
+        private readonly int _setAmount;
 
         public int MoveSetAmount { get { return _setAmount; } }
 
         public MoveSet()
         {
+            _setAmount = 4;
             Set = new(_setAmount);
         }
 

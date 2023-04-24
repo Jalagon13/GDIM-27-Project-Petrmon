@@ -15,7 +15,7 @@ namespace ProjectPetrmon
             if (base.Execute(targetPetrmon))
                 targetPetrmon.StatSystem.ApplyStatChange(_statToChange, _changeAmount);
 
-            return true;
+            return default;
         }
     }
 }
