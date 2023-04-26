@@ -426,6 +426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerParty: {fileID: 11400000, guid: a7c9fa8017653c047b805be305fa0c20, type: 2}
+  _playerAssets: {fileID: 1455039180}
+  _opponentAssets: {fileID: 976104866}
 --- !u!4 &101046621
 Transform:
   m_ObjectHideFlags: 0
@@ -861,8 +863,9 @@ GameObject:
   - component: {fileID: 265297838}
   - component: {fileID: 265297837}
   - component: {fileID: 265297836}
+  - component: {fileID: 265297839}
   m_Layer: 0
-  m_Name: Fight Option 1
+  m_Name: Fight Button 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,6 +974,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265297834}
   m_CullTransparentMesh: 1
+--- !u!114 &265297839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265297834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &300110047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,8 +1228,9 @@ GameObject:
   - component: {fileID: 567084980}
   - component: {fileID: 567084979}
   - component: {fileID: 567084978}
+  - component: {fileID: 567084981}
   m_Layer: 0
-  m_Name: Fight Option 4
+  m_Name: Fight Button 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1323,6 +1339,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567084976}
   m_CullTransparentMesh: 1
+--- !u!114 &567084981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567084976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &687693275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
@@ -2256,7 +2284,7 @@ GameObject:
   - component: {fileID: 1245760752}
   - component: {fileID: 1245760753}
   m_Layer: 0
-  m_Name: Button Layout Group
+  m_Name: Fight Button Layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2512,8 +2540,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2726,8 +2754,9 @@ GameObject:
   - component: {fileID: 1494441565}
   - component: {fileID: 1494441564}
   - component: {fileID: 1494441563}
+  - component: {fileID: 1494441566}
   m_Layer: 0
-  m_Name: Fight Option 3
+  m_Name: Fight Button 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2836,6 +2865,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494441561}
   m_CullTransparentMesh: 1
+--- !u!114 &1494441566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494441561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1581623391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,8 +3387,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3426,8 +3467,9 @@ GameObject:
   - component: {fileID: 2062093340}
   - component: {fileID: 2062093339}
   - component: {fileID: 2062093338}
+  - component: {fileID: 2062093341}
   m_Layer: 0
-  m_Name: Fight Option 2
+  m_Name: Fight Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3536,6 +3578,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062093336}
   m_CullTransparentMesh: 1
+--- !u!114 &2062093341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062093336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2084445384
 PrefabInstance:
   m_ObjectHideFlags: 0

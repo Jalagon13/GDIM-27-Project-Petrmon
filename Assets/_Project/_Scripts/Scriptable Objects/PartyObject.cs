@@ -9,5 +9,7 @@ namespace ProjectPetrmon
     public class PartyObject : ScriptableObject
     {
         [SerializeField] private List<PetrmonObject> _party;
+
+        public List<PetrmonObject> Party { get { return _party; } }
     }
 }

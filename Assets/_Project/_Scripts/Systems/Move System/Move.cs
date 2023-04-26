@@ -10,7 +10,7 @@ namespace ProjectPetrmon
         [SerializeField] private int _maxPP;
         private int _currentPP;
 
-        protected string Name { get { return _name; } }
+        public string MoveName { get { return _name; } }
         protected int MaxPP { get { return _maxPP; } }
         protected int CurrentPP { get { return _currentPP; } }
 
