@@ -3,6 +3,20 @@ using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
+    /// <summary>
+    /// GAMEPLAY TO DO LIST:
+    /// - Make Petrmon stats persistent
+    ///     - Make Petrmon Debug Button that resets all PP so reseting all PP isn't automatically 
+    ///     called at the call of StartBattle().
+    /// - Replace hard coded Petrmon calls (EX: _playerParty.Party[0]) with dynamically cached 
+    /// private variables that change depending on which Petrmon the player and opponent has currently 
+    /// out on the field.
+    /// - Need to research how stat buffs/debuffs work
+    ///     - Add functionality for StatMove moves
+    /// - Create actual Battle Sequence
+    ///     - Add Dialogue and Narration.
+    /// </summary>
+
     public class BattleManager : Singleton<BattleManager>
     {
         [SerializeField] private PartyObject _playerParty;
