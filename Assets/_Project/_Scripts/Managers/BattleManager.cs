@@ -5,18 +5,15 @@ namespace ProjectPetrmon
 {
     /// <summary>
     /// GAMEPLAY TO DO LIST:
-    /// - Make Petrmon stats persistent
-    ///     - Make Petrmon Debug Button that resets all PP so reseting all PP isn't automatically 
-    ///     called at the call of StartBattle().
-    /// - Replace hard coded Petrmon calls (EX: _playerParty.Party[0]) with dynamically cached 
-    /// private variables that change depending on which Petrmon the player and opponent has currently 
-    /// out on the field.
     /// - Need to research how stat buffs/debuffs work
     ///     - Add functionality for StatMove moves
     /// - Create actual Battle Sequence
     ///     - Add Dialogue and Narration.
     /// - Add Type functionality to moves
     ///     - Need to research how Types work 
+    /// - Replace hard coded Petrmon calls (EX: _playerParty.Party[0]) with dynamically cached 
+    /// private variables that change depending on which Petrmon the player and opponent has currently 
+    /// out on the field.
     /// </summary>
 
     public class BattleManager : Singleton<BattleManager>
@@ -43,24 +40,22 @@ namespace ProjectPetrmon
 
         private void Start()
         {
-            ShowAssets(false);
+            ShowBattleUI(false);
         }
 
         public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
         {
             _opponentParty = opponentParty;
-            //_playerParty.Party[0].MoveSet.RefreshPP();
-            //_opponentParty.Party[0].MoveSet.RefreshPP();
 
             UpdateMoves();
             UpdatePlayerPetrPanel();
             UpdateOpponentPetrPanel();
-            ShowAssets(true);
+            ShowBattleUI(true);
         }
 
         public void Run() // Hooked up to Run Button
         {
-            ShowAssets(false);
+            ShowBattleUI(false);
         }
 
         public void DebugAttackPlayer() // Hooked up to Attack Player Button
@@ -98,7 +93,7 @@ namespace ProjectPetrmon
             }
         }
 
-        private void ShowAssets(bool var)
+        private void ShowBattleUI(bool var)
         {
             _battleCanvas.gameObject.SetActive(var);
             _playerAssets.SetActive(var);
