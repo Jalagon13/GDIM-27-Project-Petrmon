@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Fire Petr
   _type: 0
   _level: 1
-  _maxHp: 100
+  p_maxHp: 40
   _sprite: {fileID: 0}
   _statSystem:
     Stats:

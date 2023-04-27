@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Water Petr
   _type: 1
   _level: 1
-  _maxHp: 100
+  p_maxHp: 60
   _sprite: {fileID: 0}
   _statSystem:
     Stats:

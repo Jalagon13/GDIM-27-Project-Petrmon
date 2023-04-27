@@ -12,6 +12,8 @@ namespace ProjectPetrmon
         private Canvas _battleCanvas;
         private GridLayoutGroup _fightButtonLayout;
         private PartyObject _opponentParty;
+        private PetrPanel _playerPetrPanel;
+        private PetrPanel _opponentPetrPanel;
 
         protected override void Awake()
         {
@@ -19,6 +21,8 @@ namespace ProjectPetrmon
 
             _battleCanvas = transform.GetChild(0).GetComponent<Canvas>();
             _fightButtonLayout = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<GridLayoutGroup>();
+            _playerPetrPanel = transform.GetChild(0).GetChild(1).GetComponent<PetrPanel>();
+            _opponentPetrPanel = transform.GetChild(0).GetChild(2).GetComponent<PetrPanel>();
         }
 
         private void Start()
@@ -34,11 +38,17 @@ namespace ProjectPetrmon
             _playerParty.Party[0].MoveSet.RefreshPP();
             _opponentParty.Party[0].MoveSet.RefreshPP();
 
-            InitializeMoves();
+            UpdateMoves();
+            UpdatePlayerPetrPanel();
+            UpdateOpponentPetrPanel();
             ShowAssets();
         }
 
-        private void InitializeMoves()
+        private void UpdatePlayerPetrPanel() => _playerPetrPanel.UpdatePanel(_playerParty.Party[0]);
+
+        private void UpdateOpponentPetrPanel() => _opponentPetrPanel.UpdatePanel(_opponentParty.Party[0]);
+
+        private void UpdateMoves()
         {
             var petrmonIndex = 0;
             var index = 0;
@@ -50,7 +60,7 @@ namespace ProjectPetrmon
                     var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
                     var targetPetrmon = _opponentParty.Party[0];
 
-                    fightButton.UpdateFightButton(move, targetPetrmon);
+                    fightButton.UpdateFightButton(move, targetPetrmon, UpdateOpponentPetrPanel);
                     index++;
                 }
             }

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ namespace ProjectPetrmon
         private Petrmon _targetPetrmon;
         private Button _fightButton;
         private TextMeshProUGUI _buttonText;
+        private Action _moveExecuteEvent;
 
         private void Awake()
         {
@@ -17,10 +19,11 @@ namespace ProjectPetrmon
             _fightButton = GetComponent<Button>();
         }
 
-        public void UpdateFightButton(Move move, Petrmon targetPetrmon)
+        public void UpdateFightButton(Move move, Petrmon targetPetrmon, Action updateOpponentPetrPanel)
         {
             _move = move;
             _targetPetrmon = targetPetrmon;
+            _moveExecuteEvent = updateOpponentPetrPanel;
 
             UpdateDisplay();
             ButtonSetup();
@@ -37,6 +40,7 @@ namespace ProjectPetrmon
             _fightButton.onClick.AddListener(() =>
             {
                 _move.Execute(_targetPetrmon);
+                _moveExecuteEvent?.Invoke();
             });
         }
     }
