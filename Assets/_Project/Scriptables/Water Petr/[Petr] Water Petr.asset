@@ -17,7 +17,7 @@ MonoBehaviour:
   _level: 1
   p_maxHp: 60
   _sprite: {fileID: 0}
-  _statSystem:
+  p_statSystem:
     Stats:
     - Stat: 0
       Value: 10
@@ -25,9 +25,9 @@ MonoBehaviour:
       Value: 10
     - Stat: 2
       Value: 10
-  _moveSet:
+  p_moveSet:
     Set:
     - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
-    - {fileID: 11400000, guid: fd47feda121b6f3478a1bf68be74ba91, type: 2}
-    - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
+    - {fileID: 11400000, guid: 2f13631d4324c0e4cafc87f5b3f99b7b, type: 2}
+    - {fileID: 11400000, guid: f2f85fbf0ac650141b8e74221ed826b5, type: 2}
     - {fileID: 11400000, guid: fd47feda121b6f3478a1bf68be74ba91, type: 2}

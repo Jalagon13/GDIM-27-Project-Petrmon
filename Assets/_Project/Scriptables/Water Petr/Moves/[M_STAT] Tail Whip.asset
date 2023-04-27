@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: '[M_STAT] Tail Whip'
   m_EditorClassIdentifier: 
   _name: Tail Whip
-  _maxPP: 25
+  _maxPP: 40
   _statToChange: 1
   _changeAmount: 10

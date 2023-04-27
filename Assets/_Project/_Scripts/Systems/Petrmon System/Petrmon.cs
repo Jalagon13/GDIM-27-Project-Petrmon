@@ -16,16 +16,16 @@ namespace ProjectPetrmon
         [SerializeField] private int _level;
         [SerializeField] protected int p_maxHp;
         [SerializeField] private Sprite _sprite;
-        [SerializeField] private StatSystem _statSystem;
-        [SerializeField] private MoveSet _moveSet;
+        [SerializeField] protected StatSystem p_statSystem;
+        [SerializeField] protected MoveSet p_moveSet;
 
         protected HealthSystem p_healthSystem;
 
         public string PetrName => _name;
         public int MaxHp { get => p_maxHp; set { p_maxHp = value; } }
         public int Level { get => _level; set { _level = value; } }
-        public HealthSystem HealthSystem => p_healthSystem;
-        public StatSystem StatSystem => _statSystem;
-        public MoveSet MoveSet => _moveSet;
+        public HealthSystem HealthSystem { get => p_healthSystem; set { p_healthSystem = value; } }
+        public StatSystem StatSystem => p_statSystem;
+        public MoveSet MoveSet => p_moveSet;
     }
 }

@@ -43,26 +43,36 @@ namespace ProjectPetrmon
 
         private void Start()
         {
-            _battleCanvas.gameObject.SetActive(false);
-            _playerAssets.SetActive(false);
-            _opponentAssets.SetActive(false);
+            ShowAssets(false);
         }
 
-        public void StartBattle(PartyObject opponentParty)
+        public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
         {
             _opponentParty = opponentParty;
-            _playerParty.Party[0].MoveSet.RefreshPP();
-            _opponentParty.Party[0].MoveSet.RefreshPP();
+            //_playerParty.Party[0].MoveSet.RefreshPP();
+            //_opponentParty.Party[0].MoveSet.RefreshPP();
 
             UpdateMoves();
             UpdatePlayerPetrPanel();
             UpdateOpponentPetrPanel();
-            ShowAssets();
+            ShowAssets(true);
         }
 
-        public void DebugAttackPlayer() // delete later
+        public void Run() // Hooked up to Run Button
+        {
+            ShowAssets(false);
+        }
+
+        public void DebugAttackPlayer() // Hooked up to Attack Player Button
         {
             _opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
+            UpdatePlayerPetrPanel();
+        }
+
+        public void DebugRefreshPetrmon() // Hooked up to Heal Petrmon Button
+        {
+            _playerParty.Party[0].MoveSet.RefreshPP();
+            _playerParty.Party[0].HealthSystem.FullHeal();
             UpdatePlayerPetrPanel();
         }
 
@@ -88,11 +98,11 @@ namespace ProjectPetrmon
             }
         }
 
-        private void ShowAssets()
+        private void ShowAssets(bool var)
         {
-            _battleCanvas.gameObject.SetActive(true);
-            _playerAssets.SetActive(true);
-            _opponentAssets.SetActive(true);
+            _battleCanvas.gameObject.SetActive(var);
+            _playerAssets.SetActive(var);
+            _opponentAssets.SetActive(var);
         }
     }
 }

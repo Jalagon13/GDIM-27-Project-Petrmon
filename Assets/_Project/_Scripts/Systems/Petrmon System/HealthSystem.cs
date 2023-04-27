@@ -6,20 +6,25 @@ namespace ProjectPetrmon
     {
         public static event Action Fainted; 
 
-        private readonly Action _onFaint;
+        //private readonly Action _onFaint;
         private readonly int _maxHp;
         private int _currentHp;
 
         public int MaxHp { get { return _maxHp; } }
         public int CurrentHp { get { return _currentHp; } }
 
-        public HealthSystem(int maxHp, Action onFaint)
+        public HealthSystem(int maxHp/*, Action onFaint*/)
         {
-            _onFaint = onFaint;
-            Fainted += _onFaint;
+            //_onFaint = onFaint;
+            //Fainted += _onFaint;
 
             _maxHp = maxHp;
             _currentHp = maxHp;
+        }
+
+        public void FullHeal()
+        {
+            _currentHp = _maxHp;
         }
 
         public void TakeDamage(int damage)
@@ -29,7 +34,7 @@ namespace ProjectPetrmon
             if(_currentHp <= 0)
             {
                 Fainted?.Invoke();
-                Fainted -= _onFaint;
+                //Fainted -= _onFaint;
             }
         }
     }
