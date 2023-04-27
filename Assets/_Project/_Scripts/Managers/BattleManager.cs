@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +11,7 @@ namespace ProjectPetrmon
 
         private Canvas _battleCanvas;
         private GridLayoutGroup _fightButtonLayout;
+        private PartyObject _opponentParty;
 
         protected override void Awake()
         {
@@ -30,15 +30,12 @@ namespace ProjectPetrmon
 
         public void StartBattle(PartyObject opponentParty)
         {
+            _opponentParty = opponentParty;
+            _playerParty.Party[0].MoveSet.RefreshPP();
+            _opponentParty.Party[0].MoveSet.RefreshPP();
+
             InitializeMoves();
             ShowAssets();
-        }
-
-        private void ShowAssets()
-        {
-            _battleCanvas.gameObject.SetActive(true);
-            _playerAssets.SetActive(true);
-            _opponentAssets.SetActive(true);
         }
 
         private void InitializeMoves()
@@ -50,10 +47,20 @@ namespace ProjectPetrmon
             {
                 if(child.TryGetComponent(out FightButton fightButton))
                 {
-                    fightButton.UpdateFightButton(_playerParty.Party[petrmonIndex].MoveSet.Set[index]);
+                    var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
+                    var targetPetrmon = _opponentParty.Party[0];
+
+                    fightButton.UpdateFightButton(move, targetPetrmon);
                     index++;
                 }
             }
+        }
+
+        private void ShowAssets()
+        {
+            _battleCanvas.gameObject.SetActive(true);
+            _playerAssets.SetActive(true);
+            _opponentAssets.SetActive(true);
         }
     }
 }

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b5af17dc75e48c43890858c345e34fd, type: 3}
-  m_Name: '[Petr] Fire Petr'
+  m_Name: '[Petr] Water Petr'
   m_EditorClassIdentifier: 
-  _name: Fire Petr
-  _type: 0
+  _name: Water Petr
+  _type: 1
   _level: 1
   _maxHp: 100
   _sprite: {fileID: 0}

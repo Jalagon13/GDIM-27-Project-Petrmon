@@ -1,14 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectPetrmon
 {
     [CreateAssetMenu(fileName = "[Petr] ", menuName = "Petrmon System/New Petrmon")]
     public class PetrmonObject : Petrmon, ISerializationCallbackReceiver
-    {   
+    {
+        private void OnFaint()
+        {
+            // for when Petrmon Faints
+        }
+
         public void OnAfterDeserialize()
         {
+            p_healthSystem = new(p_maxHp, OnFaint);
+
             if (Level <= 0) Level = 1;
             if (MaxHp <= 0) MaxHp = 10;
 
