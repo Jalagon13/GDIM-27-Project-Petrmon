@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace ProjectPetrmon
 {
@@ -28,7 +25,7 @@ namespace ProjectPetrmon
         public void TakeDamage(int damage)
         {
             _currentHp -= damage;
-            Debug.Log(CurrentHp);
+
             if(_currentHp <= 0)
             {
                 Fainted?.Invoke();

@@ -21,6 +21,7 @@ namespace ProjectPetrmon
 
         protected HealthSystem p_healthSystem;
 
+        public string PetrName { get { return _name; } }
         public int MaxHp { get { return p_maxHp; } set { p_maxHp = value; } }
         public int Level { get { return _level; } set { _level = value; } }
         public HealthSystem HealthSystem { get { return p_healthSystem; } }

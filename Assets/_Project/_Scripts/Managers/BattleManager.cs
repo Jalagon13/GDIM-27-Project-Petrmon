@@ -44,6 +44,12 @@ namespace ProjectPetrmon
             ShowAssets();
         }
 
+        public void DebugAttackPlayer()
+        {
+            _opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
+            UpdatePlayerPetrPanel();
+        }
+
         private void UpdatePlayerPetrPanel() => _playerPetrPanel.UpdatePanel(_playerParty.Party[0]);
 
         private void UpdateOpponentPetrPanel() => _opponentPetrPanel.UpdatePanel(_opponentParty.Party[0]);

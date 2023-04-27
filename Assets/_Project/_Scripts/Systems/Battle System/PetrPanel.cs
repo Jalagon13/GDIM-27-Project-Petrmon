@@ -16,7 +16,7 @@ namespace ProjectPetrmon
 
         public void UpdatePanel(Petrmon petrmon)
         {
-            _nameText.text = petrmon.name;
+            _nameText.text = petrmon.PetrName;
             _hpText.text = $"HP: {petrmon.HealthSystem.CurrentHp}/{petrmon.HealthSystem.MaxHp}";
         }
     }
