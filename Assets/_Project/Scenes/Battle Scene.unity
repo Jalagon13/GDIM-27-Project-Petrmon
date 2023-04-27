@@ -986,6 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveInfoPanel: {fileID: 1619235115}
 --- !u!1 &300110047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,6 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveInfoPanel: {fileID: 1619235115}
 --- !u!1 &654987038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2736,7 +2738,7 @@ GameObject:
   - component: {fileID: 1245760752}
   - component: {fileID: 1245760753}
   m_Layer: 0
-  m_Name: Fight Button Layout
+  m_Name: Fight Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3467,6 +3469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveInfoPanel: {fileID: 1619235115}
 --- !u!1 &1581623391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,8 +3646,9 @@ GameObject:
   - component: {fileID: 1619235112}
   - component: {fileID: 1619235114}
   - component: {fileID: 1619235113}
+  - component: {fileID: 1619235115}
   m_Layer: 0
-  m_Name: Info Panel
+  m_Name: Move Info Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3710,6 +3714,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619235111}
   m_CullTransparentMesh: 1
+--- !u!114 &1619235115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619235111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffca3414bbc1a142a91196576cdbf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654858077
 GameObject:
   m_ObjectHideFlags: 0
@@ -4584,6 +4600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20010c2669d5b5b41ac4a2f3da6d9db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveInfoPanel: {fileID: 1619235115}
 --- !u!1001 &2084445384
 PrefabInstance:
   m_ObjectHideFlags: 0

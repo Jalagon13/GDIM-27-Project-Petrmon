@@ -15,6 +15,8 @@ namespace ProjectPetrmon
     ///     - Add functionality for StatMove moves
     /// - Create actual Battle Sequence
     ///     - Add Dialogue and Narration.
+    /// - Add Type functionality to moves
+    ///     - Need to research how Types work 
     /// </summary>
 
     public class BattleManager : Singleton<BattleManager>
@@ -58,7 +60,7 @@ namespace ProjectPetrmon
             ShowAssets();
         }
 
-        public void DebugAttackPlayer()
+        public void DebugAttackPlayer() // delete later
         {
             _opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
             UpdatePlayerPetrPanel();

@@ -21,11 +21,11 @@ namespace ProjectPetrmon
 
         protected HealthSystem p_healthSystem;
 
-        public string PetrName { get { return _name; } }
-        public int MaxHp { get { return p_maxHp; } set { p_maxHp = value; } }
-        public int Level { get { return _level; } set { _level = value; } }
-        public HealthSystem HealthSystem { get { return p_healthSystem; } }
-        public StatSystem StatSystem { get { return _statSystem; } }
-        public MoveSet MoveSet { get { return _moveSet; } }
+        public string PetrName => _name;
+        public int MaxHp { get => p_maxHp; set { p_maxHp = value; } }
+        public int Level { get => _level; set { _level = value; } }
+        public HealthSystem HealthSystem => p_healthSystem;
+        public StatSystem StatSystem => _statSystem;
+        public MoveSet MoveSet => _moveSet;
     }
 }

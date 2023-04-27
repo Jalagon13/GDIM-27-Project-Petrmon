@@ -9,8 +9,8 @@ namespace ProjectPetrmon
         private int _currentPP;
 
         public string MoveName { get { return _name; } }
-        protected int MaxPP { get { return _maxPP; } }
-        protected int CurrentPP { get { return _currentPP; } }
+        public int MaxPP { get { return _maxPP; } }
+        public int CurrentPP { get { return _currentPP; } }
 
         public void ResetPP()
         {

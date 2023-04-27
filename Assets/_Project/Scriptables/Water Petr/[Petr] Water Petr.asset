@@ -27,7 +27,7 @@ MonoBehaviour:
       Value: 10
   _moveSet:
     Set:
-    - {fileID: 11400000, guid: 32cb5fe491dde6145a9a56d13fad02a4, type: 2}
-    - {fileID: 11400000, guid: f499d19bf6d32ad429bf47cd97f2de54, type: 2}
-    - {fileID: 11400000, guid: 32cb5fe491dde6145a9a56d13fad02a4, type: 2}
-    - {fileID: 11400000, guid: f499d19bf6d32ad429bf47cd97f2de54, type: 2}
+    - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
+    - {fileID: 11400000, guid: fd47feda121b6f3478a1bf68be74ba91, type: 2}
+    - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
+    - {fileID: 11400000, guid: fd47feda121b6f3478a1bf68be74ba91, type: 2}
