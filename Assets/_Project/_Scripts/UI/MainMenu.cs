@@ -75,7 +75,7 @@ namespace ProjectPetrmon
         {
             Color colorOpaque = new Color(text.color.r, text.color.g, text.color.b, 1);
             Color colorTransparent = new Color(text.color.r, text.color.g, text.color.b, 0);
-            yield return StartCoroutine(FadeTextColor(text, colorTransparent, colorOpaque, totalFadeTime));
+            yield return StartCoroutine(FadeGraphicColor(text, colorTransparent, colorOpaque, totalFadeTime));
         }
 
         private IEnumerator FadeTextInAndOut(TMP_Text text, float totalFadeTime, bool repeat)
@@ -84,23 +84,23 @@ namespace ProjectPetrmon
             Color colorTransparent = new Color(text.color.r, text.color.g, text.color.b, 0);
             do
             {
-                yield return StartCoroutine(FadeTextColor(text, colorTransparent, colorOpaque, totalFadeTime / 2));
+                yield return StartCoroutine(FadeGraphicColor(text, colorTransparent, colorOpaque, totalFadeTime / 2));
                 yield return new WaitForSeconds(0.25f);
-                yield return StartCoroutine(FadeTextColor(text, colorOpaque, colorTransparent, totalFadeTime / 2));
+                yield return StartCoroutine(FadeGraphicColor(text, colorOpaque, colorTransparent, totalFadeTime / 2));
             } while (repeat);
         }
 
-        private IEnumerator FadeTextColor(MaskableGraphic text, Color start, Color end, float totalTime)
+        private IEnumerator FadeGraphicColor(MaskableGraphic graphic, Color start, Color end, float totalTime)
         {
-            text.color = start;
+            graphic.color = start;
             float time = 0;
             while (time < totalTime)
             {
-                text.color = Color.Lerp(start, end, time);
+                graphic.color = Color.Lerp(start, end, time);
                 yield return null;
                 time += Time.deltaTime;
             }
-            text.color = end;
+            graphic.color = end;
         }
 
         public void UpdateMusicSlider(float val)
@@ -123,7 +123,7 @@ namespace ProjectPetrmon
         {
             startButton.interactable = false;
             screenCover.gameObject.SetActive(true);
-            yield return StartCoroutine(FadeTextColor(screenCover, new Color(0, 0, 0, 0), Color.black, screenFadeTime));
+            yield return StartCoroutine(FadeGraphicColor(screenCover, new Color(0, 0, 0, 0), Color.black, screenFadeTime));
             SceneManager.LoadScene(startingLevelName);
         }
         
