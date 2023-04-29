@@ -6,7 +6,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
@@ -24,6 +26,10 @@ namespace ProjectPetrmon
         [SerializeField] private float startTextFadeInAndOutTime;
 
         [Header("Options Menu")] [SerializeField] private GameObject optionsMenu;
+        [SerializeField] private Button startButton;
+        [SerializeField] private string startingLevelName;
+        [SerializeField] private Image screenCover;
+        [SerializeField] private float screenFadeTime;
 
         private Coroutine startTextCoroutine;
         private bool clickToContinueAvailable = false;
@@ -84,7 +90,7 @@ namespace ProjectPetrmon
             } while (repeat);
         }
 
-        private IEnumerator FadeTextColor(TMP_Text text, Color start, Color end, float totalTime)
+        private IEnumerator FadeTextColor(MaskableGraphic text, Color start, Color end, float totalTime)
         {
             text.color = start;
             float time = 0;
@@ -108,5 +114,18 @@ namespace ProjectPetrmon
             MainMenu.VolumeSetting = val;
             Debug.Log(MainMenu.VolumeSetting);
         }
+        private void StartGameLevel()
+        {
+            StartCoroutine(_StartGameLevel());
+        }
+        
+        private IEnumerator _StartGameLevel()
+        {
+            startButton.interactable = false;
+            screenCover.gameObject.SetActive(true);
+            yield return StartCoroutine(FadeTextColor(screenCover, new Color(0, 0, 0, 0), Color.black, screenFadeTime));
+            SceneManager.LoadScene(startingLevelName);
+        }
+        
     }
 }
