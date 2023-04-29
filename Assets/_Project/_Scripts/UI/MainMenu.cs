@@ -12,6 +12,10 @@ namespace ProjectPetrmon
 {
     public class MainMenu : MonoBehaviour, IPointerClickHandler
     {
+        public static float MusicSetting = 1;
+        public static float VolumeSetting = 1;
+        
+        [Header("Main Menu")] [SerializeField] private GameObject mainMenu;
         [SerializeField] private TMP_Text teamName;
         [SerializeField] private float teamNameFadeInAndOutTime;
         [SerializeField] private TMP_Text gameName;
@@ -19,7 +23,10 @@ namespace ProjectPetrmon
         [SerializeField] private TMP_Text startText;
         [SerializeField] private float startTextFadeInAndOutTime;
 
+        [Header("Options Menu")] [SerializeField] private GameObject optionsMenu;
+
         private Coroutine startTextCoroutine;
+        private bool clickToContinueAvailable = false;
 
         // Start is called before the first frame update
         private IEnumerator Start()
@@ -30,10 +37,11 @@ namespace ProjectPetrmon
         
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (eventData.button == PointerEventData.InputButton.Left)
+            if (eventData.button == PointerEventData.InputButton.Left && clickToContinueAvailable)
             {
+                clickToContinueAvailable = false;
                 StopCoroutine(startTextCoroutine);
-                Debug.Log(123456789);
+                StartCoroutine(DisplayOptionsMenu());
             }
         }
 
@@ -46,6 +54,14 @@ namespace ProjectPetrmon
         {
             StartCoroutine(FadeTextIn(gameName, gameNameFadeInTime));
             startTextCoroutine = StartCoroutine(FadeTextInAndOut(startText, startTextFadeInAndOutTime, true));
+            clickToContinueAvailable = true;
+            yield break;
+        }
+
+        private IEnumerator DisplayOptionsMenu()
+        {
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(true);
             yield break;
         }
 
@@ -79,6 +95,18 @@ namespace ProjectPetrmon
                 time += Time.deltaTime;
             }
             text.color = end;
+        }
+
+        public void UpdateMusicSlider(float val)
+        {
+            MainMenu.MusicSetting = val;
+            Debug.Log(MainMenu.MusicSetting);
+        }
+
+        public void UpdateVolumeSlider(float val)
+        {
+            MainMenu.VolumeSetting = val;
+            Debug.Log(MainMenu.VolumeSetting);
         }
     }
 }
