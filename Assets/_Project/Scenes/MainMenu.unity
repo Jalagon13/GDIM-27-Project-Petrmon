@@ -2880,11 +2880,11 @@ MonoBehaviour:
   teamName: {fileID: 278830569}
   teamNameFadeInAndOutTime: 4
   gameName: {fileID: 1440648656}
-  gameNameFadeInTime: 2.5
+  gameNameFadeInTime: 1.25
   startText: {fileID: 1328154557}
-  startTextFadeInAndOutTime: 2.5
+  startTextFadeInAndOutTime: 2
   optionsMenu: {fileID: 929899601}
   startButton: {fileID: 679051935}
-  startingLevelName: MainMenu
+  startingLevelName: Battle Scene
   screenCover: {fileID: 853960737}
   screenFadeTime: 2.5
