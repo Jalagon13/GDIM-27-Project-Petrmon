@@ -22,6 +22,15 @@ namespace ProjectPetrmon
             _currentHp = maxHp;
         }
 
+        // Restores Petrmon HP by the given amount, maxes at _maxHp.
+        public void Heal(int healAmount)
+        {
+            _currentHp += healAmount;
+
+            if (CurrentHp > healAmount)
+                _currentHp = healAmount;
+        }
+
         public void FullHeal()
         {
             _currentHp = _maxHp;
