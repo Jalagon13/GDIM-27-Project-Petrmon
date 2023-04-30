@@ -55,7 +55,7 @@ namespace ProjectPetrmon
         //    _playerInput.Disable();
         //}
 
-        public void StartConversation(DialogueObject currentConversation, bool isTriggered, GameObject talker)
+        public void StartConversation(DialogueObjectA currentConversation, bool isTriggered, GameObject talker)
         {
             if (!_isTalking)
             {
@@ -66,7 +66,7 @@ namespace ProjectPetrmon
             }
         }
 
-        private IEnumerator ConversationCo(DialogueObject currentConversation, bool isTriggered, GameObject talker)
+        private IEnumerator ConversationCo(DialogueObjectA currentConversation, bool isTriggered, GameObject talker)
         {
             OnStart?.Invoke();
             foreach (DialogueEntryObject entry in currentConversation.Lines)

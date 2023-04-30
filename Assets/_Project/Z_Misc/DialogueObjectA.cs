@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ProjectPetrmon
 {
     [CreateAssetMenu(fileName = "Conversation", menuName = "Conversation System/Conversation")]
-    public class DialogueObject : ScriptableObject
+    public class DialogueObjectA : ScriptableObject
     {
         public DialogueEntryObject[] Lines;
     }

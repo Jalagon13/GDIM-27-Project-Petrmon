@@ -7,7 +7,7 @@ namespace ProjectPetrmon
 {
     public class DialogueComponent : MonoBehaviour, IPointerClickHandler
     {
-        [SerializeField] private DialogueObject _thisConversation;
+        [SerializeField] private DialogueObjectA _thisConversation;
         [SerializeField] private bool _triggeredOnEntry;
 
         public void OnPointerClick(PointerEventData eventData)
