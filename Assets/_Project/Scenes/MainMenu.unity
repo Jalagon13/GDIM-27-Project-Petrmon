@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Petermon
+  m_text: Petrmon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bf5a5804b5bd3da43a53ca0e1274cfcf, type: 2}
   m_sharedMaterial: {fileID: 6381541385787046470, guid: bf5a5804b5bd3da43a53ca0e1274cfcf,
