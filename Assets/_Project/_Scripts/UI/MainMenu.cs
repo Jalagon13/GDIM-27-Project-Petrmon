@@ -118,14 +118,20 @@ namespace ProjectPetrmon
         {
             StartCoroutine(_StartGameLevel());
         }
-        
+
         private IEnumerator _StartGameLevel()
         {
             startButton.interactable = false;
             screenCover.gameObject.SetActive(true);
-            yield return StartCoroutine(FadeGraphicColor(screenCover, new Color(0, 0, 0, 0), Color.black, screenFadeTime));
+            yield return StartCoroutine(FadeGraphicColor(screenCover, new Color(0, 0, 0, 0), Color.black,
+                screenFadeTime));
             SceneManager.LoadScene(startingLevelName);
         }
-        
+
+        public void QuitGame()
+        {
+            Debug.Log("Quit Game Button Pressed");
+            Application.Quit();
+        }
     }
 }
