@@ -7,7 +7,7 @@ namespace ProjectPetrmon
     {
         public void OnAfterDeserialize()
         {
-            p_healthSystem = new(p_maxHp);
+            p_healthSystem = new(p_maxHp,_Defense,_type);
             p_moveSet.RefreshPP();
 
             if (Level <= 0) Level = 1;
