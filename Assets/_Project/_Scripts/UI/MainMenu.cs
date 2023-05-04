@@ -1,13 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ProjectPetrmon
@@ -20,7 +15,7 @@ namespace ProjectPetrmon
         [Header("Main Menu")] [SerializeField] private GameObject mainMenu;
         [SerializeField] private TMP_Text teamName;
         [SerializeField] private float teamNameFadeInAndOutTime;
-        [SerializeField] private TMP_Text gameName;
+        [SerializeField] private RawImage gameLogo;
         [SerializeField] private float gameNameFadeInTime;
         [SerializeField] private TMP_Text startText;
         [SerializeField] private float startTextFadeInAndOutTime;
@@ -32,7 +27,7 @@ namespace ProjectPetrmon
         [SerializeField] private float screenFadeTime;
 
         private Coroutine startTextCoroutine;
-        private bool clickToContinueAvailable = false;
+        private bool clickToContinueAvailable;
 
         // Start is called before the first frame update
         private IEnumerator Start()
@@ -58,7 +53,7 @@ namespace ProjectPetrmon
 
         private IEnumerator DisplayStartMenu()
         {
-            StartCoroutine(FadeTextIn(gameName, gameNameFadeInTime));
+            StartCoroutine(FadeTextIn(gameLogo, gameNameFadeInTime));
             startTextCoroutine = StartCoroutine(FadeTextInAndOut(startText, startTextFadeInAndOutTime, true));
             clickToContinueAvailable = true;
             yield break;
@@ -71,7 +66,7 @@ namespace ProjectPetrmon
             yield break;
         }
 
-        private IEnumerator FadeTextIn(TMP_Text text, float totalFadeTime)
+        private IEnumerator FadeTextIn(MaskableGraphic text, float totalFadeTime)
         {
             Color colorOpaque = new Color(text.color.r, text.color.g, text.color.b, 1);
             Color colorTransparent = new Color(text.color.r, text.color.g, text.color.b, 0);
