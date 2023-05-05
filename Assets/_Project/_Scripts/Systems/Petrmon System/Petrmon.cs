@@ -30,5 +30,16 @@ namespace ProjectPetrmon
         public HealthSystem HealthSystem { get => p_healthSystem; set { p_healthSystem = value; } }
         public StatSystem StatSystem => p_statSystem;
         public MoveSet MoveSet => p_moveSet;
+
+        private void Awake()
+        {
+            Type waterType = Type.Water;
+            Type fire = Type.Fire;
+
+            if(fire == waterType)
+            {
+
+            }
+        }
     }
 }
