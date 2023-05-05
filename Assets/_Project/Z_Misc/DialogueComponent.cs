@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace ProjectPetrmon
 {
+    /*
     public class DialogueComponent : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private DialogueObjectA _thisConversation;
@@ -31,4 +32,5 @@ namespace ProjectPetrmon
             }
         }
     }
+    */
 }

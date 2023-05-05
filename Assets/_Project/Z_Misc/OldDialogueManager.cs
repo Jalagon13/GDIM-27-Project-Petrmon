@@ -6,8 +6,8 @@ using UnityEngine;
 using System.Collections;
 
 namespace ProjectPetrmon
-{
-    public class DialogueManager : Singleton<DialogueManager>
+{/*
+    public class OldDialogueManager : Singleton<OldDialogueManager>
     {
         public delegate void StartAction();
         public static event StartAction OnStart;
@@ -122,4 +122,4 @@ namespace ProjectPetrmon
             return _isTalking;
         }
     }
-}
+*/}
