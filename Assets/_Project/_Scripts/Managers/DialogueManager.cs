@@ -23,10 +23,10 @@ namespace ProjectPetrmon
         [SerializeField] private AudioClip _textSound;
         [SerializeField] private int _charLimit;
 
-        private bool _isTalking = false;
-        private PlayerInput _playerInput;
-        private bool _enterPressed;
         private GameObject _conversationStarter;
+        private DefaultInput _input;
+        private bool _isTalking = false;
+        private bool _enterPressed;
         private bool _isTyping = false;
 
 
@@ -35,10 +35,9 @@ namespace ProjectPetrmon
             base.Awake();
             _dialogueDisplay.SetActive(false);
 
-            _playerInput = new PlayerInput();
+            _input = new DefaultInput();
 
-            //_playerInput.Player.Enter.started += NextEntry;
-            //_playerInput.Player.Enter.canceled += NextEntry;
+            _input.Player.NextEntry.started += NextEntry;
         }
 
         private void NextEntry(InputAction.CallbackContext context)
@@ -46,15 +45,15 @@ namespace ProjectPetrmon
             _enterPressed = context.ReadValue<float>() > 0;
         }
 
-        //private void OnEnable()
-        //{
-        //    _playerInput.Enable();
-        //}
+        private void OnEnable()
+        {
+            _input.Enable();
+        }
 
-        //private void OnDisable()
-        //{
-        //    _playerInput.Disable();
-        //}
+        private void OnDisable()
+        {
+            _input.Disable();
+        }
 
         public void StartConversation(DialogueObject currentConversation, bool isTriggered, GameObject talker)
         {
