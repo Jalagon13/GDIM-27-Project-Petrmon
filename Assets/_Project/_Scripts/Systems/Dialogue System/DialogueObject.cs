@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace ProjectPetrmon
 {
@@ -22,7 +19,6 @@ namespace ProjectPetrmon
             _charName = charName;
             _displayCharName = displayCharName;
             _isSign = isSign;
-
         }
     }
 }
