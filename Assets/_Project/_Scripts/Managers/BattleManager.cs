@@ -20,8 +20,6 @@ namespace ProjectPetrmon
         [SerializeField] private PetrPanel _opponentPetrPanel;
         [SerializeField] private RectTransform _fightPanel;
         [SerializeField] private RectTransform _menuPanel;
-        [SerializeField] private GameObject _playerAssets;
-        [SerializeField] private GameObject _opponentAssets;
 
         private Canvas _battleCanvas;
         private GridLayoutGroup _fightButtonLayout;
@@ -110,8 +108,6 @@ namespace ProjectPetrmon
         private void ShowBattleUI(bool var)
         {
             _battleCanvas.gameObject.SetActive(var);
-            _playerAssets.SetActive(var);
-            _opponentAssets.SetActive(var);
         }
     }
 }
