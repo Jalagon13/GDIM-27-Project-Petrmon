@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace ProjectPetrmon
 {
+    [Serializable]
     public class BattleStats
     {
         // these stats are the dynamic stats that are able to be altered during battle

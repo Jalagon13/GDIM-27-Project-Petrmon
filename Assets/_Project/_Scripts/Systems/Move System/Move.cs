@@ -27,6 +27,6 @@ namespace ProjectPetrmon
             _currentPP = MaxPP;
         }
 
-        public abstract void Execute(PetrmonObject targetPetrmon);
+        public abstract void Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon);
     }
 }

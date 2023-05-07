@@ -11,7 +11,8 @@ namespace ProjectPetrmon
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
 
         private Move _move;
-        private PetrmonObject _targetPetrmon;
+        private PetrmonObject _toPetrmon;
+        private PetrmonObject _fromPetrmon;
         private Button _fightButton;
         private TextMeshProUGUI _buttonText;
         private Action _moveExecuteEvent;
@@ -32,10 +33,11 @@ namespace ProjectPetrmon
             _moveInfoPanel.gameObject.SetActive(false);
         }
 
-        public void UpdateFightButton(Move move, PetrmonObject targetPetrmon, Action updateOpponentPetrPanel)
+        public void UpdateFightButton(Move move, PetrmonObject fromPetrmon, PetrmonObject toPetrmon, Action updateOpponentPetrPanel)
         {
             _move = move;
-            _targetPetrmon = targetPetrmon;
+            _fromPetrmon = fromPetrmon;
+            _toPetrmon = toPetrmon;
             _moveExecuteEvent = updateOpponentPetrPanel;
 
             UpdateDisplay();
@@ -52,7 +54,7 @@ namespace ProjectPetrmon
             _fightButton.onClick.RemoveAllListeners();
             _fightButton.onClick.AddListener(() =>
             {
-                _move.Execute(_targetPetrmon);
+                _move.Execute(_fromPetrmon, _toPetrmon);
                 _moveExecuteEvent?.Invoke();
                 _moveInfoPanel.UpdateMoveInfoPanel(_move);
             });

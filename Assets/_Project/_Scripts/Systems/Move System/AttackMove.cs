@@ -7,7 +7,7 @@ namespace ProjectPetrmon
     {
         [SerializeField] private int _power;
 
-        public sealed override void Execute(PetrmonObject targetPetrmon)
+        public sealed override void Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
             
         }

@@ -37,6 +37,11 @@ namespace ProjectPetrmon
         public MoveSet MoveSet { get { return _moveSet; } }
         public BattleStats BattleStats { get { return _battleStats; } }
 
+        public void InitializeBattleStats()
+        {
+            BattleStats.InitializeBattleStats(_baseAttack, _baseDefense, _baseSpeed);
+        }
+
         public void RefreshPetrmon()
         {
             _currentHp = _baseMaxHp;

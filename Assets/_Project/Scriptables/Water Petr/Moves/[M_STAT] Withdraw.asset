@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '[M_STAT] Withdraw'
   m_EditorClassIdentifier: 
   _name: Withdraw
+  _accuracy: 100
   _maxPP: 40
-  _statToChange: 1
-  _changeAmount: 10
+  _multiplier: 0.5
+  _useOnOwnPetrmon: 0

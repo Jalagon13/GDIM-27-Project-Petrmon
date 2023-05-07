@@ -50,7 +50,21 @@ namespace ProjectPetrmon
             UpdateMoves();
             UpdatePlayerPetrPanel();
             UpdateOpponentPetrPanel();
+            InitializePetrmonBattleStats();
             ShowBattleUI(true);
+        }
+
+        private void InitializePetrmonBattleStats()
+        {
+            foreach (PetrmonObject petrmon in _playerParty.Party)
+            {
+                petrmon.InitializeBattleStats();
+            }
+
+            foreach (PetrmonObject petrmon in _opponentParty.Party)
+            {
+                petrmon.InitializeBattleStats();
+            }
         }
 
         public void Run() // Hooked up to Run Button
@@ -60,7 +74,7 @@ namespace ProjectPetrmon
 
         public void DebugAttackPlayer() // Hooked up to Attack Player Button
         {
-            _opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
+            _opponentParty.Party[0].MoveSet.Set[0].Execute(_opponentParty.Party[0], _playerParty.Party[0]);
             UpdatePlayerPetrPanel();
         }
 
@@ -76,7 +90,8 @@ namespace ProjectPetrmon
 
         private void UpdateMoves()
         {
-            var targetPetrmon = _opponentParty.Party[0];
+            var toPetrmon = _opponentParty.Party[0];
+            var fromPetrmon = _playerParty.Party[0];
             var petrmonIndex = 0;
             var index = 0;
 
@@ -86,7 +101,7 @@ namespace ProjectPetrmon
                 {
                     var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
 
-                    fightButton.UpdateFightButton(move, targetPetrmon, UpdateOpponentPetrPanel);
+                    fightButton.UpdateFightButton(move, fromPetrmon, toPetrmon, UpdateOpponentPetrPanel);
                     index++;
                 }
             }

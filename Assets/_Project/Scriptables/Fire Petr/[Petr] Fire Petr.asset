@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Fire Petr
   _sprite: {fileID: 0}
-  _maxHp: 16
-  _attack: 7
-  _defense: 8
-  _speed: 6
+  _baseMaxHp: 16
+  _baseAttack: 5
+  _baseDefense: 6
+  _baseSpeed: 7
   _currentHp: 16
   _moveSet:
     Set:

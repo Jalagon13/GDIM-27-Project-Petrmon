@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '[M_STAT] Tail Whip'
   m_EditorClassIdentifier: 
   _name: Tail Whip
+  _accuracy: 100
   _maxPP: 40
-  _statToChange: 1
-  _changeAmount: 10
+  _multiplier: 3
+  _useOnOwnPetrmon: 1
