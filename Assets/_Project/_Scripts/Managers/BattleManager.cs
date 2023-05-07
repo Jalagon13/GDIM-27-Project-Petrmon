@@ -5,12 +5,9 @@ namespace ProjectPetrmon
 {
     /// <summary>
     /// GAMEPLAY TO DO LIST:
-    /// - Need to research how stat buffs/debuffs work
-    ///     - Add functionality for StatMove moves
     /// - Create actual Battle Sequence
     ///     - Add Dialogue and Narration.
-    /// - Add Type functionality to moves
-    ///     - Need to research how Types work 
+    /// - Create AI for opponents
     /// - Replace hard coded Petrmon calls (EX: _playerParty.Party[0]) with dynamically cached 
     /// private variables that change depending on which Petrmon the player and opponent has currently 
     /// out on the field.
@@ -19,14 +16,16 @@ namespace ProjectPetrmon
     public class BattleManager : Singleton<BattleManager>
     {
         [SerializeField] private PartyObject _playerParty;
+        [SerializeField] private PetrPanel _playerPetrPanel;
+        [SerializeField] private PetrPanel _opponentPetrPanel;
+        [SerializeField] private RectTransform _fightPanel;
+        [SerializeField] private RectTransform _menuPanel;
         [SerializeField] private GameObject _playerAssets;
         [SerializeField] private GameObject _opponentAssets;
 
         private Canvas _battleCanvas;
         private GridLayoutGroup _fightButtonLayout;
         private PartyObject _opponentParty;
-        private PetrPanel _playerPetrPanel;
-        private PetrPanel _opponentPetrPanel;
 
         protected override void Awake()
         {
@@ -34,8 +33,6 @@ namespace ProjectPetrmon
 
             _battleCanvas = transform.GetChild(0).GetComponent<Canvas>();
             _fightButtonLayout = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<GridLayoutGroup>();
-            _playerPetrPanel = transform.GetChild(0).GetChild(1).GetComponent<PetrPanel>();
-            _opponentPetrPanel = transform.GetChild(0).GetChild(2).GetComponent<PetrPanel>();
         }
 
         private void Start()
@@ -46,6 +43,8 @@ namespace ProjectPetrmon
         public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
         {
             _opponentParty = opponentParty;
+            _menuPanel.gameObject.SetActive(true);
+            _fightPanel.gameObject.SetActive(false);
 
             UpdateMoves();
             UpdatePlayerPetrPanel();
@@ -54,21 +53,9 @@ namespace ProjectPetrmon
             ShowBattleUI(true);
         }
 
-        private void InitializePetrmonBattleStats()
-        {
-            foreach (PetrmonObject petrmon in _playerParty.Party)
-            {
-                petrmon.InitializeBattleStats();
-            }
-
-            foreach (PetrmonObject petrmon in _opponentParty.Party)
-            {
-                petrmon.InitializeBattleStats();
-            }
-        }
-
         public void Run() // Hooked up to Run Button
         {
+            InitializePetrmonBattleStats();
             ShowBattleUI(false);
         }
 
@@ -82,6 +69,19 @@ namespace ProjectPetrmon
         {
             _playerParty.Party[0].RefreshPetrmon();
             UpdatePlayerPetrPanel();
+        }
+
+        private void InitializePetrmonBattleStats()
+        {
+            foreach (PetrmonObject petrmon in _playerParty.Party)
+            {
+                petrmon.InitializeBattleStats();
+            }
+
+            foreach (PetrmonObject petrmon in _opponentParty.Party)
+            {
+                petrmon.InitializeBattleStats();
+            }
         }
 
         private void UpdatePlayerPetrPanel() => _playerPetrPanel.UpdatePanel(_playerParty.Party[0]);
