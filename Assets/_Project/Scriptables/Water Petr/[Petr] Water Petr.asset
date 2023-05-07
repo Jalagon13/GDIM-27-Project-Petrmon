@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Water Petr
   _sprite: {fileID: 0}
-  _baseMaxHp: 15
-  _baseAttack: 7
+  _baseMaxHp: 175
+  _baseAttack: 55
   _baseDefense: 6
-  _baseSpeed: 5
-  _currentHp: 15
+  _baseSpeed: 55
+  _currentHp: 175
   _moveSet:
     Set:
     - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}

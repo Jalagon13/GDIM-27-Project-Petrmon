@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: '[M_ATK] Bite'
   m_EditorClassIdentifier: 
   _name: Bite
+  _accuracy: 100
   _maxPP: 35
-  _damageAmount: 20
+  _power: 60

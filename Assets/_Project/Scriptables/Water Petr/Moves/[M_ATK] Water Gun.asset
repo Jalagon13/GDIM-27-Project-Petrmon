@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: '[M_ATK] Water Gun'
   m_EditorClassIdentifier: 
   _name: Water Gun
+  _accuracy: 100
   _maxPP: 25
-  _damageAmount: 30
+  _power: 60
