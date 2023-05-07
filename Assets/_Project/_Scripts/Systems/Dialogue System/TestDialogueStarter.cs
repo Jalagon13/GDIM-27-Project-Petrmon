@@ -1,9 +1,15 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectPetrmon
 {
     public class TestDialogueStarter : MonoBehaviour
     {
+        [SerializeField] private List<DialogueTest> _test;
+        [TextArea]
+        [SerializeField] private string _dialogueText;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -17,5 +23,12 @@ namespace ProjectPetrmon
         {
         
         }
+    }
+
+    [Serializable]
+    public class DialogueTest
+    {
+        [TextArea]
+        public string _dialogueText;
     }
 }
