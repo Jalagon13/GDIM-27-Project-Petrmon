@@ -21,18 +21,12 @@ namespace ProjectPetrmon
             if (_currentPP > MaxPP)
                 _currentPP = MaxPP;
         }
+
         public void ResetPP()
         {
             _currentPP = MaxPP;
         }
 
-        public virtual bool Execute(PetrmonObject targetPetrmon)
-        {
-            if(_currentPP == 0) 
-                return false;
-
-            _currentPP--;
-            return true;
-        }
+        public abstract void Execute(PetrmonObject targetPetrmon);
     }
 }

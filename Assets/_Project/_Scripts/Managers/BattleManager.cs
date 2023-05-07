@@ -60,14 +60,13 @@ namespace ProjectPetrmon
 
         public void DebugAttackPlayer() // Hooked up to Attack Player Button
         {
-            //_opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
+            _opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
             UpdatePlayerPetrPanel();
         }
 
         public void DebugRefreshPetrmon() // Hooked up to Heal Petrmon Button
         {
-            //_playerParty.Party[0].MoveSet.RefreshPP();
-            //_playerParty.Party[0].HealthSystem.FullHeal();
+            _playerParty.Party[0].RefreshPetrmon();
             UpdatePlayerPetrPanel();
         }
 
@@ -77,6 +76,7 @@ namespace ProjectPetrmon
 
         private void UpdateMoves()
         {
+            var targetPetrmon = _opponentParty.Party[0];
             var petrmonIndex = 0;
             var index = 0;
 
@@ -84,10 +84,9 @@ namespace ProjectPetrmon
             {
                 if(child.TryGetComponent(out FightButton fightButton))
                 {
-                    //var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
-                    var targetPetrmon = _opponentParty.Party[0];
+                    var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
 
-                    //fightButton.UpdateFightButton(move, targetPetrmon, UpdateOpponentPetrPanel);
+                    fightButton.UpdateFightButton(move, targetPetrmon, UpdateOpponentPetrPanel);
                     index++;
                 }
             }
