@@ -7,12 +7,12 @@ namespace ProjectPetrmon
     {
         [SerializeField] private int _damageAmount;
 
-        public sealed override bool Execute(Petrmon targetPetrmon)
+        public sealed override bool Execute(PetrmonObject targetPetrmon)
         {
-            if (base.Execute(targetPetrmon))
-            {
-                targetPetrmon.HealthSystem.TakeDamage(_damageAmount);
-            }
+            //if (base.Execute(targetPetrmon))
+            //{
+            //    targetPetrmon.HealthSystem.TakeDamage(_damageAmount);
+            //}
 
             return true;
         }

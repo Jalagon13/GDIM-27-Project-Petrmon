@@ -9,23 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5af17dc75e48c43890858c345e34fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
   m_Name: '[Petr] Water Petr'
   m_EditorClassIdentifier: 
-  _name: Water Petr
-  _type: 1
-  _level: 1
-  p_maxHp: 60
-  _sprite: {fileID: 0}
-  p_statSystem:
-    Stats:
-    - Stat: 0
-      Value: 10
-    - Stat: 1
-      Value: 10
-    - Stat: 2
-      Value: 10
-  p_moveSet:
+  _name: Water
+  _hp: 0
+  _attack: 0
+  _defense: 0
+  _speed: 0
+  _moveSet:
     Set:
     - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
     - {fileID: 11400000, guid: 2f13631d4324c0e4cafc87f5b3f99b7b, type: 2}

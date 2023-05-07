@@ -26,7 +26,7 @@ namespace ProjectPetrmon
             _currentPP = MaxPP;
         }
 
-        public virtual bool Execute(Petrmon targetPetrmon)
+        public virtual bool Execute(PetrmonObject targetPetrmon)
         {
             if(_currentPP == 0) 
                 return false;

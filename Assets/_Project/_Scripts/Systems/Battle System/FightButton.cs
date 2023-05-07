@@ -11,7 +11,7 @@ namespace ProjectPetrmon
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
 
         private Move _move;
-        private Petrmon _targetPetrmon;
+        private PetrmonObject _targetPetrmon;
         private Button _fightButton;
         private TextMeshProUGUI _buttonText;
         private Action _moveExecuteEvent;
@@ -32,7 +32,7 @@ namespace ProjectPetrmon
             _moveInfoPanel.gameObject.SetActive(false);
         }
 
-        public void UpdateFightButton(Move move, Petrmon targetPetrmon, Action updateOpponentPetrPanel)
+        public void UpdateFightButton(Move move, PetrmonObject targetPetrmon, Action updateOpponentPetrPanel)
         {
             _move = move;
             _targetPetrmon = targetPetrmon;

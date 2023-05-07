@@ -20,7 +20,7 @@ namespace ProjectPetrmon
             Set = new(_setAmount);
         }
 
-        public void ExecuteMove(int moveIndex, Petrmon targetPetrmon)
+        public void ExecuteMove(int moveIndex, PetrmonObject targetPetrmon)
         {
             Set[moveIndex].Execute(targetPetrmon);
         }
