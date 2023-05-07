@@ -32,7 +32,7 @@ namespace ProjectPetrmon
             base.Awake();
 
             _battleCanvas = transform.GetChild(0).GetComponent<Canvas>();
-            _fightButtonLayout = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<GridLayoutGroup>();
+            _fightButtonLayout = transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<GridLayoutGroup>();
         }
 
         private void Start()
