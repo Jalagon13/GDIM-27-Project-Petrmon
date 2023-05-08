@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,11 +12,9 @@ namespace ProjectPetrmon
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
 
         private Move _move;
-        private PetrmonObject _toPetrmon;
-        private PetrmonObject _fromPetrmon;
         private Button _fightButton;
         private TextMeshProUGUI _buttonText;
-        private Action _moveExecuteEvent;
+        private Action<Move> _moveExecuteEvent;
 
         private void Awake()
         {
@@ -28,11 +27,9 @@ namespace ProjectPetrmon
             _moveInfoPanel.UpdateMoveInfoPanel(_move);
         }
 
-        public void UpdateFightButton(Move move, PetrmonObject fromPetrmon, PetrmonObject toPetrmon, Action updateOpponentPetrPanel)
+        public void UpdateFightButton(Move move, Action<Move> updateOpponentPetrPanel)
         {
             _move = move;
-            _fromPetrmon = fromPetrmon;
-            _toPetrmon = toPetrmon;
             _moveExecuteEvent = updateOpponentPetrPanel;
 
             UpdateDisplay();
@@ -41,7 +38,7 @@ namespace ProjectPetrmon
 
         private void UpdateDisplay()
         {
-            _buttonText.text = _move.MoveName;
+            _buttonText.text = $"{_move.MoveName}";
         }
 
         private void ButtonSetup()
@@ -49,8 +46,7 @@ namespace ProjectPetrmon
             _fightButton.onClick.RemoveAllListeners();
             _fightButton.onClick.AddListener(() =>
             {
-                _move.Execute(_fromPetrmon, _toPetrmon);
-                _moveExecuteEvent?.Invoke();
+                _moveExecuteEvent?.Invoke(_move);
                 _moveInfoPanel.UpdateMoveInfoPanel(_move);
             });
         }

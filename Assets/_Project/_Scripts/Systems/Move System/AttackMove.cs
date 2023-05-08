@@ -7,9 +7,10 @@ namespace ProjectPetrmon
     {
         [SerializeField] private int _power;
 
-        public sealed override void Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
+        public sealed override string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
             toPetrmon.CurrentHP -= CalculateDamage(fromPetrmon, toPetrmon);
+            return string.Empty;
         }
 
         private int CalculateDamage(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
