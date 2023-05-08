@@ -42,6 +42,7 @@ namespace ProjectPetrmon
         public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
         {
             _opponentParty = opponentParty;
+            _battlePrompts.DisplayCustomText(string.Empty);
             _menuPanel.gameObject.SetActive(true);
             _fightPanel.gameObject.SetActive(false);
 
@@ -51,12 +52,10 @@ namespace ProjectPetrmon
             _currentPlayerPetrImage.sprite = _playerParty.Party[0].Sprite;
             _currentOpponentPetrImage.sprite = _opponentParty.Party[0].Sprite;
 
-            _currentPlayerPetrmon.RefreshPetrmon();
-            _currentPlayerPetrmon.RefreshPetrmon();
+            _currentOpponentPetrmon.RefreshPetrmon();
+            _currentPlayerPetrmon.RefreshPetrmon(); // delete this later
 
             UpdateMoves();
-            UpdatePlayerPetrPanel();
-            UpdateOpponentPetrPanel();
             InitializePetrmonBattleStats();
             ShowBattleCanvas(true);
 
@@ -69,18 +68,19 @@ namespace ProjectPetrmon
             _fightPanel.gameObject.SetActive(false);
             _playerPanel.gameObject.SetActive(false);
             _opponentPanel.gameObject.SetActive(false);
-            _currentOpponentPetrImage.gameObject.SetActive(true);
             _currentPlayerPetrImage.gameObject.SetActive(false);
+            _currentOpponentPetrImage.gameObject.SetActive(false);
 
             yield return WaitSeconds(2f);
 
             _opponentPanel.gameObject.SetActive(true);
+            _currentOpponentPetrImage.gameObject.SetActive(true);
             _battlePrompts.DisplayWildPetrmonAppearedText(_currentOpponentPetrmon.Name);
 
-            yield return WaitSeconds(2f);
+            yield return WaitSeconds(3f);
 
-            _battlePrompts.DisplayGoPetrmonText(_currentPlayerPetrmon.Name);
             _currentPlayerPetrImage.gameObject.SetActive(true);
+            _battlePrompts.DisplayGoPetrmonText(_currentPlayerPetrmon.Name);
 
             yield return WaitSeconds(2f);
 
@@ -114,10 +114,6 @@ namespace ProjectPetrmon
             }
         }
 
-        private void UpdatePlayerPetrPanel() => _playerPetrPanel.UpdatePanel(_playerParty.Party[0]);
-
-        private void UpdateOpponentPetrPanel() => _opponentPetrPanel.UpdatePanel(_opponentParty.Party[0]);
-
         private void UpdateMoves()
         {
             var petrmonIndex = 0;
@@ -133,6 +129,8 @@ namespace ProjectPetrmon
                     index++;
                 }
             }
+
+            UpdateCurrentPetrPanels();
         }
 
         private void BattleSequence(Move playerMoveToOpponent)
@@ -157,18 +155,17 @@ namespace ProjectPetrmon
 
             yield return WaitSeconds(1.5f);
 
-            // move animations
+            // move animations here
 
             string battleText = move.Execute(_currentPlayerPetrmon, _currentOpponentPetrmon);
 
-            UpdatePlayerPetrPanel();
-            UpdateOpponentPetrPanel();
+            UpdateCurrentPetrPanels();
 
             yield return WaitSeconds(1.5f);
 
             if(_currentOpponentPetrmon.CurrentHP <= 0)
             {
-                // opponent faint animations
+                // opponent faint animations here
 
                 _battlePrompts.DisplayFaintedText(_currentOpponentPetrmon.Name);
 
@@ -184,7 +181,7 @@ namespace ProjectPetrmon
 
         private IEnumerator PlayerWins()
         {
-            // start happy win music
+            // start happy win music here
             _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
             yield return WaitSeconds(4f);
 
@@ -197,18 +194,17 @@ namespace ProjectPetrmon
 
             yield return WaitSeconds(1.5f);
 
-            // move animations
+            // move animations here
 
             string battleText = _currentOpponentPetrmon.MoveSet.Set[0].Execute(_currentOpponentPetrmon, _currentPlayerPetrmon);
 
-            UpdatePlayerPetrPanel();
-            UpdateOpponentPetrPanel();
+            UpdateCurrentPetrPanels();
 
             yield return WaitSeconds(1.5f);
 
             if(_currentPlayerPetrmon.CurrentHP <= 0)
             {
-                // player petr faint animations
+                // player petr faint animations here
 
                 _battlePrompts.DisplayFaintedText(_currentPlayerPetrmon.Name);
 
@@ -224,11 +220,17 @@ namespace ProjectPetrmon
 
         private IEnumerator PlayerLoses()
         {
-            // loss game feel (if there is any)
+            // loss game feel (if there is any) here
             _battlePrompts.DisplayCustomText("Better luck <br>next time!");
             yield return WaitSeconds(4f);
 
             ExitBattle();
+        }
+
+        private void UpdateCurrentPetrPanels()
+        {
+            _playerPetrPanel.UpdatePanel(_currentPlayerPetrmon);
+            _opponentPetrPanel.UpdatePanel(_currentOpponentPetrmon);
         }
 
         private void ShowBattleCanvas(bool var)

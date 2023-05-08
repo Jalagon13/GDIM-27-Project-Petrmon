@@ -5,6 +5,7 @@ namespace ProjectPetrmon
 {
     public class PetrPanel : MonoBehaviour
     {
+        [SerializeField] private HealthBar _healthBar;
         private TextMeshProUGUI _nameText;
         private TextMeshProUGUI _hpText;
 
@@ -17,7 +18,8 @@ namespace ProjectPetrmon
         public void UpdatePanel(PetrmonObject petrmon)
         {
             _nameText.text = petrmon.Name;
-            _hpText.text = $"HP: {petrmon.CurrentHP}/{petrmon.BaseMaxHP}";
+            _hpText.text = $"{petrmon.CurrentHP}/{petrmon.BaseMaxHP}";
+            _healthBar.UpdateFill(petrmon.CurrentHP, petrmon.BaseMaxHP);
         }
     }
 }
