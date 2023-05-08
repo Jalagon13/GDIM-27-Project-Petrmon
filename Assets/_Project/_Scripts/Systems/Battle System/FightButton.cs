@@ -38,7 +38,7 @@ namespace ProjectPetrmon
 
         private void UpdateDisplay()
         {
-            _buttonText.text = $"{_move.MoveName}";
+            _buttonText.text = $"{_move.MoveName.ToUpper()}";
         }
 
         private void ButtonSetup()

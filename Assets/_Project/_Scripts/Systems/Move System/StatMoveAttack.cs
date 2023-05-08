@@ -12,13 +12,13 @@ namespace ProjectPetrmon
             if (_useOnOwnPetrmon)
             {
                 fromPetrmon.BattleStats.AlterAttack(_multiplier);
-                return $"{fromPetrmon.Name}'s Attack <br>rose!";
+                return $"{fromPetrmon.Name.ToUpper()}'s Attack <br>rose!";
             }
             else
             {
                 toPetrmon.BattleStats.AlterAttack(_multiplier);
-                return _multiplier > 1 ? $"{toPetrmon.Name}'s Attack <br>rose!" : 
-                    _multiplier < 1 ? $"{toPetrmon.Name}'s Attack <br>fell!" : "ERROR MULTIPLER CAN'T BE 0!";
+                return _multiplier > 1 ? $"{toPetrmon.Name.ToUpper()}'s Attack <br>rose!" : 
+                    _multiplier < 1 ? $"{toPetrmon.Name.ToUpper()}'s Attack <br>fell!" : "ERROR MULTIPLER CAN'T BE 0!";
             }
         }
     }
