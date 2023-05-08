@@ -16,21 +16,19 @@ namespace ProjectPetrmon
     public class BattleManager : Singleton<BattleManager>
     {
         [SerializeField] private PartyObject _playerParty;
+        [SerializeField] private Canvas _battleCanvas; 
+        [Header("Menu Panel Stuff")]
         [SerializeField] private PetrPanel _playerPetrPanel;
         [SerializeField] private PetrPanel _opponentPetrPanel;
         [SerializeField] private RectTransform _fightPanel;
         [SerializeField] private RectTransform _menuPanel;
+        [SerializeField] private RectTransform _fightButtons;
 
-        private Canvas _battleCanvas;
-        private GridLayoutGroup _fightButtonLayout;
         private PartyObject _opponentParty;
 
         protected override void Awake()
         {
             base.Awake();
-
-            _battleCanvas = transform.GetChild(0).GetComponent<Canvas>();
-            _fightButtonLayout = transform.GetChild(0).GetChild(3).GetChild(0).GetComponent<GridLayoutGroup>();
         }
 
         private void Start()
@@ -57,18 +55,6 @@ namespace ProjectPetrmon
             ShowBattleUI(false);
         }
 
-        public void DebugAttackPlayer() // Hooked up to Attack Player Button
-        {
-            _opponentParty.Party[0].MoveSet.Set[0].Execute(_opponentParty.Party[0], _playerParty.Party[0]);
-            UpdatePlayerPetrPanel();
-        }
-
-        public void DebugRefreshPetrmon() // Hooked up to Heal Petrmon Button
-        {
-            _playerParty.Party[0].RefreshPetrmon();
-            UpdatePlayerPetrPanel();
-        }
-
         private void InitializePetrmonBattleStats()
         {
             foreach (PetrmonObject petrmon in _playerParty.Party)
@@ -93,7 +79,7 @@ namespace ProjectPetrmon
             var petrmonIndex = 0;
             var index = 0;
 
-            foreach(Transform child in _fightButtonLayout.transform)
+            foreach(Transform child in _fightButtons.transform)
             {
                 if(child.TryGetComponent(out FightButton fightButton))
                 {

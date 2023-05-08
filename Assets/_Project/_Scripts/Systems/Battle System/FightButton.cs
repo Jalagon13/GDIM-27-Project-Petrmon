@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
-    public class FightButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class FightButton : MonoBehaviour, IPointerEnterHandler
     {
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
 
@@ -26,11 +26,6 @@ namespace ProjectPetrmon
         public void OnPointerEnter(PointerEventData eventData)
         {
             _moveInfoPanel.UpdateMoveInfoPanel(_move);
-            _moveInfoPanel.gameObject.SetActive(true);
-        }
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            _moveInfoPanel.gameObject.SetActive(false);
         }
 
         public void UpdateFightButton(Move move, PetrmonObject fromPetrmon, PetrmonObject toPetrmon, Action updateOpponentPetrPanel)
