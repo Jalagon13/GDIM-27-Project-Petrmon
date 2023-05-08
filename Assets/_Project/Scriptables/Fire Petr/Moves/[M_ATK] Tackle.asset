@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: '[M_ATK] Tackle'
   m_EditorClassIdentifier: 
   _name: Tackle
+  _accuracy: 100
   _maxPP: 20
-  _damageAmount: 15
+  _power: 60

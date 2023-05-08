@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
-  m_Name: '[Petr] Fire Petr'
+  m_Name: '[Petr] Charmander'
   m_EditorClassIdentifier: 
-  _name: Fire Petr
+  _name: Charmander Petr
   _sprite: {fileID: 21300000, guid: 2d7c19d994b796641a535eadc6a59b57, type: 3}
-  _baseMaxHp: 1
-  _baseAttack: 35
-  _baseDefense: 12
-  _baseSpeed: 35
-  _currentHp: 1
+  _baseMaxHp: 39
+  _baseAttack: 52
+  _baseDefense: 43
+  _baseSpeed: 65
+  _currentHp: 39
   _moveSet:
     Set:
     - {fileID: 11400000, guid: 32cb5fe491dde6145a9a56d13fad02a4, type: 2}

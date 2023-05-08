@@ -205,13 +205,27 @@ namespace ProjectPetrmon
 
             if(_currentPlayerPetrmon.CurrentHP <= 0)
             {
-                // execute player loss.
+                // player petr faint animations
+
+                _battlePrompts.DisplayFaintedText(_currentPlayerPetrmon.Name);
+
+                yield return WaitSeconds(2f);
+                yield return PlayerLoses();
             }
             else if (battleText != string.Empty)
             {
                 _battlePrompts.DisplayCustomText(battleText);
                 yield return WaitSeconds(2f);
             }
+        }
+
+        private IEnumerator PlayerLoses()
+        {
+            // loss game feel (if there is any)
+            _battlePrompts.DisplayCustomText("Better luck <br>next time!");
+            yield return WaitSeconds(4f);
+
+            ExitBattle();
         }
 
         private void ShowBattleCanvas(bool var)
