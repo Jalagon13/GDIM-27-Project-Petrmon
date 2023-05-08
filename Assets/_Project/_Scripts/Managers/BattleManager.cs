@@ -51,6 +51,9 @@ namespace ProjectPetrmon
             _currentPlayerPetrImage.sprite = _playerParty.Party[0].Sprite;
             _currentOpponentPetrImage.sprite = _opponentParty.Party[0].Sprite;
 
+            _currentPlayerPetrmon.RefreshPetrmon();
+            _currentPlayerPetrmon.RefreshPetrmon();
+
             UpdateMoves();
             UpdatePlayerPetrPanel();
             UpdateOpponentPetrPanel();
@@ -83,7 +86,7 @@ namespace ProjectPetrmon
 
             _playerPanel.gameObject.SetActive(true);
             _menuPanel.gameObject.SetActive(true);
-            _battlePrompts.DisplayWhatWillPetrmonDoText(_currentOpponentPetrmon.Name);
+            _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);
         }
 
         private WaitForSeconds WaitSeconds(float sec)

@@ -10,6 +10,7 @@ namespace ProjectPetrmon
         public sealed override string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
             toPetrmon.CurrentHP -= CalculateDamage(fromPetrmon, toPetrmon);
+            _currentPP--;
             return string.Empty;
         }
 

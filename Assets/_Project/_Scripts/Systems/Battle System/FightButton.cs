@@ -46,6 +46,8 @@ namespace ProjectPetrmon
             _fightButton.onClick.RemoveAllListeners();
             _fightButton.onClick.AddListener(() =>
             {
+                if (_move.CurrentPP <= 0) return;
+
                 _moveExecuteEvent?.Invoke(_move);
                 _moveInfoPanel.UpdateMoveInfoPanel(_move);
             });

@@ -7,7 +7,7 @@ namespace ProjectPetrmon
         [SerializeField] private string _name;
         [SerializeField] private int _accuracy = 100;
         [SerializeField] private int _maxPP;
-        private int _currentPP;
+        protected int _currentPP;
 
         public string MoveName { get { return _name; } }
         public int Accuracy { get { return _accuracy; } }

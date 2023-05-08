@@ -7,6 +7,8 @@ namespace ProjectPetrmon
     {
         public sealed override string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
+            _currentPP--;
+
             if (_useOnOwnPetrmon)
             {
                 fromPetrmon.BattleStats.AlterAttack(_multiplier);
