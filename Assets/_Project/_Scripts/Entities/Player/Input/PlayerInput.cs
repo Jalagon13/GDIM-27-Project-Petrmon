@@ -7,6 +7,9 @@ namespace StarterAssets
 {
 	public class PlayerInput : MonoBehaviour
 	{
+
+
+
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
@@ -19,6 +22,9 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+
+
+
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -53,7 +59,7 @@ namespace StarterAssets
 
 		public void LookInput(Vector2 newLookDirection)
 		{
-			look = newLookDirection;
+           	look = newLookDirection;
 		}
 
 		public void JumpInput(bool newJumpState)

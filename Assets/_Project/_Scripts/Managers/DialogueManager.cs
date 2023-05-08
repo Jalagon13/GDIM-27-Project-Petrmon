@@ -13,14 +13,14 @@ namespace ProjectPetrmon
         [SerializeField] private Canvas _canvas;
 
         private DialogueObject _currentDialogue;
-        private DefaultInput _input;
+        private DefaultInputActions _input;
         private bool _inDialogue;
         private bool _isTyping;
         private int _dialogueIndex;
 
         protected override void Awake()
         {
-            _input = new DefaultInput();
+            _input = new DefaultInputActions();
             _input.Player.NextEntry.started += NextEntry;
         }
 
