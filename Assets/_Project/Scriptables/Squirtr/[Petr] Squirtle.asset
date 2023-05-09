@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
   m_Name: '[Petr] Squirtle'
   m_EditorClassIdentifier: 
-  _name: Squirtle Petr
+  _name: Squirtr
   _sprite: {fileID: 21300000, guid: 293d773d9f1b1d9489732a80c358d6d6, type: 3}
-  _baseMaxHp: 12
-  _baseAttack: 13
-  _baseDefense: 14
-  _baseSpeed: 15
-  _currentHp: 42
+  _baseMaxHp: 44
+  _baseAttack: 48
+  _baseDefense: 65
+  _baseSpeed: 43
+  _currentHp: 44
   _moveSet:
     Set:
     - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
   m_Name: '[Petr] Charmander'
   m_EditorClassIdentifier: 
-  _name: Charmander Petr
+  _name: Charmandr
   _sprite: {fileID: 21300000, guid: 2d7c19d994b796641a535eadc6a59b57, type: 3}
-  _baseMaxHp: 16
+  _baseMaxHp: 23
   _baseAttack: 15
-  _baseDefense: 17
-  _baseSpeed: 14
-  _currentHp: 12
+  _baseDefense: 13
+  _baseSpeed: 23
+  _currentHp: 23
   _moveSet:
     Set:
     - {fileID: 11400000, guid: 32cb5fe491dde6145a9a56d13fad02a4, type: 2}
