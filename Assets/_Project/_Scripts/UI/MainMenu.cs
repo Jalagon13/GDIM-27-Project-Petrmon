@@ -9,8 +9,8 @@ namespace ProjectPetrmon
 {
     public struct MainMenuSettings
     {
-        public static float MusicSetting = 1;
-        public static float VolumeSetting = 1;
+        public static float MusicSetting = 0.5f;
+        public static float VolumeSetting = 0.5f;
     }
     
     public class MainMenu : MonoBehaviour, IPointerClickHandler

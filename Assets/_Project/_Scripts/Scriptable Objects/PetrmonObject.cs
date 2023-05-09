@@ -16,7 +16,7 @@ namespace ProjectPetrmon
         [SerializeField] private int _currentHp;
         [SerializeField] private MoveSet _moveSet;
 
-        private BattleStats _battleStats;
+        private BattleStats _battleStats = new();
 
         public string Name { get { return _name; } }
         public Sprite Sprite { get { return _sprite; } }
