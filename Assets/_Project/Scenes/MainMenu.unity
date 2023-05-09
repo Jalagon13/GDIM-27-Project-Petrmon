@@ -807,6 +807,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2049352441}
+        m_TargetAssemblyTypeName: ProjectPetrmon.MainMenu, Assembly-CSharp
+        m_MethodName: PlayMenuClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &377926483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2904,6 +2916,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2049352441}
+        m_TargetAssemblyTypeName: ProjectPetrmon.MainMenu, Assembly-CSharp
+        m_MethodName: PlayMenuClickSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6579,6 +6603,9 @@ MonoBehaviour:
   startingLevelName: UTCMap
   screenCover: {fileID: 853960737}
   screenFadeTime: 2.5
+  menuButtonClick: {fileID: 8300000, guid: 6434272970896ea458ea35fa950f29ea, type: 3}
+  startGameClick: {fileID: 8300000, guid: 20702bcb4d118364bb094fe71cb7db6f, type: 3}
+  menuBGM: {fileID: 8300000, guid: 2f2b437cf6b0b7043bb85c3e54914b5c, type: 3}
 --- !u!1 &2068907887
 GameObject:
   m_ObjectHideFlags: 0
