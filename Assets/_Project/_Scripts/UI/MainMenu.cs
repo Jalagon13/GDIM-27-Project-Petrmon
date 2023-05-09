@@ -24,8 +24,11 @@ namespace ProjectPetrmon
         [SerializeField] private float startTextFadeInAndOutTime;
 
         [Header("Options Menu")] [SerializeField] private GameObject optionsMenu;
+        [SerializeField] private Slider musicSlider;
+        [SerializeField] private Slider volumeSlider;
         [SerializeField] private Button startButton;
         [SerializeField] private string startingLevelName;
+        [SerializeField] private string creditsLevelName;
         [SerializeField] private Image screenCover;
         [SerializeField] private float screenFadeTime;
 
@@ -39,6 +42,8 @@ namespace ProjectPetrmon
         // Start is called before the first frame update
         private IEnumerator Start()
         {
+            musicSlider.value = MainMenuSettings.MusicSetting;
+            volumeSlider.value = MainMenuSettings.VolumeSetting;
             yield return StartCoroutine(DisplayTeamName());
             yield return StartCoroutine(DisplayStartMenu());
         }
@@ -138,6 +143,12 @@ namespace ProjectPetrmon
         public void PlayMenuClickSound()
         {
             AudioManager.Instance.PlayClip(menuButtonClick, false, true, MainMenuSettings.VolumeSetting);
+        }
+
+        public void LoadCreditsScene()
+        {
+            AudioManager.Instance.StopClip(menuBGM);
+            SceneManager.LoadScene(creditsLevelName);
         }
 
         public void QuitGame()

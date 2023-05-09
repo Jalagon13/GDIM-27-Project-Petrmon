@@ -1489,6 +1489,7 @@ MonoBehaviour:
   postCreditButtons:
   - {fileID: 212092803}
   - {fileID: 660670921}
+  creditsBGM: {fileID: 8300000, guid: 688ace307ce222449afd6a460158f449, type: 3}
 --- !u!1 &1026647765
 GameObject:
   m_ObjectHideFlags: 0
