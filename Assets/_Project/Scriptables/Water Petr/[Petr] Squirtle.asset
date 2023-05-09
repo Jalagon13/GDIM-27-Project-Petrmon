@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Squirtle Petr
   _sprite: {fileID: 21300000, guid: 293d773d9f1b1d9489732a80c358d6d6, type: 3}
-  _baseMaxHp: 22
-  _baseAttack: 11
-  _baseDefense: 12
-  _baseSpeed: 11
-  _currentHp: 22
+  _baseMaxHp: 12
+  _baseAttack: 13
+  _baseDefense: 14
+  _baseSpeed: 15
+  _currentHp: 42
   _moveSet:
     Set:
     - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}

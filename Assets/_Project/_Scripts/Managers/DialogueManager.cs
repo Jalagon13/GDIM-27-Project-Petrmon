@@ -112,6 +112,8 @@ namespace ProjectPetrmon
             {
                 OnDialogueEnd?.Invoke();
             }
+
+            _inDialogue = false;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -21,56 +22,74 @@ namespace ProjectPetrmon
 
         public void DisplayCustomText(string customText)
         {
-            _battleText.text = customText;
+            StartCoroutine(TypeText(customText));
             if (!customText.Equals(string.Empty)) PlayDialogueSound();
         }
 
         public void DisplayExpGainText(string petrmonName)
         {
-            _battleText.text = $"{petrmonName.ToUpper()} gained <br>EXP. Points!";
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()} gained <br>EXP. Points!"));
             PlayDialogueSound();
         }
 
         public void DisplayWhatWillPetrmonDoText(string petrmonName)
         {
-            _battleText.text = $"What will<br>{petrmonName.ToUpper()} do?";
+            StartCoroutine(TypeText($"What will<br>{petrmonName.ToUpper()} do?"));
             PlayDialogueSound();
         }
 
         public void DisplayMoveUsedText(string petrmonName, string moveName)
         {
-            _battleText.text = $"{petrmonName.ToUpper()} used <br>{moveName}!";
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()} used <br>{moveName}!"));
             PlayDialogueSound();
         }
 
         public void DisplayFaintedText(string petrmonName)
         {
-            _battleText.text = $"{petrmonName.ToUpper()} <br>fainted!";
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()} <br>fainted!"));
             PlayDialogueSound();
         }
 
         public void DisplayStatRoseText(string petrmonName, string statName)
         {
             _battleText.text = $"{petrmonName.ToUpper()}'s {statName} <br>rose!";
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()}'s {statName} <br>fell!"));
             PlayDialogueSound();
         }
 
         public void DisplayStatFellText(string petrmonName, string statName)
         {
-            _battleText.text = $"{petrmonName.ToUpper()}'s {statName} <br>fell!";
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()}'s {statName} <br>fell!"));
             PlayDialogueSound();
         }
 
         public void DisplayWildPetrmonAppearedText(string petrmonName)
         {
-            _battleText.text = $"Wild {petrmonName.ToUpper()} appeared!";
+            StartCoroutine(TypeText($"Wild {petrmonName.ToUpper()} appeared!"));
             PlayDialogueSound();
         }
 
         public void DisplayGoPetrmonText(string petrmonName)
         {
-            _battleText.text = $"Go! {petrmonName.ToUpper()}!";
+            StartCoroutine(TypeText($"Go! {petrmonName.ToUpper()}!"));
             PlayDialogueSound();
+        }
+
+        private IEnumerator TypeText(string text)
+        {
+            int charLimit = 300;
+
+            _battleText.text = String.Empty;
+
+            if (text.Length > charLimit)
+                text = text.Substring(0, charLimit); //if the text goes over, it just gets cut off.
+
+            foreach (char chr in text)
+            {
+                _battleText.text += chr;
+                yield return new WaitForSeconds(0.025f);
+            }
+
         }
     }
 }
