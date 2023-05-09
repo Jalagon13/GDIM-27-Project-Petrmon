@@ -126,8 +126,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f72bd98c34c163448e87a0a3431f258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _thisConversation: Hello there silly player!/Yeehaw!
-  _triggeredOnEntry: 0
+  _triggeredOnEntry: 1
+  _party: {fileID: 11400000, guid: d62fb72d6535cb8438b59e557a5b08c9, type: 2}
+  _conversation:
+    _lines:
+    - Hello there silly player!
+    - Yeehaw!
+    - BATTLE ME MOTHAFUCKAA!!!!!!!!!
 --- !u!54 &6187448681421829397
 Rigidbody:
   m_ObjectHideFlags: 0

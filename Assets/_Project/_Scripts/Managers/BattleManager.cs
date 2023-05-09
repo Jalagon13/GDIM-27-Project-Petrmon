@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,9 @@ namespace ProjectPetrmon
 {
     public class BattleManager : Singleton<BattleManager>
     {
+        public event Action OnBattleStart; 
+        public event Action OnBattleEnd; 
+
         [SerializeField] private PartyObject _playerParty;
         [SerializeField] private Canvas _battleCanvas; 
         [Header("Menu Panel Stuff")]
@@ -61,6 +65,8 @@ namespace ProjectPetrmon
             _currentOpponentPetrmon.RefreshPetrmon();
             _currentPlayerPetrmon.RefreshPetrmon(); // delete this later
 
+            OnBattleStart?.Invoke();
+
             UpdateMoves();
             InitializePetrmonBattleStats();
             ShowBattleCanvas(true);
@@ -108,6 +114,7 @@ namespace ProjectPetrmon
             InitializePetrmonBattleStats();
             StopAllCoroutines();
             ShowBattleCanvas(false);
+            OnBattleEnd?.Invoke();
         }
 
         private void InitializePetrmonBattleStats()

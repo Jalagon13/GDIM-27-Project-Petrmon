@@ -7,9 +7,6 @@ namespace StarterAssets
 {
 	public class PlayerInput : MonoBehaviour
 	{
-
-
-
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
@@ -24,10 +21,8 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 
-
-
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}

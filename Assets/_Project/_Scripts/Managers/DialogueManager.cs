@@ -8,12 +8,16 @@ namespace ProjectPetrmon
 {
     public class DialogueManager : Singleton<DialogueManager>
     {
+        public event Action OnDialogueStart;
+        public event Action OnDialogueEnd;
+
         [SerializeField] private TextMeshProUGUI _dialogueText;
         [SerializeField] private int _charLimit;
         [SerializeField] private Canvas _canvas;
 
         private DialogueObject _currentDialogue;
         private DefaultInputActions _input;
+        private PartyObject _opponentParty;
         private bool _inDialogue;
         private bool _isTyping;
         private int _dialogueIndex;
@@ -54,13 +58,14 @@ namespace ProjectPetrmon
             PopulateText(_currentDialogue.Lines[_dialogueIndex]);
         }
 
-        public void StartDialogue()
+        public void StartDialogue(DialogueObject dialogue, PartyObject opponentParty = null)
         {
-            string name = "Squirtle";
+            if (_inDialogue) return;
 
-            DialogueObject newDialogue = new($"{name} I CHOOSE U!");
+            OnDialogueStart?.Invoke();
 
-            _currentDialogue = newDialogue;
+            _opponentParty = opponentParty;
+            _currentDialogue = dialogue;
             _dialogueIndex = 0;
             _inDialogue = true;
 
@@ -98,6 +103,17 @@ namespace ProjectPetrmon
         private void CloseDialogue()
         {
             _canvas.enabled = false;
+            
+            if(_opponentParty != null)
+            {
+                Debug.Log("Battle started");
+                BattleManager.Instance.StartBattle(_opponentParty);
+            }
+            else
+            {
+                Debug.Log("Battle NOT started");
+                OnDialogueEnd?.Invoke();
+            }
         }
     }
 }
