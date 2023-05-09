@@ -28,7 +28,7 @@ namespace ProjectPetrmon
             string stats = string.Empty;
             foreach (PetrmonObject petr in _playerParty.Party)
             {
-                stats += $"{petr.Name}: {petr.CurrentHP} hp\n";
+                stats += $"Your Petrmon:<br>{petr.Name}: {petr.CurrentHP}/{petr.BaseMaxHP} hp\n";
             }
 
             _statsText.text = stats;
