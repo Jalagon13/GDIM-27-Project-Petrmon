@@ -18,6 +18,12 @@ namespace ProjectPetrmon
         [SerializeField] private Image _currentPlayerPetrImage;
         [SerializeField] private Image _currentOpponentPetrImage;
 
+        [Header("Sound Assets")] 
+        [SerializeField] private AudioClip _buttonClickSound;
+        [SerializeField] private AudioClip _playerLoseSound;
+        [SerializeField] private AudioClip _playerWinSound;
+        [SerializeField] private AudioClip _battleBGMSound;
+
         private PartyObject _opponentParty;
         private BattlePrompts _battlePrompts;
         private PetrPanel _playerPetrPanel;
@@ -70,6 +76,7 @@ namespace ProjectPetrmon
             _opponentPanel.gameObject.SetActive(false);
             _currentPlayerPetrImage.gameObject.SetActive(false);
             _currentOpponentPetrImage.gameObject.SetActive(false);
+            AudioManager.Instance.PlayClip(_battleBGMSound, true, false, MainMenuSettings.MusicSetting);
 
             yield return WaitSeconds(2f);
 
@@ -97,6 +104,7 @@ namespace ProjectPetrmon
 
         public void ExitBattle() // Hooked up to Run Button
         {
+            AudioManager.Instance.StopClip(_battleBGMSound);
             InitializePetrmonBattleStats();
             ShowBattleCanvas(false);
         }
@@ -182,6 +190,7 @@ namespace ProjectPetrmon
         private IEnumerator PlayerWins()
         {
             // start happy win music here
+            AudioManager.Instance.PlayClip(_playerWinSound, false, true, MainMenuSettings.VolumeSetting);
             _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
             yield return WaitSeconds(4f);
 
@@ -221,6 +230,7 @@ namespace ProjectPetrmon
         private IEnumerator PlayerLoses()
         {
             // loss game feel (if there is any) here
+            AudioManager.Instance.PlayClip(_playerLoseSound, false, true, MainMenuSettings.VolumeSetting);
             _battlePrompts.DisplayCustomText("Better luck <br>next time!");
             yield return WaitSeconds(4f);
 
@@ -236,6 +246,11 @@ namespace ProjectPetrmon
         private void ShowBattleCanvas(bool var)
         {
             _battleCanvas.gameObject.SetActive(var);
+        }
+
+        public void PlayButtonClickSound()
+        {
+            AudioManager.Instance.PlayClip(_buttonClickSound, false, true, MainMenuSettings.VolumeSetting);
         }
     }
 }

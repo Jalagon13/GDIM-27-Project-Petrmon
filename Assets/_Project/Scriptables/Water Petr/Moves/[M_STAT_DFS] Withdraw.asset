@@ -15,5 +15,6 @@ MonoBehaviour:
   _name: Withdraw
   _accuracy: 100
   _maxPP: 40
+  _moveSFX: {fileID: 8300000, guid: bc1ac5fcbebcafb4390cb94a5a779e77, type: 3}
   _multiplier: 1.5
   _useOnOwnPetrmon: 1
