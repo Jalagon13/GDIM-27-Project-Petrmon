@@ -190,6 +190,7 @@ namespace ProjectPetrmon
         private IEnumerator PlayerWins()
         {
             // start happy win music here
+            AudioManager.Instance.StopClip(_battleBGMSound);
             AudioManager.Instance.PlayClip(_playerWinSound, false, true, MainMenuSettings.VolumeSetting);
             _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
             yield return WaitSeconds(4f);
@@ -230,6 +231,7 @@ namespace ProjectPetrmon
         private IEnumerator PlayerLoses()
         {
             // loss game feel (if there is any) here
+            AudioManager.Instance.StopClip(_battleBGMSound);
             AudioManager.Instance.PlayClip(_playerLoseSound, false, true, MainMenuSettings.VolumeSetting);
             _battlePrompts.DisplayCustomText("Better luck <br>next time!");
             yield return WaitSeconds(4f);
