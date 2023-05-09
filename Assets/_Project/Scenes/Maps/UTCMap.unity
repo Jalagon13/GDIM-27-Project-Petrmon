@@ -1092,6 +1092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1964823658}
+  _hoverClip: {fileID: 8300000, guid: b51135be2cb8cdc468ad36353c22db85, type: 3}
 --- !u!114 &125514035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5261,6 +5262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1964823658}
+  _hoverClip: {fileID: 8300000, guid: b51135be2cb8cdc468ad36353c22db85, type: 3}
 --- !u!114 &577717567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13790,6 +13792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1964823658}
+  _hoverClip: {fileID: 8300000, guid: b51135be2cb8cdc468ad36353c22db85, type: 3}
 --- !u!114 &1358605911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16110,6 +16113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1964823658}
+  _hoverClip: {fileID: 8300000, guid: b51135be2cb8cdc468ad36353c22db85, type: 3}
 --- !u!114 &1779321262
 MonoBehaviour:
   m_ObjectHideFlags: 0

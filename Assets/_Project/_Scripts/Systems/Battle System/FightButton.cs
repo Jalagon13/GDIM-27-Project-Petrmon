@@ -10,6 +10,7 @@ namespace ProjectPetrmon
     public class FightButton : MonoBehaviour, IPointerEnterHandler
     {
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
+        [SerializeField] private AudioClip _hoverClip;
 
         private Move _move;
         private Button _fightButton;
@@ -25,6 +26,7 @@ namespace ProjectPetrmon
         public void OnPointerEnter(PointerEventData eventData)
         {
             _moveInfoPanel.UpdateMoveInfoPanel(_move);
+            AudioManager.Instance.PlayClip(_hoverClip, false, false, 1f);
         }
 
         public void UpdateFightButton(Move move, Action<Move> updateOpponentPetrPanel)
