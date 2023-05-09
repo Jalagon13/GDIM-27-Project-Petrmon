@@ -106,6 +106,7 @@ namespace ProjectPetrmon
         {
             AudioManager.Instance.StopClip(_battleBGMSound);
             InitializePetrmonBattleStats();
+            StopAllCoroutines();
             ShowBattleCanvas(false);
         }
 
