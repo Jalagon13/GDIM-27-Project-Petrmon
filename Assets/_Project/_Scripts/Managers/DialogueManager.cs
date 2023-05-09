@@ -106,12 +106,10 @@ namespace ProjectPetrmon
             
             if(_opponentParty != null)
             {
-                Debug.Log("Battle started");
                 BattleManager.Instance.StartBattle(_opponentParty);
             }
             else
             {
-                Debug.Log("Battle NOT started");
                 OnDialogueEnd?.Invoke();
             }
         }
