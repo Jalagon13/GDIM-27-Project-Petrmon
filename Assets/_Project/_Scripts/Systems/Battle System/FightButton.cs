@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,15 +7,15 @@ using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
-    public class FightButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class FightButton : MonoBehaviour, IPointerEnterHandler
     {
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
+        [SerializeField] private AudioClip _hoverClip;
 
         private Move _move;
-        private Petrmon _targetPetrmon;
         private Button _fightButton;
         private TextMeshProUGUI _buttonText;
-        private Action _moveExecuteEvent;
+        private Action<Move> _moveExecuteEvent;
 
         private void Awake()
         {
@@ -25,17 +26,12 @@ namespace ProjectPetrmon
         public void OnPointerEnter(PointerEventData eventData)
         {
             _moveInfoPanel.UpdateMoveInfoPanel(_move);
-            _moveInfoPanel.gameObject.SetActive(true);
-        }
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            _moveInfoPanel.gameObject.SetActive(false);
+            AudioManager.Instance.PlayClip(_hoverClip, false, false, 1f);
         }
 
-        public void UpdateFightButton(Move move, Petrmon targetPetrmon, Action updateOpponentPetrPanel)
+        public void UpdateFightButton(Move move, Action<Move> updateOpponentPetrPanel)
         {
             _move = move;
-            _targetPetrmon = targetPetrmon;
             _moveExecuteEvent = updateOpponentPetrPanel;
 
             UpdateDisplay();
@@ -44,7 +40,7 @@ namespace ProjectPetrmon
 
         private void UpdateDisplay()
         {
-            _buttonText.text = _move.MoveName;
+            _buttonText.text = $"{_move.MoveName.ToUpper()}";
         }
 
         private void ButtonSetup()
@@ -52,8 +48,9 @@ namespace ProjectPetrmon
             _fightButton.onClick.RemoveAllListeners();
             _fightButton.onClick.AddListener(() =>
             {
-                _move.Execute(_targetPetrmon);
-                _moveExecuteEvent?.Invoke();
+                if (_move.CurrentPP <= 0) return;
+
+                _moveExecuteEvent?.Invoke(_move);
                 _moveInfoPanel.UpdateMoveInfoPanel(_move);
             });
         }

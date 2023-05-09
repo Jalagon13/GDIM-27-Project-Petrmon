@@ -1,103 +1,266 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
-    /// <summary>
-    /// GAMEPLAY TO DO LIST:
-    /// - Need to research how stat buffs/debuffs work
-    ///     - Add functionality for StatMove moves
-    /// - Create actual Battle Sequence
-    ///     - Add Dialogue and Narration.
-    /// - Add Type functionality to moves
-    ///     - Need to research how Types work 
-    /// - Replace hard coded Petrmon calls (EX: _playerParty.Party[0]) with dynamically cached 
-    /// private variables that change depending on which Petrmon the player and opponent has currently 
-    /// out on the field.
-    /// </summary>
-
     public class BattleManager : Singleton<BattleManager>
     {
-        [SerializeField] private PartyObject _playerParty;
-        [SerializeField] private GameObject _playerAssets;
-        [SerializeField] private GameObject _opponentAssets;
+        public event Action OnBattleStart; 
+        public event Action OnBattleEnd; 
 
-        private Canvas _battleCanvas;
-        private GridLayoutGroup _fightButtonLayout;
+        [SerializeField] private PartyObject _playerParty;
+        [SerializeField] private Canvas _battleCanvas; 
+        [Header("Menu Panel Stuff")]
+        [SerializeField] private RectTransform _playerPanel;
+        [SerializeField] private RectTransform _opponentPanel;
+        [SerializeField] private RectTransform _fightPanel;
+        [SerializeField] private RectTransform _menuPanel;
+        [SerializeField] private RectTransform _fightButtons;
+        [Header("Battle Assets")]
+        [SerializeField] private Image _currentPlayerPetrImage;
+        [SerializeField] private Image _currentOpponentPetrImage;
+
+        [Header("Sound Assets")] 
+        [SerializeField] private AudioClip _buttonClickSound;
+        [SerializeField] private AudioClip _playerLoseSound;
+        [SerializeField] private AudioClip _playerWinSound;
+        [SerializeField] private AudioClip _battleBGMSound;
+
         private PartyObject _opponentParty;
+        private BattlePrompts _battlePrompts;
         private PetrPanel _playerPetrPanel;
         private PetrPanel _opponentPetrPanel;
+        private PetrmonObject _currentPlayerPetrmon;
+        private PetrmonObject _currentOpponentPetrmon;
+        private WaitForSeconds _wait;
 
         protected override void Awake()
         {
             base.Awake();
-
-            _battleCanvas = transform.GetChild(0).GetComponent<Canvas>();
-            _fightButtonLayout = transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<GridLayoutGroup>();
-            _playerPetrPanel = transform.GetChild(0).GetChild(1).GetComponent<PetrPanel>();
-            _opponentPetrPanel = transform.GetChild(0).GetChild(2).GetComponent<PetrPanel>();
+            _battlePrompts = GetComponent<BattlePrompts>();
+            _playerPetrPanel = _playerPanel.GetComponent<PetrPanel>();
+            _opponentPetrPanel = _opponentPanel.GetComponent<PetrPanel>();
         }
 
         private void Start()
         {
-            ShowBattleUI(false);
+            ShowBattleCanvas(false);
         }
 
         public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
         {
             _opponentParty = opponentParty;
+            _battlePrompts.DisplayCustomText(string.Empty);
+            _menuPanel.gameObject.SetActive(true);
+            _fightPanel.gameObject.SetActive(false);
+
+            _currentPlayerPetrmon = _playerParty.Party[0];
+            _currentOpponentPetrmon = _opponentParty.Party[0];
+
+            _currentPlayerPetrImage.sprite = _playerParty.Party[0].Sprite;
+            _currentOpponentPetrImage.sprite = _opponentParty.Party[0].Sprite;
+
+            _currentOpponentPetrmon.RefreshPetrmon();
+            _currentPlayerPetrmon.RefreshPetrmon(); // delete this later
+
+            OnBattleStart?.Invoke();
 
             UpdateMoves();
-            UpdatePlayerPetrPanel();
-            UpdateOpponentPetrPanel();
-            ShowBattleUI(true);
+            InitializePetrmonBattleStats();
+            ShowBattleCanvas(true);
+
+            StartCoroutine(BeginningSequence());
         }
 
-        public void Run() // Hooked up to Run Button
+        private IEnumerator BeginningSequence()
         {
-            ShowBattleUI(false);
+            _menuPanel.gameObject.SetActive(false);
+            _fightPanel.gameObject.SetActive(false);
+            _playerPanel.gameObject.SetActive(false);
+            _opponentPanel.gameObject.SetActive(false);
+            _currentPlayerPetrImage.gameObject.SetActive(false);
+            _currentOpponentPetrImage.gameObject.SetActive(false);
+            AudioManager.Instance.PlayClip(_battleBGMSound, true, false, MainMenuSettings.MusicSetting);
+
+            yield return WaitSeconds(2f);
+
+            _opponentPanel.gameObject.SetActive(true);
+            _currentOpponentPetrImage.gameObject.SetActive(true);
+            _battlePrompts.DisplayWildPetrmonAppearedText(_currentOpponentPetrmon.Name);
+
+            yield return WaitSeconds(3f);
+
+            _currentPlayerPetrImage.gameObject.SetActive(true);
+            _battlePrompts.DisplayGoPetrmonText(_currentPlayerPetrmon.Name);
+
+            yield return WaitSeconds(2f);
+
+            _playerPanel.gameObject.SetActive(true);
+            _menuPanel.gameObject.SetActive(true);
+            _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);
         }
 
-        public void DebugAttackPlayer() // Hooked up to Attack Player Button
+        private WaitForSeconds WaitSeconds(float sec)
         {
-            _opponentParty.Party[0].MoveSet.Set[0].Execute(_playerParty.Party[0]);
-            UpdatePlayerPetrPanel();
+            _wait = new(sec);
+            return _wait;
         }
 
-        public void DebugRefreshPetrmon() // Hooked up to Heal Petrmon Button
+        public void ExitBattle() // Hooked up to Run Button
         {
-            _playerParty.Party[0].MoveSet.RefreshPP();
-            _playerParty.Party[0].HealthSystem.FullHeal();
-            UpdatePlayerPetrPanel();
+            AudioManager.Instance.StopClip(_battleBGMSound);
+            InitializePetrmonBattleStats();
+            StopAllCoroutines();
+            ShowBattleCanvas(false);
+            OnBattleEnd?.Invoke();
         }
 
-        private void UpdatePlayerPetrPanel() => _playerPetrPanel.UpdatePanel(_playerParty.Party[0]);
+        private void InitializePetrmonBattleStats()
+        {
+            foreach (PetrmonObject petrmon in _playerParty.Party)
+            {
+                petrmon.InitializeBattleStats();
+            }
 
-        private void UpdateOpponentPetrPanel() => _opponentPetrPanel.UpdatePanel(_opponentParty.Party[0]);
+            foreach (PetrmonObject petrmon in _opponentParty.Party)
+            {
+                petrmon.InitializeBattleStats();
+            }
+        }
 
         private void UpdateMoves()
         {
             var petrmonIndex = 0;
             var index = 0;
 
-            foreach(Transform child in _fightButtonLayout.transform)
+            foreach(Transform child in _fightButtons.transform)
             {
                 if(child.TryGetComponent(out FightButton fightButton))
                 {
                     var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
-                    var targetPetrmon = _opponentParty.Party[0];
 
-                    fightButton.UpdateFightButton(move, targetPetrmon, UpdateOpponentPetrPanel);
+                    fightButton.UpdateFightButton(move, BattleSequence);
                     index++;
                 }
             }
+
+            UpdateCurrentPetrPanels();
         }
 
-        private void ShowBattleUI(bool var)
+        private void BattleSequence(Move playerMoveToOpponent)
+        {
+            _menuPanel.gameObject.SetActive(false);
+            _fightPanel.gameObject.SetActive(false);
+            StartCoroutine(PlayerFirstSequence(playerMoveToOpponent));
+        }
+
+        private IEnumerator PlayerFirstSequence(Move move)
+        {
+            yield return PlayerMoveOnOpponent(move);
+            yield return OpponentMoveOnPlayer();
+
+            _menuPanel.gameObject.SetActive(true);
+            _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);
+        }
+
+        private IEnumerator PlayerMoveOnOpponent(Move move)
+        {
+            _battlePrompts.DisplayMoveUsedText(_currentPlayerPetrmon.Name, move.MoveName);
+
+            yield return WaitSeconds(1.5f);
+
+            // move animations here
+
+            string battleText = move.Execute(_currentPlayerPetrmon, _currentOpponentPetrmon);
+
+            UpdateCurrentPetrPanels();
+
+            yield return WaitSeconds(1.5f);
+
+            if(_currentOpponentPetrmon.CurrentHP <= 0)
+            {
+                // opponent faint animations here
+
+                _battlePrompts.DisplayFaintedText(_currentOpponentPetrmon.Name);
+
+                yield return WaitSeconds(2f);
+                yield return PlayerWins();
+            }
+            else if (battleText != string.Empty)
+            {
+                _battlePrompts.DisplayCustomText(battleText);
+                yield return WaitSeconds(2f);
+            }
+        }
+
+        private IEnumerator PlayerWins()
+        {
+            // start happy win music here
+            AudioManager.Instance.StopClip(_battleBGMSound);
+            AudioManager.Instance.PlayClip(_playerWinSound, false, true, MainMenuSettings.VolumeSetting);
+            _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
+            yield return WaitSeconds(4f);
+
+            ExitBattle();
+        }
+
+        private IEnumerator OpponentMoveOnPlayer()
+        {
+            _battlePrompts.DisplayMoveUsedText(_currentOpponentPetrmon.Name, _currentOpponentPetrmon.MoveSet.Set[0].MoveName);
+
+            yield return WaitSeconds(1.5f);
+
+            // move animations here
+
+            string battleText = _currentOpponentPetrmon.MoveSet.Set[0].Execute(_currentOpponentPetrmon, _currentPlayerPetrmon);
+
+            UpdateCurrentPetrPanels();
+
+            yield return WaitSeconds(1.5f);
+
+            if(_currentPlayerPetrmon.CurrentHP <= 0)
+            {
+                // player petr faint animations here
+
+                _battlePrompts.DisplayFaintedText(_currentPlayerPetrmon.Name);
+
+                yield return WaitSeconds(2f);
+                yield return PlayerLoses();
+            }
+            else if (battleText != string.Empty)
+            {
+                _battlePrompts.DisplayCustomText(battleText);
+                yield return WaitSeconds(2f);
+            }
+        }
+
+        private IEnumerator PlayerLoses()
+        {
+            // loss game feel (if there is any) here
+            AudioManager.Instance.StopClip(_battleBGMSound);
+            AudioManager.Instance.PlayClip(_playerLoseSound, false, true, MainMenuSettings.VolumeSetting);
+            _battlePrompts.DisplayCustomText("Better luck <br>next time!");
+            yield return WaitSeconds(4f);
+
+            ExitBattle();
+        }
+
+        private void UpdateCurrentPetrPanels()
+        {
+            _playerPetrPanel.UpdatePanel(_currentPlayerPetrmon);
+            _opponentPetrPanel.UpdatePanel(_currentOpponentPetrmon);
+        }
+
+        private void ShowBattleCanvas(bool var)
         {
             _battleCanvas.gameObject.SetActive(var);
-            _playerAssets.SetActive(var);
-            _opponentAssets.SetActive(var);
+        }
+
+        public void PlayButtonClickSound()
+        {
+            AudioManager.Instance.PlayClip(_buttonClickSound, false, true, MainMenuSettings.VolumeSetting);
         }
     }
 }

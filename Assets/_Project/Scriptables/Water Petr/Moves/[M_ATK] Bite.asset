@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: '[M_ATK] Bite'
   m_EditorClassIdentifier: 
   _name: Bite
-  _maxPP: 35
-  _damageAmount: 20
+  _accuracy: 100
+  _maxPP: 25
+  _moveSFX: {fileID: 8300000, guid: 45f6d9a9eaa34e2458bd21af47679796, type: 3}
+  _power: 60

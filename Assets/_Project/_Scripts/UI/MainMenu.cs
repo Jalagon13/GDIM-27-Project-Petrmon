@@ -7,11 +7,14 @@ using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
+    public struct MainMenuSettings
+    {
+        public static float MusicSetting = 0.65f;
+        public static float VolumeSetting = 0.65f;
+    }
+    
     public class MainMenu : MonoBehaviour, IPointerClickHandler
     {
-        public static float MusicSetting = 1;
-        public static float VolumeSetting = 1;
-        
         [Header("Main Menu")] [SerializeField] private GameObject mainMenu;
         [SerializeField] private TMP_Text teamName;
         [SerializeField] private float teamNameFadeInAndOutTime;
@@ -21,10 +24,17 @@ namespace ProjectPetrmon
         [SerializeField] private float startTextFadeInAndOutTime;
 
         [Header("Options Menu")] [SerializeField] private GameObject optionsMenu;
+        [SerializeField] private Slider musicSlider;
+        [SerializeField] private Slider volumeSlider;
         [SerializeField] private Button startButton;
         [SerializeField] private string startingLevelName;
+        [SerializeField] private string creditsLevelName;
         [SerializeField] private Image screenCover;
         [SerializeField] private float screenFadeTime;
+
+        [Header("Sounds")] [SerializeField] private AudioClip menuButtonClick;
+        [SerializeField] private AudioClip startGameClick;
+        [SerializeField] private AudioClip menuBGM;
 
         private Coroutine startTextCoroutine;
         private bool clickToContinueAvailable;
@@ -32,6 +42,8 @@ namespace ProjectPetrmon
         // Start is called before the first frame update
         private IEnumerator Start()
         {
+            musicSlider.value = MainMenuSettings.MusicSetting;
+            volumeSlider.value = MainMenuSettings.VolumeSetting;
             yield return StartCoroutine(DisplayTeamName());
             yield return StartCoroutine(DisplayStartMenu());
         }
@@ -40,6 +52,7 @@ namespace ProjectPetrmon
         {
             if (eventData.button == PointerEventData.InputButton.Left && clickToContinueAvailable)
             {
+                PlayMenuClickSound();
                 clickToContinueAvailable = false;
                 StopCoroutine(startTextCoroutine);
                 StartCoroutine(DisplayOptionsMenu());
@@ -53,6 +66,7 @@ namespace ProjectPetrmon
 
         private IEnumerator DisplayStartMenu()
         {
+            AudioManager.Instance.PlayClip(menuBGM, true, false, MainMenuSettings.MusicSetting);
             StartCoroutine(FadeTextIn(gameLogo, gameNameFadeInTime));
             startTextCoroutine = StartCoroutine(FadeTextInAndOut(startText, startTextFadeInAndOutTime, true));
             clickToContinueAvailable = true;
@@ -100,14 +114,15 @@ namespace ProjectPetrmon
 
         public void UpdateMusicSlider(float val)
         {
-            MainMenu.MusicSetting = val;
-            Debug.Log(MainMenu.MusicSetting);
+            MainMenuSettings.MusicSetting = val;
+            AudioManager.Instance.UpdateClipVolume(menuBGM, MainMenuSettings.MusicSetting);
+            Debug.Log(MainMenuSettings.MusicSetting);
         }
 
         public void UpdateVolumeSlider(float val)
         {
-            MainMenu.VolumeSetting = val;
-            Debug.Log(MainMenu.VolumeSetting);
+            MainMenuSettings.VolumeSetting = val;
+            Debug.Log(MainMenuSettings.VolumeSetting);
         }
         private void StartGameLevel()
         {
@@ -116,11 +131,24 @@ namespace ProjectPetrmon
 
         private IEnumerator _StartGameLevel()
         {
+            AudioManager.Instance.PlayClip(startGameClick, false, false, MainMenuSettings.VolumeSetting);
             startButton.interactable = false;
             screenCover.gameObject.SetActive(true);
             yield return StartCoroutine(FadeGraphicColor(screenCover, new Color(0, 0, 0, 0), Color.black,
                 screenFadeTime));
+            AudioManager.Instance.StopClip(menuBGM);
             SceneManager.LoadScene(startingLevelName);
+        }
+
+        public void PlayMenuClickSound()
+        {
+            AudioManager.Instance.PlayClip(menuButtonClick, false, true, MainMenuSettings.VolumeSetting);
+        }
+
+        public void LoadCreditsScene()
+        {
+            AudioManager.Instance.StopClip(menuBGM);
+            SceneManager.LoadScene(creditsLevelName);
         }
 
         public void QuitGame()

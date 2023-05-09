@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectPetrmon
 {
-    [CreateAssetMenu(fileName = "[M_STAT] ", menuName = "Petrmon System/Moves/New Stat Move")]
     public class StatMove : Move
     {
-        [SerializeField] private Stat _statToChange;
-        [SerializeField] private int _changeAmount;
+        // The stages are: x1.5, x2.0, x2.5, x3.0, x3.5, x4.0
+        // If you want to lower stat, multiply by appropriate fraction.
+        [SerializeField] protected float _multiplier;
+        [SerializeField] protected bool _useOnOwnPetrmon;
 
-        public sealed override bool Execute(Petrmon targetPetrmon)
+        public bool UseOnOwnPetrmon { get { return _useOnOwnPetrmon; } }
+
+        public override string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
-            if (base.Execute(targetPetrmon))
-                targetPetrmon.StatSystem.ApplyStatChange(_statToChange, _changeAmount);
-
-            return default;
+            if (_moveSFX) AudioManager.Instance.PlayClip(_moveSFX, false, true, MainMenuSettings.VolumeSetting); 
+            return string.Empty;
         }
     }
 }

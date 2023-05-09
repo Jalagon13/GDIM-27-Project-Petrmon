@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
+  m_Name: '[Petr] Squirtle'
+  m_EditorClassIdentifier: 
+  _name: Squirtle Petr
+  _sprite: {fileID: 21300000, guid: 293d773d9f1b1d9489732a80c358d6d6, type: 3}
+  _baseMaxHp: 22
+  _baseAttack: 11
+  _baseDefense: 12
+  _baseSpeed: 11
+  _currentHp: 22
+  _moveSet:
+    Set:
+    - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
+    - {fileID: 11400000, guid: 2f13631d4324c0e4cafc87f5b3f99b7b, type: 2}
+    - {fileID: 11400000, guid: 56c1f303ed1b2ec4d9da3f4028b5ca6c, type: 2}
+    - {fileID: 11400000, guid: 1e9cb8304278d704793fafe1c1efc066, type: 2}

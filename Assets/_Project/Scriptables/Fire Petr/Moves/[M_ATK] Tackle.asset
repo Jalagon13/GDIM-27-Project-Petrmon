@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: '[M_ATK] Tackle'
   m_EditorClassIdentifier: 
   _name: Tackle
-  _maxPP: 20
-  _damageAmount: 15
+  _accuracy: 100
+  _maxPP: 35
+  _moveSFX: {fileID: 8300000, guid: 45f6d9a9eaa34e2458bd21af47679796, type: 3}
+  _power: 40

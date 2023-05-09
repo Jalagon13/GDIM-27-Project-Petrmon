@@ -67,6 +67,22 @@ namespace ProjectPetrmon
             }
         }
 
+        public void UpdateClipVolume(AudioClip clipToModify, float volume)
+        {
+            if (clipToModify == null) return;
+
+            foreach (Transform audioSource in transform)
+            {
+                var source = audioSource.GetComponent<AudioSource>();
+
+                if (source.clip == clipToModify)
+                {
+                    source.volume = volume;
+                    return;
+                }
+            }
+        }
+
         private void AudioHandle(bool looping, bool randPitch, AudioSource source, AudioClip clip, float volume, float pitch)
         {
             pitch = randPitch ? Random.Range(pitch - 0.2f, pitch + 0.7f) : pitch;

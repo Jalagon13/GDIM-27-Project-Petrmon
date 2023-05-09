@@ -7,7 +7,8 @@ namespace ProjectPetrmon
         [SerializeField] private string _name;
         [SerializeField] private int _accuracy = 100;
         [SerializeField] private int _maxPP;
-        private int _currentPP;
+        [SerializeField] protected AudioClip _moveSFX;
+        protected int _currentPP;
 
         public string MoveName { get { return _name; } }
         public int Accuracy { get { return _accuracy; } }
@@ -21,18 +22,12 @@ namespace ProjectPetrmon
             if (_currentPP > MaxPP)
                 _currentPP = MaxPP;
         }
+
         public void ResetPP()
         {
             _currentPP = MaxPP;
         }
 
-        public virtual bool Execute(Petrmon targetPetrmon)
-        {
-            if(_currentPP == 0) 
-                return false;
-
-            _currentPP--;
-            return true;
-        }
+        public abstract string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon);
     }
 }

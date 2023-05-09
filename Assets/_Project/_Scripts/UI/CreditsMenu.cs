@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,12 @@ namespace ProjectPetrmon
     {
         [SerializeField] private string mainMenuSceneName;
         [SerializeField] private List<GameObject> postCreditButtons;
+        [SerializeField] private AudioClip creditsBGM;
+
+        private void Start()
+        {
+            AudioManager.Instance.PlayClip(creditsBGM, true, false, MainMenuSettings.MusicSetting);
+        }
 
         public void EnableMenuButton()
         {
@@ -18,6 +25,7 @@ namespace ProjectPetrmon
 
         public void LoadMainMenu()
         {
+            AudioManager.Instance.StopClip(creditsBGM);
             Debug.Log("Loading Main Menu");
             SceneManager.LoadScene(mainMenuSceneName);
         }

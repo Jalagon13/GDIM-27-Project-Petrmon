@@ -3,30 +3,49 @@ using UnityEngine;
 namespace ProjectPetrmon
 {
     [CreateAssetMenu(fileName = "[Petr] ", menuName = "Petrmon System/New Petrmon")]
-    public class PetrmonObject : Petrmon, ISerializationCallbackReceiver
+    public class PetrmonObject : ScriptableObject
     {
-        public void OnAfterDeserialize()
+        [SerializeField] private string _name;
+        [SerializeField] private Sprite _sprite;
+        [Header("Persistent Stats")] // The only time these values change is when Petrmon levels up.
+        [SerializeField] private int _baseMaxHp;
+        [SerializeField] private int _baseAttack;
+        [SerializeField] private int _baseDefense;
+        [SerializeField] private int _baseSpeed;
+        [Header("Non Persistent Stats")]
+        [SerializeField] private int _currentHp;
+        [SerializeField] private MoveSet _moveSet;
+
+        private BattleStats _battleStats = new();
+
+        public string Name { get { return _name; } }
+        public Sprite Sprite { get { return _sprite; } }
+
+        // Persistent Stats
+        public int BaseMaxHP { get { return _baseMaxHp; } }
+        public int BaseAttack { get { return _baseAttack; } }
+        public int BaseDefense { get { return _baseDefense; } }
+        public int BaseSpeed { get { return _baseSpeed; } }
+
+        // Non Persistent Stats
+        public int CurrentHP { get { return _currentHp; } 
+            set 
+            { 
+                _currentHp = value > _baseMaxHp ? _baseMaxHp : value;
+            } 
+        }
+        public MoveSet MoveSet { get { return _moveSet; } }
+        public BattleStats BattleStats { get { return _battleStats; } }
+
+        public void InitializeBattleStats()
         {
-            p_healthSystem = new(p_maxHp,_Defense,_type);
-            p_moveSet.RefreshPP();
-
-            if (Level <= 0) Level = 1;
-            if (MaxHp <= 0) MaxHp = 10;
-
-            //if(StatSystem.Attack <= 0) StatSystem.Attack = 10;
-            //if(StatSystem.Defense <= 0) StatSystem.Defense = 10;
-            //if(StatSystem.Speed <= 0) StatSystem.Speed = 10;
-
-            if (MoveSet.Set.Count != 4)
-                MoveSet.Set = new(MoveSet.MoveSetAmount);
-
-            if (StatSystem.Stats.Count != 3)
-                StatSystem.Stats = new(StatSystem.StatAmount);
+            BattleStats.InitializeBattleStats(_baseAttack, _baseDefense, _baseSpeed);
         }
 
-        public void OnBeforeSerialize()
+        public void RefreshPetrmon()
         {
-            
+            _currentHp = _baseMaxHp;
+            _moveSet.RefreshPP();
         }
     }
 }
