@@ -5,6 +5,7 @@ namespace ProjectPetrmon
     public class NurseJoy : MonoBehaviour
     {
         [SerializeField] private PartyObject _playerParty;
+        [SerializeField] private PlayerCanvas _playerCanvas;
         [SerializeField] private DialogueObject _conversation;
 
         public void OnTriggerEnter(Collider collision)
@@ -13,6 +14,7 @@ namespace ProjectPetrmon
             {
                 DialogueManager.Instance.StartDialogue(_conversation);
                 _playerParty.Party[0].RefreshPetrmon();
+                _playerCanvas.UpdateCanvasPetrStats();
             }
         }
     }
