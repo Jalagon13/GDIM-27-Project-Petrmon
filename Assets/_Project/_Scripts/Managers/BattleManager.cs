@@ -63,7 +63,6 @@ namespace ProjectPetrmon
             _currentOpponentPetrImage.sprite = _opponentParty.Party[0].Sprite;
 
             _currentOpponentPetrmon.RefreshPetrmon();
-            _currentPlayerPetrmon.RefreshPetrmon(); // delete this later
 
             OnBattleStart?.Invoke();
 
