@@ -21,7 +21,7 @@ MonoBehaviour:
   _currentHp: 19
   _moveSet:
     Set:
-    - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
-    - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
-    - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
-    - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
+    - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}
+    - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}
+    - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}
+    - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}
