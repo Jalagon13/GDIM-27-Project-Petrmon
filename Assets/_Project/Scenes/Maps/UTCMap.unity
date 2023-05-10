@@ -12975,8 +12975,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8486024752936961579, guid: ec733718f9f265b4aaad6be63f8d2342,
-    type: 3}
+  m_Sprite: {fileID: 1972779758, guid: fc9686230e1552545a1006363187e357, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13029,6 +13028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7015503370019169732}
   - component: {fileID: 7015503370019169723}
+  - component: {fileID: 7015503370019169733}
   - component: {fileID: 7015503370019169722}
   m_Layer: 0
   m_Name: '[NPC] Nurse Joy'
@@ -13053,3 +13053,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7015503370019169733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015503370019169728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a03c58bc9cd9a428c83e55cf0cf04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerParty: {fileID: 0}
+  _conversation:
+    _lines:
+    - Your Petrmon have been healed!
