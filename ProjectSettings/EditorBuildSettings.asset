@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Maps/UTCMap.unity
     guid: 6e6284af54d4d2c4d8cdaff6df5d8cb0
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Project/Scenes/Battle Scene.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
   m_configObjects:
