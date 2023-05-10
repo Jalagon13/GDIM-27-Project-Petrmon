@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Sqrtle
   _sprite: {fileID: 21300000, guid: 293d773d9f1b1d9489732a80c358d6d6, type: 3}
-  _baseMaxHp: 44
-  _baseAttack: 48
-  _baseDefense: 65
-  _baseSpeed: 43
+  _baseMaxHp: 24
+  _baseAttack: 16
+  _baseDefense: 17
+  _baseSpeed: 22
   _currentHp: 40
   _moveSet:
     Set:
