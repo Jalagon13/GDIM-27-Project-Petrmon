@@ -639,7 +639,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52694
+  m_Name: pb_Mesh38374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -803,7 +803,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52640
+  m_Name: pb_Mesh38312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1512,9 +1512,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _opponentParty: {fileID: 11400000, guid: 01b4dc3c3a5374a469c0139c3ab61a88, type: 2}
-  _conversation:
+  _battleConversation:
     _lines:
-    - A wild Sqrtle appears!
+    - A wild SQRTLE appears!
+  _lossConversation:
+    _lines:
+    - Hi! I like shorts! They're comfy and easy to wear!
+    - Of course, I'm not wearing any though... But that's because I'm not real!
 --- !u!20 &233329275 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
@@ -2418,7 +2422,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52818
+  m_Name: pb_Mesh38522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2951,9 +2955,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _opponentParty: {fileID: 11400000, guid: d62fb72d6535cb8438b59e557a5b08c9, type: 2}
-  _conversation:
+  _battleConversation:
     _lines:
-    - A wild Bulbasr appears!
+    - A wild BULBASR appears!
+  _lossConversation:
+    _lines:
+    - Bulba? Bulbasr!
+    - (You don't know what it's saying since you didn't take Ptrmn Lang 1A)
 --- !u!136 &425506693
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2990,7 +2998,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52616
+  m_Name: pb_Mesh38292
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4078,6 +4086,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 541102638291097214, guid: bcc79a7c82cace2428a01736397ba0b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 541102638632042412, guid: bcc79a7c82cace2428a01736397ba0b8,
         type: 3}
       propertyPath: m_Color.b
@@ -4127,6 +4140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BattleManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 541102639247564616, guid: bcc79a7c82cace2428a01736397ba0b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 541102639247564622, guid: bcc79a7c82cace2428a01736397ba0b8,
         type: 3}
@@ -4183,6 +4201,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 541102639328552842, guid: bcc79a7c82cace2428a01736397ba0b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 541102639363692143, guid: bcc79a7c82cace2428a01736397ba0b8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4212,6 +4235,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 541102639400102902, guid: bcc79a7c82cace2428a01736397ba0b8,
+        type: 3}
+      propertyPath: m_text
+      value: What will [your Petrmon] do?
+      objectReference: {fileID: 0}
+    - target: {fileID: 541102639493737907, guid: bcc79a7c82cace2428a01736397ba0b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 541102639795809856, guid: bcc79a7c82cace2428a01736397ba0b8,
         type: 3}
@@ -4271,7 +4304,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52708
+  m_Name: pb_Mesh38388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4435,7 +4468,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52728
+  m_Name: pb_Mesh38416
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5583,7 +5616,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52586
+  m_Name: pb_Mesh38254
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6499,7 +6532,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52516
+  m_Name: pb_Mesh38176
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6849,7 +6882,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52558
+  m_Name: pb_Mesh38226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8219,7 +8252,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52796
+  m_Name: pb_Mesh38500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10601,7 +10634,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52780
+  m_Name: pb_Mesh38468
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11109,7 +11142,7 @@ GameObject:
   - component: {fileID: 1626554232}
   - component: {fileID: 1626554231}
   m_Layer: 0
-  m_Name: '[NPC] Chamandr'
+  m_Name: '[NPC] Charmandr'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11128,9 +11161,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _opponentParty: {fileID: 11400000, guid: 0df7e86403f9c834a9b190fc94f29ce6, type: 2}
-  _conversation:
+  _battleConversation:
     _lines:
-    - A wild Charmandr appears!
+    - A wild CHARMANDR appears!
+  _lossConversation:
+    _lines:
+    - These jelly filled donuts are delicious! Nothing beats a jelly filled donut!
+    - When it rains, I'll use my trusty frying pan as a DRYING pan.
 --- !u!136 &1626554232
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11265,7 +11302,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52664
+  m_Name: pb_Mesh38342
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12022,7 +12059,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52538
+  m_Name: pb_Mesh38198
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12676,7 +12713,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52752
+  m_Name: pb_Mesh38440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

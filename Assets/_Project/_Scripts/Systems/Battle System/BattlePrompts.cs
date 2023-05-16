@@ -28,38 +28,38 @@ namespace ProjectPetrmon
 
         public void DisplayExpGainText(string petrmonName)
         {
-            StartCoroutine(TypeText($"{petrmonName.ToUpper()} gained <br>EXP. Points!"));
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()} gained no EXP. Points!"));
             PlayDialogueSound();
         }
 
         public void DisplayWhatWillPetrmonDoText(string petrmonName)
         {
-            StartCoroutine(TypeText($"What will<br>{petrmonName.ToUpper()} do?"));
+            StartCoroutine(TypeText($"What will {petrmonName.ToUpper()} do?"));
             PlayDialogueSound();
         }
 
         public void DisplayMoveUsedText(string petrmonName, string moveName)
         {
-            StartCoroutine(TypeText($"{petrmonName.ToUpper()} used <br>{moveName}!"));
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()} used {moveName}!"));
             PlayDialogueSound();
         }
 
         public void DisplayFaintedText(string petrmonName)
         {
-            StartCoroutine(TypeText($"{petrmonName.ToUpper()} <br>fainted!"));
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()} fainted!"));
             PlayDialogueSound();
         }
 
         public void DisplayStatRoseText(string petrmonName, string statName)
         {
-            _battleText.text = $"{petrmonName.ToUpper()}'s {statName} <br>rose!";
-            StartCoroutine(TypeText($"{petrmonName.ToUpper()}'s {statName} <br>fell!"));
+            _battleText.text = $"{petrmonName.ToUpper()}'s {statName} rose!";
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()}'s {statName} fell!"));
             PlayDialogueSound();
         }
 
         public void DisplayStatFellText(string petrmonName, string statName)
         {
-            StartCoroutine(TypeText($"{petrmonName.ToUpper()}'s {statName} <br>fell!"));
+            StartCoroutine(TypeText($"{petrmonName.ToUpper()}'s {statName} fell!"));
             PlayDialogueSound();
         }
 

@@ -30,6 +30,8 @@ namespace ProjectPetrmon
 
         private PartyObject _opponentParty;
         private BattlePrompts _battlePrompts;
+        private Animator _playerPetrAnim;
+        private Animator _opponentPetrAnim;
         private PetrPanel _playerPetrPanel;
         private PetrPanel _opponentPetrPanel;
         private PetrmonObject _currentPlayerPetrmon;
@@ -40,6 +42,8 @@ namespace ProjectPetrmon
         {
             base.Awake();
             _battlePrompts = GetComponent<BattlePrompts>();
+            _playerPetrAnim = _currentPlayerPetrImage.GetComponent<Animator>();
+            _opponentPetrAnim = _currentOpponentPetrImage.GetComponent<Animator>();
             _playerPetrPanel = _playerPanel.GetComponent<PetrPanel>();
             _opponentPetrPanel = _opponentPanel.GetComponent<PetrPanel>();
         }
@@ -83,18 +87,20 @@ namespace ProjectPetrmon
             _currentOpponentPetrImage.gameObject.SetActive(false);
             AudioManager.Instance.PlayClip(_battleBGMSound, true, false, MainMenuSettings.MusicSetting);
 
-            yield return WaitSeconds(2f);
+            yield return WaitSeconds(0.5f);
 
             _opponentPanel.gameObject.SetActive(true);
             _currentOpponentPetrImage.gameObject.SetActive(true);
+            _opponentPetrAnim.SetTrigger("spawn");
             _battlePrompts.DisplayWildPetrmonAppearedText(_currentOpponentPetrmon.Name);
 
-            yield return WaitSeconds(3f);
+            yield return WaitSeconds(1.5f);
 
             _currentPlayerPetrImage.gameObject.SetActive(true);
+            _playerPetrAnim.SetTrigger("spawn");
             _battlePrompts.DisplayGoPetrmonText(_currentPlayerPetrmon.Name);
 
-            yield return WaitSeconds(2f);
+            yield return WaitSeconds(1f);
 
             _playerPanel.gameObject.SetActive(true);
             _menuPanel.gameObject.SetActive(true);
@@ -113,6 +119,9 @@ namespace ProjectPetrmon
             InitializePetrmonBattleStats();
             StopAllCoroutines();
             ShowBattleCanvas(false);
+
+            // disable battle trigger here
+
             OnBattleEnd?.Invoke();
         }
 
@@ -171,6 +180,7 @@ namespace ProjectPetrmon
             yield return WaitSeconds(1.5f);
 
             // move animations here
+            _opponentPetrAnim.SetTrigger("tookDamage");
 
             string battleText = move.Execute(_currentPlayerPetrmon, _currentOpponentPetrmon);
 
@@ -181,6 +191,7 @@ namespace ProjectPetrmon
             if(_currentOpponentPetrmon.CurrentHP <= 0)
             {
                 // opponent faint animations here
+                _opponentPetrAnim.SetTrigger("dies");
 
                 _battlePrompts.DisplayFaintedText(_currentOpponentPetrmon.Name);
 
@@ -212,6 +223,7 @@ namespace ProjectPetrmon
             yield return WaitSeconds(1.5f);
 
             // move animations here
+            _playerPetrAnim.SetTrigger("tookDamage");
 
             string battleText = _currentOpponentPetrmon.MoveSet.Set[0].Execute(_currentOpponentPetrmon, _currentPlayerPetrmon);
 
@@ -222,6 +234,7 @@ namespace ProjectPetrmon
             if(_currentPlayerPetrmon.CurrentHP <= 0)
             {
                 // player petr faint animations here
+                _playerPetrAnim.SetTrigger("dies");
 
                 _battlePrompts.DisplayFaintedText(_currentPlayerPetrmon.Name);
 
