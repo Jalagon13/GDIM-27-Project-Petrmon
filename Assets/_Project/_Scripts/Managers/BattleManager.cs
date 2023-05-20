@@ -166,7 +166,7 @@ namespace ProjectPetrmon
             StartCoroutine(PlayerFirstRoutine(playerMoveToOpponent));
         }
 
-        private void SwapRoutine()
+        private void SwapRoutine(int petrPartySlot)
         {
 
         }
