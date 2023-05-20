@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,11 @@ namespace ProjectPetrmon
 {
     public class BattleManager : Singleton<BattleManager>
     {
-        public event Action OnBattleStart; 
-        public event Action OnBattleEnd; 
+        public event Action OnBattleStart;
+        public event Action OnBattleEnd;
 
         [SerializeField] private PartyObject _playerParty;
-        [SerializeField] private Canvas _battleCanvas; 
+        [SerializeField] private Canvas _battleCanvas;
         [Header("Menu Panel Stuff")]
         [SerializeField] private RectTransform _playerPanel;
         [SerializeField] private RectTransform _opponentPanel;
@@ -22,12 +23,13 @@ namespace ProjectPetrmon
         [SerializeField] private Image _currentPlayerPetrImage;
         [SerializeField] private Image _currentOpponentPetrImage;
 
-        [Header("Sound Assets")] 
+        [Header("Sound Assets")]
         [SerializeField] private AudioClip _buttonClickSound;
         [SerializeField] private AudioClip _playerLoseSound;
         [SerializeField] private AudioClip _playerWinSound;
         [SerializeField] private AudioClip _battleBGMSound;
 
+        private List<int> _playerPartyRef = new List<int>(){0, 1, 2, 3, 4, 5};
         private PartyObject _opponentParty;
         private BattlePrompts _battlePrompts;
         private Animator _playerPetrAnim;
