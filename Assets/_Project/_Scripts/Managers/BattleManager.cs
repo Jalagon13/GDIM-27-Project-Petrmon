@@ -29,7 +29,7 @@ namespace ProjectPetrmon
         [SerializeField] private AudioClip _playerWinSound;
         [SerializeField] private AudioClip _battleBGMSound;
 
-        private List<int> _playerPartyRef = new List<int>(){0, 1, 2, 3, 4, 5};
+        private List<int> _playerPartyRef;
         private PartyObject _opponentParty;
         private BattlePrompts _battlePrompts;
         private Animator _playerPetrAnim;
@@ -57,6 +57,7 @@ namespace ProjectPetrmon
 
         public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
         {
+            _playerPartyRef = new List<int>() { 0, 1, 2, 3, 4, 5 };
             _opponentParty = opponentParty;
             _battlePrompts.DisplayCustomText(string.Empty);
             _menuPanel.gameObject.SetActive(true);
@@ -65,8 +66,8 @@ namespace ProjectPetrmon
             _currentPlayerPetrmon = _playerParty.Party[0];
             _currentOpponentPetrmon = _opponentParty.Party[0];
 
-            _currentPlayerPetrImage.sprite = _playerParty.Party[0].Sprite;
-            _currentOpponentPetrImage.sprite = _opponentParty.Party[0].Sprite;
+            _currentPlayerPetrImage.sprite = _currentPlayerPetrmon.Sprite;
+            _currentOpponentPetrImage.sprite = _currentOpponentPetrmon.Sprite;
 
             _currentOpponentPetrmon.RefreshPetrmon();
 
@@ -142,14 +143,13 @@ namespace ProjectPetrmon
 
         private void UpdateMoves()
         {
-            var petrmonIndex = 0;
             var index = 0;
 
             foreach(Transform child in _fightButtons.transform)
             {
                 if(child.TryGetComponent(out FightButton fightButton))
                 {
-                    var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
+                    var move = _currentPlayerPetrmon.MoveSet.Set[index];
 
                     fightButton.UpdateFightButton(move, BattleRoutine);
                     index++;
@@ -159,22 +159,65 @@ namespace ProjectPetrmon
             UpdateCurrentPetrPanels();
         }
         // Alaina works above this line
+        public void SwapRoutine(int petrPartySlot)
+        {
+            _menuPanel.gameObject.SetActive(false);
+
+            StartCoroutine(SwapSequence(petrPartySlot));
+        }
+
+        private IEnumerator SwapSequence(int slot)
+        {
+            _battlePrompts.DisplayWithdrawPetrmonText("You", _currentPlayerPetrmon.name);
+            yield return WaitSeconds(1.5f);
+
+            _playerPetrAnim.SetTrigger("swap");
+            yield return WaitSeconds(1.5f);
+
+            // make the swap after petrmon is withdrawn
+            int temp = _playerPartyRef[0];
+            _playerPartyRef[0] = _playerPartyRef[slot];
+            _playerPartyRef[slot] = temp;
+
+            // update change to UI
+            _currentPlayerPetrmon = _playerParty.Party[_playerPartyRef[0]];
+            _currentPlayerPetrImage.sprite = _currentPlayerPetrmon.Sprite;
+            UpdateMoves();
+
+            _battlePrompts.DisplaySentOutPetrmonText("You", _currentPlayerPetrmon.name);
+            yield return WaitSeconds(1.5f);
+
+            _playerPetrAnim.SetTrigger("spawn");
+            yield return WaitSeconds(1.5f);
+
+            // resume battle
+            yield return OpponentMoveOnPlayer();
+
+            _menuPanel.gameObject.SetActive(true);
+            _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);
+        }
+
         private void BattleRoutine(Move playerMoveToOpponent)
         {
             _menuPanel.gameObject.SetActive(false);
             _fightPanel.gameObject.SetActive(false);
-            StartCoroutine(PlayerFirstRoutine(playerMoveToOpponent));
+
+            StartCoroutine(BattleSequence(playerMoveToOpponent));
         }
 
-        private void SwapRoutine(int petrPartySlot)
+        private IEnumerator BattleSequence(Move move)
         {
-
-        }
-
-        private IEnumerator PlayerFirstRoutine(Move move)
-        {
-            yield return PlayerMoveOnOpponent(move);
-            yield return OpponentMoveOnPlayer();
+            // determine who goes first
+            if (_currentPlayerPetrmon.BaseSpeed >= _currentOpponentPetrmon.BaseSpeed)
+            {
+                yield return PlayerMoveOnOpponent(move);
+                yield return OpponentMoveOnPlayer();
+            }
+            else 
+            {
+                yield return OpponentMoveOnPlayer();
+                yield return PlayerMoveOnOpponent(move);
+            }
 
             _menuPanel.gameObject.SetActive(true);
             _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);

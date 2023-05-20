@@ -13,7 +13,8 @@ namespace ProjectPetrmon
             if (collision.CompareTag("Player"))
             {
                 DialogueManager.Instance.StartDialogue(_conversation);
-                _playerParty.Party[0].RefreshPetrmon();
+                foreach(PetrmonObject petr in _playerParty.Party)
+                    petr.RefreshPetrmon();
                 _playerCanvas.UpdateCanvasPetrStats();
             }
         }

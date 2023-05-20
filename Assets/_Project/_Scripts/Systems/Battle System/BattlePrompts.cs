@@ -74,6 +74,16 @@ namespace ProjectPetrmon
             StartCoroutine(TypeText($"Go! {petrmonName.ToUpper()}!"));
             PlayDialogueSound();
         }
+        public void DisplayWithdrawPetrmonText(string trainer, string petrmonName)
+        {
+            StartCoroutine(TypeText($"{trainer} withdrew {petrmonName.ToUpper()}!"));
+            PlayDialogueSound();
+        }
+        public void DisplaySentOutPetrmonText(string trainer,  string petrmonName)
+        {
+            StartCoroutine(TypeText($"{trainer} sent out {petrmonName.ToUpper()}!"));
+            PlayDialogueSound();
+        }
 
         private IEnumerator TypeText(string text)
         {
