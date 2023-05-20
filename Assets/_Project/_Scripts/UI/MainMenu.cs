@@ -22,6 +22,8 @@ namespace ProjectPetrmon
         [SerializeField] private float gameNameFadeInTime;
         [SerializeField] private TMP_Text startText;
         [SerializeField] private float startTextFadeInAndOutTime;
+        [SerializeField] private RawImage petrImage;
+        [SerializeField] private float petrImageFadeInTime;
 
         [Header("Options Menu")] [SerializeField] private GameObject optionsMenu;
         [SerializeField] private Slider musicSlider;
@@ -35,6 +37,7 @@ namespace ProjectPetrmon
         [Header("Sounds")] [SerializeField] private AudioClip menuButtonClick;
         [SerializeField] private AudioClip startGameClick;
         [SerializeField] private AudioClip menuBGM;
+        [SerializeField] private AudioClip petrRoar;
 
         private Coroutine startTextCoroutine;
         private bool clickToContinueAvailable;
@@ -66,6 +69,10 @@ namespace ProjectPetrmon
 
         private IEnumerator DisplayStartMenu()
         {
+            AudioManager.Instance.PlayClip(petrRoar, false, false, MainMenuSettings.VolumeSetting);
+            yield return new WaitForSeconds(petrRoar.length - petrImageFadeInTime);
+            StartCoroutine(FadeTextIn(petrImage, petrImageFadeInTime));
+            yield return new WaitForSeconds(petrImageFadeInTime/2);
             AudioManager.Instance.PlayClip(menuBGM, true, false, MainMenuSettings.MusicSetting);
             StartCoroutine(FadeTextIn(gameLogo, gameNameFadeInTime));
             startTextCoroutine = StartCoroutine(FadeTextInAndOut(startText, startTextFadeInAndOutTime, true));
