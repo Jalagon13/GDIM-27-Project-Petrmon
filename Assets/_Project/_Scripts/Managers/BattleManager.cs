@@ -149,22 +149,27 @@ namespace ProjectPetrmon
                 {
                     var move = _playerParty.Party[petrmonIndex].MoveSet.Set[index];
 
-                    fightButton.UpdateFightButton(move, BattleSequence);
+                    fightButton.UpdateFightButton(move, BattleRoutine);
                     index++;
                 }
             }
 
             UpdateCurrentPetrPanels();
         }
-
-        private void BattleSequence(Move playerMoveToOpponent)
+        // Alaina works above this line
+        private void BattleRoutine(Move playerMoveToOpponent)
         {
             _menuPanel.gameObject.SetActive(false);
             _fightPanel.gameObject.SetActive(false);
-            StartCoroutine(PlayerFirstSequence(playerMoveToOpponent));
+            StartCoroutine(PlayerFirstRoutine(playerMoveToOpponent));
         }
 
-        private IEnumerator PlayerFirstSequence(Move move)
+        private void SwapRoutine()
+        {
+
+        }
+
+        private IEnumerator PlayerFirstRoutine(Move move)
         {
             yield return PlayerMoveOnOpponent(move);
             yield return OpponentMoveOnPlayer();
