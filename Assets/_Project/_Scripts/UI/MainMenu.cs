@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -39,10 +40,18 @@ namespace ProjectPetrmon
         // Start is called before the first frame update
         private IEnumerator Start()
         {
+            PauseManager.CanPause = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             yield return StartCoroutine(DisplayTeamName());
             yield return StartCoroutine(DisplayStartMenu());
         }
-        
+
+        private void OnDestroy()
+        {
+            PauseManager.CanPause = true;
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left && clickToContinueAvailable)

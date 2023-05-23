@@ -10,18 +10,26 @@ namespace ProjectPetrmon
 {
     public class PauseManager : MonoBehaviour
     {
+        public static bool CanPause;
         public static bool IsPaused { get; private set; }
         public static event Action OnPauseEnable;
         public static event Action OnPauseDisable;
-        
+
         [SerializeField] private GameObject pauseMenuGameObject;
         [SerializeField] private string mainMenuName;
         private float timeScaleBeforePause = 1;
+        private static CursorLockMode _cursorModeBeforePause = Cursor.lockState;
 
         public static void TogglePause()
         {
+            if (!CanPause) return;
             // Disable pause menu if currently paused
-            if (IsPaused) OnPauseDisable?.Invoke();
+            if (IsPaused)
+            {
+                OnPauseDisable?.Invoke();
+                // Reset cursor state, occurs after invoke to avoid conflicting cursor states from subscribed methods
+                Cursor.lockState = _cursorModeBeforePause;
+            }
             // Enable pause menu if currently unpaused
             else OnPauseEnable?.Invoke();
             // Update current pause status
@@ -49,6 +57,7 @@ namespace ProjectPetrmon
         private void EnablePauseMenu()
         {
             timeScaleBeforePause = Time.timeScale;
+            _cursorModeBeforePause = Cursor.lockState;
             Time.timeScale = 0;
             pauseMenuGameObject.SetActive(true);
         }
