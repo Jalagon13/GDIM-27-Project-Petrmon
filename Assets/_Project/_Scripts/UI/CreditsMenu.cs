@@ -15,7 +15,7 @@ namespace ProjectPetrmon
 
         private void Start()
         {
-            AudioManager.Instance.PlayClip(creditsBGM, true, false, MainMenuSettings.MusicSetting);
+            AudioManager.Instance.PlayClip(creditsBGM, true, false, GlobalSettings.MusicSetting);
         }
 
         public void EnableMenuButton()

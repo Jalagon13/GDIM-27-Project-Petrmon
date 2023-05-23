@@ -8,7 +8,7 @@ namespace ProjectPetrmon
         public sealed override string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
             _currentPP--;
-            if (_moveSFX) AudioManager.Instance.PlayClip(_moveSFX, false, true, MainMenuSettings.VolumeSetting); 
+            if (_moveSFX) AudioManager.Instance.PlayClip(_moveSFX, false, true, GlobalSettings.VolumeSetting); 
 
             if (_useOnOwnPetrmon)
             {

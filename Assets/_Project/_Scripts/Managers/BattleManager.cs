@@ -88,7 +88,7 @@ namespace ProjectPetrmon
             _opponentPanel.gameObject.SetActive(false);
             _currentPlayerPetrImage.gameObject.SetActive(false);
             _currentOpponentPetrImage.gameObject.SetActive(false);
-            AudioManager.Instance.PlayClip(_battleBGMSound, true, false, MainMenuSettings.MusicSetting);
+            AudioManager.Instance.PlayClip(_battleBGMSound, true, false, GlobalSettings.MusicSetting);
 
             yield return WaitSeconds(0.5f);
 
@@ -259,7 +259,7 @@ namespace ProjectPetrmon
         {
             // start happy win music here
             AudioManager.Instance.StopClip(_battleBGMSound);
-            AudioManager.Instance.PlayClip(_playerWinSound, false, true, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(_playerWinSound, false, true, GlobalSettings.VolumeSetting);
             _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
             yield return WaitSeconds(4f);
 
@@ -302,7 +302,7 @@ namespace ProjectPetrmon
         {
             // loss game feel (if there is any) here
             AudioManager.Instance.StopClip(_battleBGMSound);
-            AudioManager.Instance.PlayClip(_playerLoseSound, false, true, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(_playerLoseSound, false, true, GlobalSettings.VolumeSetting);
             _battlePrompts.DisplayCustomText("Better luck <br>next time!");
             yield return WaitSeconds(4f);
 
@@ -322,7 +322,7 @@ namespace ProjectPetrmon
 
         public void PlayButtonClickSound()
         {
-            AudioManager.Instance.PlayClip(_buttonClickSound, false, true, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(_buttonClickSound, false, true, GlobalSettings.VolumeSetting);
         }
     }
 }

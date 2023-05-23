@@ -3,16 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ProjectPetrmon
 {
-    public struct MainMenuSettings
-    {
-        public static float MusicSetting = 0.65f;
-        public static float VolumeSetting = 0.65f;
-    }
-    
     public class MainMenu : MonoBehaviour, IPointerClickHandler
     {
         [Header("Main Menu")] [SerializeField] private GameObject mainMenu;
@@ -24,16 +19,15 @@ namespace ProjectPetrmon
         [SerializeField] private float startTextFadeInAndOutTime;
         [SerializeField] private RawImage petrImage;
         [SerializeField] private float petrImageFadeInTime;
-
-        [Header("Options Menu")] [SerializeField] private GameObject optionsMenu;
-        [SerializeField] private Slider musicSlider;
-        [SerializeField] private Slider volumeSlider;
         [SerializeField] private Button startButton;
         [SerializeField] private string startingLevelName;
         [SerializeField] private string creditsLevelName;
         [SerializeField] private Image screenCover;
         [SerializeField] private float screenFadeTime;
 
+        [Header("Other Menu Items")] [SerializeField] private GameObject settingsMenu;
+        [SerializeField] private GameObject additionalButtons;
+        
         [Header("Sounds")] [SerializeField] private AudioClip menuButtonClick;
         [SerializeField] private AudioClip startGameClick;
         [SerializeField] private AudioClip menuBGM;
@@ -45,8 +39,6 @@ namespace ProjectPetrmon
         // Start is called before the first frame update
         private IEnumerator Start()
         {
-            musicSlider.value = MainMenuSettings.MusicSetting;
-            volumeSlider.value = MainMenuSettings.VolumeSetting;
             yield return StartCoroutine(DisplayTeamName());
             yield return StartCoroutine(DisplayStartMenu());
         }
@@ -58,7 +50,7 @@ namespace ProjectPetrmon
                 PlayMenuClickSound();
                 clickToContinueAvailable = false;
                 StopCoroutine(startTextCoroutine);
-                StartCoroutine(DisplayOptionsMenu());
+                StartCoroutine(DisplaySettingsMenu());
             }
         }
 
@@ -69,21 +61,22 @@ namespace ProjectPetrmon
 
         private IEnumerator DisplayStartMenu()
         {
-            AudioManager.Instance.PlayClip(petrRoar, false, false, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(petrRoar, false, false, GlobalSettings.VolumeSetting);
             yield return new WaitForSeconds(petrRoar.length - petrImageFadeInTime);
             StartCoroutine(FadeTextIn(petrImage, petrImageFadeInTime));
             yield return new WaitForSeconds(petrImageFadeInTime/2);
-            AudioManager.Instance.PlayClip(menuBGM, true, false, MainMenuSettings.MusicSetting);
+            AudioManager.Instance.PlayClip(menuBGM, true, false, GlobalSettings.MusicSetting);
             StartCoroutine(FadeTextIn(gameLogo, gameNameFadeInTime));
             startTextCoroutine = StartCoroutine(FadeTextInAndOut(startText, startTextFadeInAndOutTime, true));
             clickToContinueAvailable = true;
             yield break;
         }
 
-        private IEnumerator DisplayOptionsMenu()
+        private IEnumerator DisplaySettingsMenu()
         {
             mainMenu.SetActive(false);
-            optionsMenu.SetActive(true);
+            settingsMenu.SetActive(true);
+            additionalButtons.SetActive(true);
             yield break;
         }
 
@@ -119,18 +112,6 @@ namespace ProjectPetrmon
             graphic.color = end;
         }
 
-        public void UpdateMusicSlider(float val)
-        {
-            MainMenuSettings.MusicSetting = val;
-            AudioManager.Instance.UpdateClipVolume(menuBGM, MainMenuSettings.MusicSetting);
-            Debug.Log(MainMenuSettings.MusicSetting);
-        }
-
-        public void UpdateVolumeSlider(float val)
-        {
-            MainMenuSettings.VolumeSetting = val;
-            Debug.Log(MainMenuSettings.VolumeSetting);
-        }
         private void StartGameLevel()
         {
             StartCoroutine(_StartGameLevel());
@@ -138,7 +119,7 @@ namespace ProjectPetrmon
 
         private IEnumerator _StartGameLevel()
         {
-            AudioManager.Instance.PlayClip(startGameClick, false, false, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(startGameClick, false, false, GlobalSettings.VolumeSetting);
             startButton.interactable = false;
             screenCover.gameObject.SetActive(true);
             yield return StartCoroutine(FadeGraphicColor(screenCover, new Color(0, 0, 0, 0), Color.black,
@@ -149,7 +130,7 @@ namespace ProjectPetrmon
 
         public void PlayMenuClickSound()
         {
-            AudioManager.Instance.PlayClip(menuButtonClick, false, true, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(menuButtonClick, false, true, GlobalSettings.VolumeSetting);
         }
 
         public void LoadCreditsScene()

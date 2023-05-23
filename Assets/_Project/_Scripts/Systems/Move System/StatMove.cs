@@ -13,7 +13,7 @@ namespace ProjectPetrmon
 
         public override string Execute(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
-            if (_moveSFX) AudioManager.Instance.PlayClip(_moveSFX, false, true, MainMenuSettings.VolumeSetting); 
+            if (_moveSFX) AudioManager.Instance.PlayClip(_moveSFX, false, true, GlobalSettings.VolumeSetting); 
             return string.Empty;
         }
     }

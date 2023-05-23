@@ -25,10 +25,10 @@ namespace ProjectPetrmon
 
         public void UpdateCanvasPetrStats()
         {
-            string stats = string.Empty;
+            string stats = $"Your Petrmon:\n";
             foreach (PetrmonObject petr in _playerParty.Party)
             {
-                stats += $"Your Petrmon:<br>{petr.Name}: {petr.CurrentHP}/{petr.BaseMaxHP} hp\n";
+                stats += $"{petr.Name}: {petr.CurrentHP}/{petr.BaseMaxHP} hp\n";
             }
 
             _statsText.text = stats;

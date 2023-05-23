@@ -17,7 +17,7 @@ namespace ProjectPetrmon
 
         private void PlayDialogueSound()
         {
-            AudioManager.Instance.PlayClip(_dialogueSound, false, true, MainMenuSettings.VolumeSetting);
+            AudioManager.Instance.PlayClip(_dialogueSound, false, true, GlobalSettings.VolumeSetting);
         }
 
         public void DisplayCustomText(string customText)

@@ -83,6 +83,16 @@ namespace ProjectPetrmon
             }
         }
 
+        public void UpdateAllLoopingClipVolume(float volume)
+        {
+            foreach (Transform audioSource in transform)
+            {
+                var src = audioSource.GetComponent<AudioSource>();
+                // Looping clips are bgm, which should be updated
+                if (src.loop) src.volume = volume;
+            }
+        }
+
         private void AudioHandle(bool looping, bool randPitch, AudioSource source, AudioClip clip, float volume, float pitch)
         {
             pitch = randPitch ? Random.Range(pitch - 0.2f, pitch + 0.7f) : pitch;
