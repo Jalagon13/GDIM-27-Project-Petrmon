@@ -1,5 +1,6 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+using ProjectPetrmon;
 using UnityEngine.InputSystem;
 #endif
 
@@ -43,6 +44,11 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
+		}
+
+		public void OnPause(InputValue value)
+		{
+			if (value.isPressed) PauseManager.TogglePause();
 		}
 #endif
 

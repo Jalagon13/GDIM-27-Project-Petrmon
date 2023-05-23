@@ -1,0 +1,84 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+
+namespace ProjectPetrmon
+{
+    public class PauseManager : MonoBehaviour
+    {
+        public static bool IsPaused { get; private set; }
+        public static event Action OnPauseEnable;
+        public static event Action OnPauseDisable;
+        
+        [SerializeField] private GameObject pauseMenuGameObject;
+        [SerializeField] private string mainMenuName;
+        private float timeScaleBeforePause = 1;
+
+        public static void TogglePause()
+        {
+            // Disable pause menu if currently paused
+            if (IsPaused) OnPauseDisable?.Invoke();
+            // Enable pause menu if currently unpaused
+            else OnPauseEnable?.Invoke();
+            // Update current pause status
+            IsPaused = !IsPaused;
+        }
+        
+        private void OnEnable()
+        {
+            OnPauseEnable += EnablePauseMenu;
+            OnPauseDisable += DisablePauseMenu;
+        }
+
+        private void OnDisable()
+        {
+            OnPauseEnable -= EnablePauseMenu;
+            OnPauseDisable -= DisablePauseMenu;
+        }
+
+        private void OnDestroy()
+        {
+            // When changing scenes, make sure to turn off pause if currently active
+            if (IsPaused) TogglePause();
+        }
+
+        private void EnablePauseMenu()
+        {
+            timeScaleBeforePause = Time.timeScale;
+            Time.timeScale = 0;
+            pauseMenuGameObject.SetActive(true);
+        }
+        
+        private void DisablePauseMenu()
+        {
+            pauseMenuGameObject.SetActive(false);
+            Time.timeScale = timeScaleBeforePause;
+        }
+
+        public void Resume()
+        {
+            TogglePause();
+        }
+
+        public void LoadMainMenu()
+        {
+            /*
+             * Loading a different scene does not make the game happy:
+             *      (1) Coroutines don't work
+             *      (2) 40% of the time the DialogueManager has a NullReferenceException
+             * Thus functionality for this has been commented out until a fix is found.
+             */
+            
+            // SceneManager.LoadScene(mainMenuName);
+        }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
+    }
+}
