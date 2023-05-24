@@ -168,7 +168,7 @@ namespace ProjectPetrmon
 
         private IEnumerator SwapSequence(int slot)
         {
-            _battlePrompts.DisplayWithdrawPetrmonText("You", _currentPlayerPetrmon.name);
+            _battlePrompts.DisplayWithdrawPetrmonText("You", _currentPlayerPetrmon.Name);
             yield return WaitSeconds(1.5f);
 
             _playerPetrAnim.SetTrigger("swap");
@@ -184,7 +184,7 @@ namespace ProjectPetrmon
             _currentPlayerPetrImage.sprite = _currentPlayerPetrmon.Sprite;
             UpdateMoves();
 
-            _battlePrompts.DisplaySentOutPetrmonText("You", _currentPlayerPetrmon.name);
+            _battlePrompts.DisplaySentOutPetrmonText("You", _currentPlayerPetrmon.Name);
             yield return WaitSeconds(1.5f);
 
             _playerPetrAnim.SetTrigger("spawn");
