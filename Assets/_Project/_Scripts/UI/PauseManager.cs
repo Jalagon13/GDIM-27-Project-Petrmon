@@ -87,7 +87,7 @@ namespace ProjectPetrmon
              * Thus functionality for this has been commented out until a fix is found.
              */
             
-            // SceneManager.LoadScene(mainMenuName);
+            SceneManager.LoadScene(mainMenuName);
         }
 
         public void Quit()

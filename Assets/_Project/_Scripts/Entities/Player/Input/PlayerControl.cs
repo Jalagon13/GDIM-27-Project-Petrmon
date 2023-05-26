@@ -26,10 +26,16 @@ namespace ProjectPetrmon
 
         private void OnDisable()
         {
-            DialogueManager.Instance.OnDialogueStart -= RestrictMovement;
-            DialogueManager.Instance.OnDialogueEnd -= AllowMovement;
-            BattleManager.Instance.OnBattleStart -= RestrictMovement;
-            BattleManager.Instance.OnBattleEnd -= AllowMovement;
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.OnDialogueStart -= RestrictMovement;
+                DialogueManager.Instance.OnDialogueEnd -= AllowMovement;
+            }
+            if (BattleManager.Instance != null)
+            {
+                BattleManager.Instance.OnBattleStart -= RestrictMovement;
+                BattleManager.Instance.OnBattleEnd -= AllowMovement;
+            }
             PauseManager.OnPauseEnable -= RestrictMovement;
             PauseManager.OnPauseDisable -= AllowMovement;
         }

@@ -20,7 +20,8 @@ namespace ProjectPetrmon
 
         private void OnDisable()
         {
-            BattleManager.Instance.OnBattleEnd -= UpdateCanvasPetrStats;
+            if (BattleManager.Instance != null)
+                BattleManager.Instance.OnBattleEnd -= UpdateCanvasPetrStats;
         }
 
         public void UpdateCanvasPetrStats()

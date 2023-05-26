@@ -24,6 +24,7 @@ namespace ProjectPetrmon
 
         protected override void Awake()
         {
+            base.Awake();
             _input = new DefaultInputActions();
             _input.Player.NextEntry.started += NextEntry;
         }
