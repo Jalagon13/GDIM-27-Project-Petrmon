@@ -18,7 +18,7 @@ namespace ProjectPetrmon
         [SerializeField] private GameObject pauseMenuGameObject;
         [SerializeField] private string mainMenuName;
         private float timeScaleBeforePause = 1;
-        private static CursorLockMode _cursorModeBeforePause = Cursor.lockState;
+        private static CursorLockMode _cursorModeBeforePause;
 
         public static void TogglePause()
         {
@@ -52,6 +52,11 @@ namespace ProjectPetrmon
         {
             // When changing scenes, make sure to turn off pause if currently active
             if (IsPaused) TogglePause();
+        }
+
+        private void Awake()
+        {
+            _cursorModeBeforePause = Cursor.lockState;
         }
 
         private void EnablePauseMenu()
