@@ -67,6 +67,15 @@ namespace ProjectPetrmon
             }
         }
 
+        public void StopAllClips()
+        {
+            foreach (Transform audioSource in transform)
+            {
+                var source = audioSource.GetComponent<AudioSource>();
+                if (source.isPlaying) source.Stop();
+            }
+        }
+
         public void UpdateClipVolume(AudioClip clipToModify, float volume)
         {
             if (clipToModify == null) return;

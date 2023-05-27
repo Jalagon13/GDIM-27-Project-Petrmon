@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace ProjectPetrmon
@@ -49,6 +47,7 @@ namespace ProjectPetrmon
 
         private void OnDestroy()
         {
+            StopAllCoroutines();
             PauseManager.CanPause = true;
         }
 

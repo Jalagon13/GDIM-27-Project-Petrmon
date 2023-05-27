@@ -86,7 +86,7 @@ namespace ProjectPetrmon
              *      (2) 40% of the time the DialogueManager has a NullReferenceException
              * Thus functionality for this has been commented out until a fix is found.
              */
-            
+            AudioManager.Instance.StopAllClips();
             SceneManager.LoadScene(mainMenuName);
         }
 
