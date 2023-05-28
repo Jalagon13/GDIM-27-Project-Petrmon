@@ -62,6 +62,7 @@ namespace ProjectPetrmon
         private void EnablePauseMenu()
         {
             timeScaleBeforePause = Time.timeScale;
+            Debug.Log("EnablePauseMenu() callback - Time Scale b4 pause: " + timeScaleBeforePause);
             _cursorModeBeforePause = Cursor.lockState;
             Time.timeScale = 0;
             pauseMenuGameObject.SetActive(true);
@@ -71,6 +72,7 @@ namespace ProjectPetrmon
         {
             pauseMenuGameObject.SetActive(false);
             Time.timeScale = timeScaleBeforePause;
+            Debug.Log("DisablePauseMenu() callback - Time Scale after pause: " + Time.timeScale);
         }
 
         public void Resume()

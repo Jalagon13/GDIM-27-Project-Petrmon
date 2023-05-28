@@ -36,19 +36,21 @@ namespace ProjectPetrmon
         private bool clickToContinueAvailable;
 
         // Start is called before the first frame update
-        private IEnumerator Start()
+        private void Start()
         {
             PauseManager.CanPause = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            yield return StartCoroutine(DisplayTeamName());
-            yield return StartCoroutine(DisplayStartMenu());
+            Time.timeScale = 1;
+            Debug.Log("MainMenu Start() callback - Time.timeScale value: " + Time.timeScale);
+            StopAllCoroutines();
+            StartCoroutine(StartSequence());
         }
 
-        private void OnDestroy()
+        private IEnumerator StartSequence()
         {
-            StopAllCoroutines();
-            PauseManager.CanPause = true;
+            yield return StartCoroutine(DisplayTeamName());
+            yield return StartCoroutine(DisplayStartMenu());
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -64,6 +66,7 @@ namespace ProjectPetrmon
 
         private IEnumerator DisplayTeamName()
         {
+            Debug.Log("display team name");
             yield return StartCoroutine(FadeTextInAndOut(teamName, teamNameFadeInAndOutTime, false));
         }
 
@@ -97,6 +100,7 @@ namespace ProjectPetrmon
 
         private IEnumerator FadeTextInAndOut(TMP_Text text, float totalFadeTime, bool repeat)
         {
+            Debug.Log("Fade Text In and Out");
             Color colorOpaque = new Color(text.color.r, text.color.g, text.color.b, 1);
             Color colorTransparent = new Color(text.color.r, text.color.g, text.color.b, 0);
             do
@@ -109,13 +113,16 @@ namespace ProjectPetrmon
 
         private IEnumerator FadeGraphicColor(MaskableGraphic graphic, Color start, Color end, float totalTime)
         {
+            Debug.Log("Fade Graphic Color");
             graphic.color = start;
             float time = 0;
+            Debug.Log(time + " " + totalTime);
             while (time < totalTime)
             {
                 graphic.color = Color.Lerp(start, end, time);
                 yield return null;
                 time += Time.deltaTime;
+                Debug.Log(time + " " + Time.deltaTime);
             }
             graphic.color = end;
         }
@@ -133,6 +140,8 @@ namespace ProjectPetrmon
             yield return StartCoroutine(FadeGraphicColor(screenCover, new Color(0, 0, 0, 0), Color.black,
                 screenFadeTime));
             AudioManager.Instance.StopClip(menuBGM);
+            PauseManager.CanPause = true;
+            StopAllCoroutines();
             SceneManager.LoadScene(startingLevelName);
         }
 
