@@ -7,7 +7,7 @@ namespace ProjectPetrmon
     {
         [SerializeField] private Image _fillImage;
 
-        public void UpdateFill(int currentHp, int maxHp)
+        public void UpdateFill(float currentHp, float maxHp)
         {
             _fillImage.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0, maxHp, currentHp));
         }
