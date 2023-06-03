@@ -11,8 +11,8 @@ namespace ProjectPetrmon
 
         private void Awake()
         {
-            _nameText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-            _hpText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            _nameText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            _hpText = transform.GetChild(3).GetComponent<TextMeshProUGUI>();
         }
 
         public void UpdatePanel(PetrmonObject petrmon)
