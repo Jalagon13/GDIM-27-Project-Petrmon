@@ -148,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758309033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba74bfaa9bf92964094866eb333fd0e2, type: 3}
   m_Name: 
@@ -324,7 +324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3617022738052525566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
+  - component: {fileID: 928215189}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -806,3 +807,17 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &928215189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bed2c93d44e5aa41a6bd05aee5b89a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerParty: {fileID: 11400000, guid: a7c9fa8017653c047b805be305fa0c20, type: 2}
+  _playerCanvas: {fileID: 758309038}
