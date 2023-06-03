@@ -158,6 +158,36 @@ namespace ProjectPetrmon
 
             UpdateCurrentPetrPanels();
         }
+
+        public void UpdateSwappablePetrs(PetrmonSwapButton currentPetrmon, GameObject buttonsParent)
+        {
+            currentPetrmon.UpdatePetrmonButton(_playerParty.Party[_playerPartyRef[0]]);
+            Debug.Log("Starting to populate swap buttons!");
+            var index = 1;
+
+            foreach (Transform child in buttonsParent.transform)
+            {
+                if (child.TryGetComponent(out PetrmonSwapButton petrmonButton))
+                {
+                    Debug.Log($"Current button index: {index}");
+
+                    if (_playerParty.Party.Count > index)
+                    {
+                        petrmonButton.UpdatePetrmonButton(_playerParty.Party[_playerPartyRef[index]]);
+                        child.GetComponent<Button>().interactable = true;
+                        Debug.Log("Button within range; populated.");
+                    }
+                    else
+                    {
+                        petrmonButton.BlankButton();
+                        child.GetComponent<Button>().interactable = false;
+                        Debug.Log("Button outside of range; deactivated.");
+                    }
+                    index++;
+                }
+                Debug.Log("Buttons populated!");
+            }
+        }
         // Alaina works above this line
         public void SwapRoutine(int petrPartySlot)
         {
