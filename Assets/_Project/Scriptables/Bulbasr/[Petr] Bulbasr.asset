@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '[Petr] Bulbasr'
   m_EditorClassIdentifier: 
   _name: Bulbasr
+  _type: 0
   _sprite: {fileID: 21300000, guid: 663f498b385d0164aa1176bc63347b34, type: 3}
   _baseMaxHp: 19
   _baseAttack: 17

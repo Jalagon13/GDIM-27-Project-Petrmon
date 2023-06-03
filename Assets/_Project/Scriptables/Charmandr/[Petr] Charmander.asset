@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '[Petr] Charmander'
   m_EditorClassIdentifier: 
   _name: Charmandr
+  _type: 1
   _sprite: {fileID: 21300000, guid: 2d7c19d994b796641a535eadc6a59b57, type: 3}
   _baseMaxHp: 23
   _baseAttack: 15

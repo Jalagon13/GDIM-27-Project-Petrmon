@@ -561,10 +561,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerParty: {fileID: 11400000, guid: a7c9fa8017653c047b805be305fa0c20, type: 2}
-  _playerPetrPanel: {fileID: 654987042}
-  _opponentPetrPanel: {fileID: 926493857}
+  _battleCanvas: {fileID: 0}
+  _playerPanel: {fileID: 0}
+  _opponentPanel: {fileID: 0}
   _fightPanel: {fileID: 103149700}
   _menuPanel: {fileID: 1627916401}
+  _fightButtons: {fileID: 0}
+  _currentPlayerPetrImage: {fileID: 0}
+  _currentOpponentPetrImage: {fileID: 0}
+  _buttonClickSound: {fileID: 0}
+  _playerLoseSound: {fileID: 0}
+  _playerWinSound: {fileID: 0}
+  _battleBGMSound: {fileID: 0}
 --- !u!4 &101046621
 Transform:
   m_ObjectHideFlags: 0
@@ -1154,6 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1619235115}
+  _hoverClip: {fileID: 0}
 --- !u!1 &303185926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1619235115}
+  _hoverClip: {fileID: 0}
 --- !u!1 &600841368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,6 +2448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5f1eb3cfd53314d8fb13e4bab808c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthBar: {fileID: 0}
 --- !u!1 &731890521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,6 +3011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5f1eb3cfd53314d8fb13e4bab808c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthBar: {fileID: 0}
 --- !u!1 &940202170
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,6 +4689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1619235115}
+  _hoverClip: {fileID: 0}
 --- !u!1 &1538546542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6616,6 +6629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveInfoPanel: {fileID: 1619235115}
+  _hoverClip: {fileID: 0}
 --- !u!1001 &2084445384
 PrefabInstance:
   m_ObjectHideFlags: 0
