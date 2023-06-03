@@ -21,8 +21,9 @@ namespace ProjectPetrmon
         {
             int tempLevel = 5; // replace with fromPetrmon's actual level once we have that coded (starts at 5 because that show it is in game)
             float multiplicity = getTypeMultiplicity(fromPetrmon, toPetrmon);
-            
-            return (((2 * tempLevel / 5) + 2) * multiplicity * _power * (fromPetrmon.BattleStats.BattleAttack * 100 / toPetrmon.BattleStats.BattleDefense) / 50) / 100 + 2;
+            float damage = (((2 * tempLevel / 5) + 2) * multiplicity * _power * (fromPetrmon.BattleStats.BattleAttack * 100 / toPetrmon.BattleStats.BattleDefense) / 50) / 100 + 2;
+
+            return Mathf.Round(damage);
         }
 
         private float getTypeMultiplicity(PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
