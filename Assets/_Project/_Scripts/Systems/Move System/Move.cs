@@ -7,7 +7,7 @@ namespace ProjectPetrmon
         [SerializeField] private string _name;
         [SerializeField] private int _accuracy = 100;
         [SerializeField] private int _maxPP;
-        [SerializeField] private string _type;
+        [SerializeField] private Type _type;
         [SerializeField] protected AudioClip _moveSFX;
 
         public string MoveName { get { return _name; } }

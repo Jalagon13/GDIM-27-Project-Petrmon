@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
-  m_Name: '[Petr] Charmandr'
+  m_Name: '[Petr] Bulbasr'
   m_EditorClassIdentifier: 
-  _name: Charmandr
+  _name: Bulbasr
   _type: 1
-  _sprite: {fileID: 21300000, guid: 2d7c19d994b796641a535eadc6a59b57, type: 3}
-  _baseMaxHp: 23
-  _baseAttack: 15
-  _baseDefense: 13
-  _baseSpeed: 23
-  _currentHp: 23
+  _sprite: {fileID: 21300000, guid: 663f498b385d0164aa1176bc63347b34, type: 3}
+  _baseMaxHp: 45
+  _baseAttack: 49
+  _baseDefense: 49
+  _baseSpeed: 45
+  _currentHp: 45
   _moveSet:
     _moves:
+    - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
     - {fileID: 11400000, guid: 71bb66a6228c09d4fb6a4a313696b3ce, type: 2}
-    - {fileID: 11400000, guid: 2e203dda13ff3034fa3a72fd5089c5ea, type: 2}
-    - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}
-    - {fileID: 11400000, guid: 0f9a62545c64421429baae3d31a7b955, type: 2}
+    - {fileID: 11400000, guid: a267185b74f540f4aa3c2c518ea7c529, type: 2}
+    - {fileID: 11400000, guid: d9ae3097938362b4682e42fc730bbfec, type: 2}

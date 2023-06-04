@@ -46,6 +46,7 @@ namespace ProjectPetrmon
         private void ButtonSetup()
         {
             _fightButton.onClick.RemoveAllListeners();
+            gameObject.SetActive(true);
             _fightButton.onClick.AddListener(() =>
             {
                 if (_move.CurrentPP <= 0) return;
@@ -53,6 +54,12 @@ namespace ProjectPetrmon
                 _moveExecuteEvent?.Invoke(_move);
                 _moveInfoPanel.UpdateMoveInfoPanel(_move);
             });
+        }
+
+        public void HideButton()
+        {
+            _fightButton.onClick.RemoveAllListeners();
+            gameObject.SetActive(false);
         }
     }
 }

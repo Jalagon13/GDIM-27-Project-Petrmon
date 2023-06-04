@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b079356e2aff52d459ddcb509236d8b4, type: 3}
-  m_Name: '[M_ATK] Ember'
+  m_Name: '[M_ATK] Absorb'
   m_EditorClassIdentifier: 
-  _name: Ember
+  _name: Absorb
   _accuracy: 100
   _maxPP: 25
-  _type: 2
+  _type: 1
   _moveSFX: {fileID: 8300000, guid: 45f6d9a9eaa34e2458bd21af47679796, type: 3}
-  _power: 40
+  _power: 20

@@ -11,9 +11,7 @@ namespace ProjectPetrmon
         [SerializeField] private List<Move> _moves;
         private List<MoveManager> _set;
 
-        private readonly int _setAmount = 4;
-
-        public int MoveSetAmount { get { return _setAmount; } }
+        public int MoveSetAmount { get { return _set.Count; } }
         public List<MoveManager> Set { get { return _set; } }
 
         public void ExecuteMove(int moveIndex, PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
@@ -25,7 +23,7 @@ namespace ProjectPetrmon
         {
             if (_set == null)
             {
-                _set = new List<MoveManager>(_setAmount);
+                _set = new List<MoveManager>();
                 for (int i = 0; i < _moves.Count; i++)
                     _set.Add(new MoveManager(_moves[i]));
                 return;

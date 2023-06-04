@@ -149,9 +149,13 @@ namespace ProjectPetrmon
             {
                 if(child.TryGetComponent(out FightButton fightButton))
                 {
-                    var move = _currentPlayerPetrmon.MoveSet.Set[index];
-
-                    fightButton.UpdateFightButton(move, BattleRoutine);
+                    if (index < _currentPlayerPetrmon.MoveSet.MoveSetAmount)
+                    {
+                        var move = _currentPlayerPetrmon.MoveSet.Set[index];
+                        fightButton.UpdateFightButton(move, BattleRoutine);
+                    }
+                    else
+                        fightButton.HideButton();
                     index++;
                 }
             }

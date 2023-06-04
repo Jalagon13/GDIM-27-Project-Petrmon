@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
-  m_Name: '[Petr] Magikrp'
+  m_Script: {fileID: 11500000, guid: b079356e2aff52d459ddcb509236d8b4, type: 3}
+  m_Name: '[M_ATK] Splash'
   m_EditorClassIdentifier: 
-  _name: 
-  _type: 0
-  _sprite: {fileID: 0}
-  _baseMaxHp: 0
-  _baseAttack: 0
-  _baseDefense: 0
-  _baseSpeed: 0
-  _currentHp: 0
-  _moveSet:
-    _moves: []
+  _name: Splash
+  _accuracy: 100
+  _maxPP: 40
+  _type: 3
+  _moveSFX: {fileID: 8300000, guid: fe99afe61d42339479e321d1a97be54f, type: 3}
+  _power: 0

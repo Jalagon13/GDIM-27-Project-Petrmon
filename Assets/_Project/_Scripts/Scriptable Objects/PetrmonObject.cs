@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProjectPetrmon
 {
-    public enum PetrType{
+    public enum Type{
         normal,
         grass,
         fire,
@@ -14,7 +14,7 @@ namespace ProjectPetrmon
     public class PetrmonObject : ScriptableObject
     {
         [SerializeField] private string _name;
-        [SerializeField] private PetrType _type;
+        [SerializeField] private Type _type;
         [SerializeField] private Sprite _sprite;
         [Header("Persistent Stats")] // The only time these values change is when Petrmon levels up.
         [SerializeField] private int _baseMaxHp;
@@ -27,11 +27,11 @@ namespace ProjectPetrmon
 
         private BattleStats _battleStats = new();
 
-        public Dictionary<PetrType, Dictionary<PetrType, float>> typeMultiplicity = new Dictionary<PetrType, Dictionary<PetrType, float>>{
-            {PetrType.normal, new Dictionary<PetrType, float>{{PetrType.normal, 1.0f}, { PetrType.grass, 1.0f}, {PetrType.water, 1.0f}, {PetrType.fire, 1.0f}}},
-            {PetrType.grass, new Dictionary<PetrType, float>{ { PetrType.normal, 1.0f }, { PetrType.grass, 1.0f}, {PetrType.water, 1.2f}, {PetrType.fire, .8f}}},
-            {PetrType.fire, new Dictionary<PetrType, float>{ { PetrType.normal, 1.0f }, { PetrType.grass, 1.2f}, {PetrType.water, .8f}, {PetrType.fire, 1.0f}}},
-            {PetrType.water, new Dictionary<PetrType, float>{ { PetrType.normal, 1.0f }, { PetrType.grass, .8f}, {PetrType.water, 1.0f}, {PetrType.fire, 1.2f}}},
+        public Dictionary<Type, Dictionary<Type, float>> typeMultiplicity = new Dictionary<Type, Dictionary<Type, float>>{
+            {Type.normal, new Dictionary<Type, float>{{Type.normal, 1.0f}, { Type.grass, 1.0f}, {Type.water, 1.0f}, {Type.fire, 1.0f}}},
+            {Type.grass, new Dictionary<Type, float>{ { Type.normal, 1.0f }, { Type.grass, 1.0f}, {Type.water, 1.2f}, {Type.fire, .8f}}},
+            {Type.fire, new Dictionary<Type, float>{ { Type.normal, 1.0f }, { Type.grass, 1.2f}, {Type.water, .8f}, {Type.fire, 1.0f}}},
+            {Type.water, new Dictionary<Type, float>{ { Type.normal, 1.0f }, { Type.grass, .8f}, {Type.water, 1.0f}, {Type.fire, 1.2f}}},
         };
 
         public string Name { get { return _name; } }
@@ -42,7 +42,7 @@ namespace ProjectPetrmon
         public int BaseAttack { get { return _baseAttack; } }
         public int BaseDefense { get { return _baseDefense; } }
         public int BaseSpeed { get { return _baseSpeed; } }
-        public PetrType type {get { return _type; }}
+        public Type type {get { return _type; }}
 
         // Non Persistent Stats
         public float CurrentHP { get { return _currentHp; } 

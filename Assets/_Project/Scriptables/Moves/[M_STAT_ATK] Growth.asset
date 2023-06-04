@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Growth
   _accuracy: 100
   _maxPP: 20
-  _type: Grass
+  _type: 1
   _moveSFX: {fileID: 8300000, guid: bc1ac5fcbebcafb4390cb94a5a779e77, type: 3}
   _multiplier: 1.5
   _useOnOwnPetrmon: 1
