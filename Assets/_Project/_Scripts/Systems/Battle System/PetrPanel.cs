@@ -17,6 +17,7 @@ namespace ProjectPetrmon
 
         public void UpdatePanel(PetrmonObject petrmon)
         {
+            Debug.Log(petrmon == null);
             _nameText.text = petrmon.Name.ToUpper();
             _hpText.text = $"{petrmon.CurrentHP}/{petrmon.BaseMaxHP}";
             _healthBar.UpdateFill(petrmon.CurrentHP, petrmon.BaseMaxHP);
