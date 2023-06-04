@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace ProjectPetrmon
 {
     public enum PetrType{
+        normal,
         grass,
         fire,
         water,
@@ -25,11 +26,12 @@ namespace ProjectPetrmon
         [SerializeField] private MoveSet _moveSet;
 
         private BattleStats _battleStats = new();
-            
+
         public Dictionary<PetrType, Dictionary<PetrType, float>> typeMultiplicity = new Dictionary<PetrType, Dictionary<PetrType, float>>{
-            {PetrType.grass, new Dictionary<PetrType, float>{{PetrType.grass, 1.0f}, {PetrType.water, 1.2f}, {PetrType.fire, .8f}}},
-            {PetrType.fire, new Dictionary<PetrType, float>{{PetrType.grass, 1.2f}, {PetrType.water, .8f}, {PetrType.fire, 1.0f}}},
-            {PetrType.water, new Dictionary<PetrType, float>{{PetrType.grass, .8f}, {PetrType.water, 1.0f}, {PetrType.fire, 1.2f}}},
+            {PetrType.normal, new Dictionary<PetrType, float>{{PetrType.normal, 1.0f}, { PetrType.grass, 1.0f}, {PetrType.water, 1.0f}, {PetrType.fire, 1.0f}}},
+            {PetrType.grass, new Dictionary<PetrType, float>{ { PetrType.normal, 1.0f }, { PetrType.grass, 1.0f}, {PetrType.water, 1.2f}, {PetrType.fire, .8f}}},
+            {PetrType.fire, new Dictionary<PetrType, float>{ { PetrType.normal, 1.0f }, { PetrType.grass, 1.2f}, {PetrType.water, .8f}, {PetrType.fire, 1.0f}}},
+            {PetrType.water, new Dictionary<PetrType, float>{ { PetrType.normal, 1.0f }, { PetrType.grass, .8f}, {PetrType.water, 1.0f}, {PetrType.fire, 1.2f}}},
         };
 
         public string Name { get { return _name; } }

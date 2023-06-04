@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
-  m_Name: '[Petr] Charmander'
+  m_Name: '[Petr] Charmandr (Opp)'
   m_EditorClassIdentifier: 
   _name: Charmandr
   _type: 1
