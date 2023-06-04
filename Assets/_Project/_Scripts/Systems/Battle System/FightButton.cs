@@ -12,10 +12,10 @@ namespace ProjectPetrmon
         [SerializeField] private MoveInfoPanel _moveInfoPanel;
         [SerializeField] private AudioClip _hoverClip;
 
-        private Move _move;
+        private MoveManager _move;
         private Button _fightButton;
         private TextMeshProUGUI _buttonText;
-        private Action<Move> _moveExecuteEvent;
+        private Action<MoveManager> _moveExecuteEvent;
 
         private void Awake()
         {
@@ -29,7 +29,7 @@ namespace ProjectPetrmon
             AudioManager.Instance.PlayClip(_hoverClip, false, false, 1f);
         }
 
-        public void UpdateFightButton(Move move, Action<Move> updateOpponentPetrPanel)
+        public void UpdateFightButton(MoveManager move, Action<MoveManager> updateOpponentPetrPanel)
         {
             _move = move;
             _moveExecuteEvent = updateOpponentPetrPanel;

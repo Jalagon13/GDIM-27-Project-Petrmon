@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee7701b11e476364d94ca77ec60d3856, type: 3}
-  m_Name: '[Party] Bulbasr'
+  m_Script: {fileID: 11500000, guid: b079356e2aff52d459ddcb509236d8b4, type: 3}
+  m_Name: '[M_ATK] Water Gun'
   m_EditorClassIdentifier: 
-  _party:
-  - {fileID: 11400000, guid: 3927a543265e615438076e4a69a2b767, type: 2}
+  _name: Water Gun
+  _accuracy: 100
+  _maxPP: 25
+  _type: Water
+  _moveSFX: {fileID: 8300000, guid: 45f6d9a9eaa34e2458bd21af47679796, type: 3}
+  _power: 40

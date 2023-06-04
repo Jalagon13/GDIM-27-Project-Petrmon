@@ -227,7 +227,7 @@ namespace ProjectPetrmon
             _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);
         }
 
-        private void BattleRoutine(Move playerMoveToOpponent)
+        private void BattleRoutine(MoveManager playerMoveToOpponent)
         {
             _menuPanel.gameObject.SetActive(false);
             _fightPanel.gameObject.SetActive(false);
@@ -235,7 +235,7 @@ namespace ProjectPetrmon
             StartCoroutine(BattleSequence(playerMoveToOpponent));
         }
 
-        private IEnumerator BattleSequence(Move move)
+        private IEnumerator BattleSequence(MoveManager move)
         {
             // determine who goes first
             if (_currentPlayerPetrmon.BaseSpeed >= _currentOpponentPetrmon.BaseSpeed)
@@ -253,7 +253,7 @@ namespace ProjectPetrmon
             _battlePrompts.DisplayWhatWillPetrmonDoText(_currentPlayerPetrmon.Name);
         }
 
-        private IEnumerator PlayerMoveOnOpponent(Move move)
+        private IEnumerator PlayerMoveOnOpponent(MoveManager move)
         {
             _battlePrompts.DisplayMoveUsedText(_currentPlayerPetrmon.Name, move.MoveName);
 

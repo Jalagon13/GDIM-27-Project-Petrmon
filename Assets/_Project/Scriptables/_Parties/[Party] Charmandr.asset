@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: '[Party] Charmandr'
   m_EditorClassIdentifier: 
   _party:
-  - {fileID: 11400000, guid: 6f53db7ed36d2d54dba9cd2f4d704f67, type: 2}
+  - {fileID: 11400000, guid: a82c4624480cb4b4ca14feb94b4b440b, type: 2}

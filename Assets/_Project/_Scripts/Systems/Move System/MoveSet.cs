@@ -8,29 +8,33 @@ namespace ProjectPetrmon
     [Serializable]
     public class MoveSet
     {
-        public List<Move> Set;
+        [SerializeField] private List<Move> _moves;
+        private List<MoveManager> _set;
 
-        private readonly int _setAmount;
+        private readonly int _setAmount = 4;
 
         public int MoveSetAmount { get { return _setAmount; } }
-
-        public MoveSet()
-        {
-            _setAmount = 4;
-            Set = new(_setAmount);
-        }
+        public List<MoveManager> Set { get { return _set; } }
 
         public void ExecuteMove(int moveIndex, PetrmonObject fromPetrmon, PetrmonObject toPetrmon)
         {
-            Set[moveIndex].Execute(fromPetrmon, toPetrmon);
+            _set[moveIndex].Execute(fromPetrmon, toPetrmon);
         }
 
         public void RefreshPP()
         {
-            foreach (Move move in Set)
+            if (_set == null)
+            {
+                _set = new List<MoveManager>(_setAmount);
+                for (int i = 0; i < _moves.Count; i++)
+                    _set.Add(new MoveManager(_moves[i]));
+                return;
+            }
+            foreach (MoveManager move in _set)
             {
                 move.ResetPP();
             }
+            
         }
     }
 }

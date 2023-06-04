@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
+  m_Name: '[Petr] Charmandr'
+  m_EditorClassIdentifier: 
+  _name: Charmandr
+  _type: 1
+  _sprite: {fileID: 21300000, guid: 2d7c19d994b796641a535eadc6a59b57, type: 3}
+  _baseMaxHp: 23
+  _baseAttack: 15
+  _baseDefense: 13
+  _baseSpeed: 23
+  _currentHp: 23
+  _moveSet:
+    _moves:
+    - {fileID: 11400000, guid: 71bb66a6228c09d4fb6a4a313696b3ce, type: 2}
+    - {fileID: 11400000, guid: 2e203dda13ff3034fa3a72fd5089c5ea, type: 2}
+    - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}
+    - {fileID: 11400000, guid: 0f9a62545c64421429baae3d31a7b955, type: 2}

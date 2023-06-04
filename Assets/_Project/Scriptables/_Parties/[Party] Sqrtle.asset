@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: '[Party] Sqrtle'
   m_EditorClassIdentifier: 
   _party:
-  - {fileID: 11400000, guid: ae8c0fb3bd45f0b4abab4ea01073ab83, type: 2}
+  - {fileID: 11400000, guid: 43720d7bce0dc184694ba3ee41feb41e, type: 2}

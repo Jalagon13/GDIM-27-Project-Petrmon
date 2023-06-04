@@ -18,7 +18,7 @@ namespace ProjectPetrmon
             {
                 if (!_alreadyBattled)
                 {
-                    DialogueManager.Instance.StartDialogue(_battleConversation, _opponentParty);
+                    DialogueManager.Instance.StartDialogue(_battleConversation, Instantiate(_opponentParty));
                     _alreadyBattled = true;
                 }
                 else

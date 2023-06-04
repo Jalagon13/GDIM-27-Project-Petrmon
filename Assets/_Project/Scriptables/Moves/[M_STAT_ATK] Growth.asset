@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee7701b11e476364d94ca77ec60d3856, type: 3}
-  m_Name: '[Party] Bulbasr'
+  m_Script: {fileID: 11500000, guid: d0389675249527c478724a919c67b67b, type: 3}
+  m_Name: '[M_STAT_ATK] Growth'
   m_EditorClassIdentifier: 
-  _party:
-  - {fileID: 11400000, guid: 3927a543265e615438076e4a69a2b767, type: 2}
+  _name: Growth
+  _accuracy: 100
+  _maxPP: 20
+  _type: Grass
+  _moveSFX: {fileID: 8300000, guid: bc1ac5fcbebcafb4390cb94a5a779e77, type: 3}
+  _multiplier: 1.5
+  _useOnOwnPetrmon: 1

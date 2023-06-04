@@ -16,7 +16,7 @@ namespace ProjectPetrmon
             _typeText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         }
 
-        public void UpdateMoveInfoPanel(Move move)
+        public void UpdateMoveInfoPanel(MoveManager move)
         {
             _ppText.SetText($"PP: {move.CurrentPP}/{move.MaxPP}");
             // moves have no type functionality built in
