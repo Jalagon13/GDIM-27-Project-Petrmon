@@ -7,15 +7,14 @@ namespace ProjectPetrmon
     public class NPCInteractable : MonoBehaviour
     {
         [SerializeField] private string _interactText;
+        [SerializeField] private PartyObject _npcPetrmonParty;
         [SerializeField] private DialogueObject _dialogue;
 
         public string InteractText { get { return _interactText; } }
 
         public void Interact()
         {
-            if (DialogueManager.Instance.InDialogue) return;
-            Debug.Log("Entering dialogue");
-            DialogueManager.Instance.StartDialogue(_dialogue);
+            DialogueManager.Instance.StartDialogue(_dialogue, _npcPetrmonParty);
         }
     }
 }
