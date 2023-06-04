@@ -116,6 +116,12 @@ namespace ProjectPetrmon
                 OnDialogueEnd?.Invoke();
             }
 
+            StartCoroutine(DelayDialogueEnd());
+        }
+
+        private IEnumerator DelayDialogueEnd()
+        {
+            yield return new WaitForEndOfFrame();
             _inDialogue = false;
         }
     }

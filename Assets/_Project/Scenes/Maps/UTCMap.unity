@@ -14575,3 +14575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactText: Talk with Nurse Joy
+  _dialogue:
+    _lines:
+    - AYYYYYYYYY
+    - WHATS UP MY DUDE!!
