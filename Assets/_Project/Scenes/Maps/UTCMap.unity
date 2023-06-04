@@ -14581,7 +14581,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactText: Battle with Alaina
   _npcPetrmonParty: {fileID: 11400000, guid: 662890412b4afaf4297d11ac75d27e3b, type: 2}
-  _dialogue:
+  _undefeatedDialogue:
     _lines:
-    - AYYYYYYYYY
-    - WHATS UP MY DUDE!!
+    - BATTLE ME :D
+  _defeatedDialogue:
+    _lines:
+    - 'I LOST D:'

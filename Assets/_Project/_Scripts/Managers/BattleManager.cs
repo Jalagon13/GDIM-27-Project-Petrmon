@@ -38,6 +38,7 @@ namespace ProjectPetrmon
         private PetrPanel _opponentPetrPanel;
         private PetrmonObject _currentPlayerPetrmon;
         private PetrmonObject _currentOpponentPetrmon;
+        private NPCInteractable _currentNPC;
         private WaitForSeconds _wait;
 
         protected override void Awake()
@@ -55,10 +56,11 @@ namespace ProjectPetrmon
             ShowBattleCanvas(false);
         }
 
-        public void StartBattle(PartyObject opponentParty) // Hooked up to Start Battle Button
+        public void StartBattle(NPCInteractable currentNPC) // Hooked up to Start Battle Button
         {
             _playerPartyRef = new List<int>() { 0, 1, 2, 3, 4, 5 };
-            _opponentParty = opponentParty;
+            _currentNPC = currentNPC;
+            _opponentParty = currentNPC.NPCParty;
             _battlePrompts.DisplayCustomText(string.Empty);
             _menuPanel.gameObject.SetActive(true);
             _fightPanel.gameObject.SetActive(false);
@@ -297,6 +299,7 @@ namespace ProjectPetrmon
             _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
             yield return WaitSeconds(4f);
 
+            _currentNPC.Defeated = true;
             ExitBattle();
         }
 
@@ -340,6 +343,7 @@ namespace ProjectPetrmon
             _battlePrompts.DisplayCustomText("Better luck <br>next time!");
             yield return WaitSeconds(4f);
 
+            _currentNPC.Defeated = false;
             ExitBattle();
         }
 

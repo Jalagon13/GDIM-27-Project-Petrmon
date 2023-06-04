@@ -17,7 +17,7 @@ namespace ProjectPetrmon
 
         private DialogueObject _currentDialogue;
         private DefaultInputActions _input;
-        private PartyObject _opponentParty;
+        private NPCInteractable _currentNPC;
         private bool _inDialogue;
         private bool _isTyping;
         private int _dialogueIndex;
@@ -61,13 +61,13 @@ namespace ProjectPetrmon
             PopulateText(_currentDialogue.Lines[_dialogueIndex]);
         }
 
-        public void StartDialogue(DialogueObject dialogue, PartyObject opponentParty = null)
+        public void StartDialogue(DialogueObject dialogue, NPCInteractable npcInteractable = null)
         {
             if (_inDialogue) return;
 
             OnDialogueStart?.Invoke();
 
-            _opponentParty = opponentParty;
+            _currentNPC = npcInteractable;
             _currentDialogue = dialogue;
             _dialogueIndex = 0;
             _inDialogue = true;
@@ -107,9 +107,9 @@ namespace ProjectPetrmon
         {
             _canvas.enabled = false;
             
-            if(_opponentParty != null)
+            if(_currentNPC != null)
             {
-                BattleManager.Instance.StartBattle(_opponentParty);
+                BattleManager.Instance.StartBattle(_currentNPC);
             }
             else
             {
