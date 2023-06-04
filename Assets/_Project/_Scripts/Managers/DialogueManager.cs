@@ -22,6 +22,8 @@ namespace ProjectPetrmon
         private bool _isTyping;
         private int _dialogueIndex;
 
+        public bool InDialogue { get { return _inDialogue; } }
+
         protected override void Awake()
         {
             base.Awake();
