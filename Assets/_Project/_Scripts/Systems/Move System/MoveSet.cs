@@ -10,6 +10,7 @@ namespace ProjectPetrmon
     {
         [SerializeField] private List<Move> _moves;
         private List<MoveManager> _set;
+        private System.Random rand = new System.Random();
 
         public int MoveSetAmount { get { return _set.Count; } }
         public List<MoveManager> Set { get { return _set; } }
