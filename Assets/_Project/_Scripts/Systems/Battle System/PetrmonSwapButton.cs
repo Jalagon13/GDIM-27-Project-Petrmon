@@ -48,8 +48,11 @@ namespace ProjectPetrmon
             _healthBar.gameObject.SetActive(true);
             _petrmonName.text = $"{_petr.Name}";
             _petrmonIconObject.sprite = _petr.Sprite;
-            _hpText.text = $"{_petr.CurrentHP}/{_petr.BaseMaxHP}";
             _healthBar.UpdateFill(_petr.CurrentHP, _petr.BaseMaxHP);
+            if (_petr.CurrentHP > 0)
+                _hpText.text = $"{_petr.CurrentHP}/{_petr.BaseMaxHP}";
+            else
+                _hpText.text = "FAINTED";
         }
 
         /*
