@@ -9,5 +9,11 @@ namespace ProjectPetrmon
         [SerializeField] private List<PetrmonObject> _party;
 
         public List<PetrmonObject> Party { get { return _party; } }
+
+        public void RestoreParty()
+        {
+            foreach (PetrmonObject petr in _party)
+                petr.RefreshPetrmon();
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace ProjectPetrmon
     {
         [SerializeField] private string _interactText;
         [SerializeField] private float _gpaAwarded;
+        [SerializeField] private string _npcName;
         [SerializeField] private PartyObject _npcPetrmonParty;
         [SerializeField] private DialogueObject _undefeatedDialogue;
         [SerializeField] private DialogueObject _defeatedDialogue;
@@ -16,18 +17,18 @@ namespace ProjectPetrmon
 
         public string InteractText { get { return _interactText; } }
         public bool Defeated { get { return _defeated; } set { _defeated = value; } }
+        public string NPCName { get { return _npcName; } }
         public PartyObject NPCParty { get { return _npcPetrmonParty; } }
         public Vector3 Position { get { return transform.position; } }
 
         public void Interact()
         {
-            foreach (PetrmonObject petr in _npcPetrmonParty.Party)
-                petr.RefreshPetrmon();
 
             if (_defeated)
                 DialogueManager.Instance.StartDialogue(_defeatedDialogue);
             else
                 DialogueManager.Instance.StartDialogue(_undefeatedDialogue, this);
+            //DialogueManager.Instance.StartDialogue(_dialogue, _npcName, _npcPetrmonParty);
         }
     }
 }

@@ -26,9 +26,9 @@ namespace ProjectPetrmon
             if (!customText.Equals(string.Empty)) PlayDialogueSound();
         }
 
-        public void DisplayExpGainText(string petrmonName)
+        public void DisplayWinText(string opponentName)
         {
-            StartCoroutine(TypeText($"{petrmonName.ToUpper()} gained no EXP. Points!"));
+            StartCoroutine(TypeText($"You have won against {opponentName}!"));
             PlayDialogueSound();
         }
 
@@ -65,7 +65,12 @@ namespace ProjectPetrmon
 
         public void DisplayWildPetrmonAppearedText(string petrmonName)
         {
-            StartCoroutine(TypeText($"Wild {petrmonName.ToUpper()} appeared!"));
+            StartCoroutine(TypeText($"A wild {petrmonName.ToUpper()} appeared!"));
+            PlayDialogueSound();
+        }
+        public void DisplayChallengeText(string opponentName)
+        {
+            StartCoroutine(TypeText($"You are challenged by {opponentName}!"));
             PlayDialogueSound();
         }
 
@@ -82,6 +87,11 @@ namespace ProjectPetrmon
         public void DisplaySentOutPetrmonText(string trainer,  string petrmonName)
         {
             StartCoroutine(TypeText($"{trainer} sent out {petrmonName.ToUpper()}!"));
+            PlayDialogueSound();
+        }
+        public void DisplayNoMorePetrText(string trainer)
+        {
+            StartCoroutine(TypeText($"{trainer} has no more Petrmon to use in battle!"));
             PlayDialogueSound();
         }
 
@@ -101,5 +111,6 @@ namespace ProjectPetrmon
             }
 
         }
+
     }
 }
