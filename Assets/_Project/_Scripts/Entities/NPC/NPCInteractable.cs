@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace ProjectPetrmon
 {
-    public class NPCInteractable : MonoBehaviour
+    public class NPCInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] private string _interactText;
+        [SerializeField] private float _gpaAwarded;
         [SerializeField] private PartyObject _npcPetrmonParty;
         [SerializeField] private DialogueObject _undefeatedDialogue;
         [SerializeField] private DialogueObject _defeatedDialogue;
@@ -16,6 +17,7 @@ namespace ProjectPetrmon
         public string InteractText { get { return _interactText; } }
         public bool Defeated { get { return _defeated; } set { _defeated = value; } }
         public PartyObject NPCParty { get { return _npcPetrmonParty; } }
+        public Vector3 Position { get { return transform.position; } }
 
         public void Interact()
         {

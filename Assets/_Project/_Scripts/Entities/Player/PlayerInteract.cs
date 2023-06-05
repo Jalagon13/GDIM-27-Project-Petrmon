@@ -32,27 +32,27 @@ namespace ProjectPetrmon
             Collider[] colliders = Physics.OverlapSphere(transform.position, _interactRange);
             foreach (Collider collider in colliders)
             {
-                if(collider.TryGetComponent(out NPCInteractable npc))
+                if(collider.TryGetComponent(out IInteractable interactable))
                 {
-                    npc.Interact();
+                    interactable.Interact();
                 }
             }
         }
 
-        public NPCInteractable GetInteractableObject()
+        public IInteractable GetInteractableObject()
         {
-            List<NPCInteractable> interactables = new List<NPCInteractable>();
+            List<IInteractable> interactables = new List<IInteractable>();
             Collider[] colliders = Physics.OverlapSphere(transform.position, _interactRange);
             foreach (Collider collider in colliders)
             {
-                if (collider.TryGetComponent(out NPCInteractable npcInteractable))
+                if (collider.TryGetComponent(out IInteractable npcInteractable))
                 {
                     interactables.Add(npcInteractable);
                 }
             }
 
-            NPCInteractable closestNPCInteractable = null;
-            foreach (NPCInteractable interactable in interactables)
+            IInteractable closestNPCInteractable = null;
+            foreach (IInteractable interactable in interactables)
             {
                 if(closestNPCInteractable == null)
                 {
@@ -60,8 +60,8 @@ namespace ProjectPetrmon
                 }
                 else
                 {
-                    if(Vector3.Distance(transform.position, interactable.transform.position) <
-                       Vector3.Distance(transform.position, closestNPCInteractable.transform.position))
+                    if(Vector3.Distance(transform.position, interactable.Position) <
+                       Vector3.Distance(transform.position, closestNPCInteractable.Position))
                     {
                         closestNPCInteractable = interactable;
                     }

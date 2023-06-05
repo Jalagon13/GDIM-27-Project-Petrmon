@@ -40,6 +40,10 @@ namespace ProjectPetrmon
         private PetrmonObject _currentOpponentPetrmon;
         private NPCInteractable _currentNPC;
         private WaitForSeconds _wait;
+        private bool _inBattle;
+
+        public bool InBattle { get { return _inBattle; } }
+
 
         protected override void Awake()
         {
@@ -64,6 +68,7 @@ namespace ProjectPetrmon
             _battlePrompts.DisplayCustomText(string.Empty);
             _menuPanel.gameObject.SetActive(true);
             _fightPanel.gameObject.SetActive(false);
+            _inBattle = true;
 
             _currentPlayerPetrmon = _playerParty.Party[0];
             _currentOpponentPetrmon = _opponentParty.Party[0];
@@ -121,6 +126,7 @@ namespace ProjectPetrmon
         public void ExitBattle() // Hooked up to Run Button
         {
             AudioManager.Instance.StopClip(_battleBGMSound);
+            _inBattle = false;
             InitializePetrmonBattleStats();
             StopAllCoroutines();
             ShowBattleCanvas(false);

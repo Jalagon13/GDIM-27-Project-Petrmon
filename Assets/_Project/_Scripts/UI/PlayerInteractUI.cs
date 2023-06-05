@@ -23,7 +23,7 @@ namespace ProjectPetrmon
             }
         }
 
-        private void Show(NPCInteractable npcInteractable)
+        private void Show(IInteractable npcInteractable)
         {
             _container.SetActive(true);
             _interactText.text = npcInteractable.InteractText;

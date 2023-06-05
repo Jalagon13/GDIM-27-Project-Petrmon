@@ -63,7 +63,7 @@ namespace ProjectPetrmon
 
         public void StartDialogue(DialogueObject dialogue, NPCInteractable npcInteractable = null)
         {
-            if (_inDialogue) return;
+            if (_inDialogue || BattleManager.Instance.InBattle) return;
 
             OnDialogueStart?.Invoke();
 
