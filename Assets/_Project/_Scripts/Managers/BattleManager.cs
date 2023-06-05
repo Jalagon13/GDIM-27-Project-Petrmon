@@ -30,6 +30,7 @@ namespace ProjectPetrmon
         [SerializeField] private AudioClip _battleBGMSound;
 
         private List<int> _playerPartyRef;
+        private string _opponentName;
         private PartyObject _opponentParty;
         private BattlePrompts _battlePrompts;
         private Animator _playerPetrAnim;
@@ -65,6 +66,7 @@ namespace ProjectPetrmon
             _playerPartyRef = new List<int>() { 0, 1, 2, 3, 4, 5 };
             _currentNPC = currentNPC;
             _opponentParty = currentNPC.NPCParty;
+            _opponentName = currentNPC.NPCName;
             _battlePrompts.DisplayCustomText(string.Empty);
             _menuPanel.gameObject.SetActive(true);
             _fightPanel.gameObject.SetActive(false);
@@ -76,9 +78,9 @@ namespace ProjectPetrmon
             _currentPlayerPetrImage.sprite = _currentPlayerPetrmon.Sprite;
             _currentOpponentPetrImage.sprite = _currentOpponentPetrmon.Sprite;
 
-            _currentOpponentPetrmon.RefreshPetrmon();
+            _opponentParty.RestoreParty();
 
-            OnBattleStart?.Invoke();
+             OnBattleStart?.Invoke();
 
             UpdateMoves();
             InitializePetrmonBattleStats();
@@ -99,10 +101,18 @@ namespace ProjectPetrmon
 
             yield return WaitSeconds(0.5f);
 
+            if (_opponentName == null)
+                _battlePrompts.DisplayWildPetrmonAppearedText(_currentOpponentPetrmon.Name);
+            else
+            {
+                _battlePrompts.DisplayChallengeText(_opponentName);
+                yield return WaitSeconds(1.5f);
+                _battlePrompts.DisplaySentOutPetrmonText(_opponentName, _currentOpponentPetrmon.Name);
+            }
+
             _opponentPanel.gameObject.SetActive(true);
             _currentOpponentPetrImage.gameObject.SetActive(true);
             _opponentPetrAnim.SetTrigger("spawn");
-            _battlePrompts.DisplayWildPetrmonAppearedText(_currentOpponentPetrmon.Name);
 
             yield return WaitSeconds(1.5f);
 
@@ -200,7 +210,6 @@ namespace ProjectPetrmon
                 Debug.Log("Buttons populated!");
             }
         }
-        // Alaina works above this line
         public void SwapRoutine(int petrPartySlot)
         {
             _menuPanel.gameObject.SetActive(false);
@@ -253,12 +262,17 @@ namespace ProjectPetrmon
             if (_currentPlayerPetrmon.BaseSpeed >= _currentOpponentPetrmon.BaseSpeed)
             {
                 yield return PlayerMoveOnOpponent(move);
-                yield return OpponentMoveOnPlayer();
+                if (_currentOpponentPetrmon.CurrentHP <= 0)
+                    yield return FaintedOpponent();
+                else
+                    yield return OpponentMoveOnPlayer();
             }
             else 
             {
                 yield return OpponentMoveOnPlayer();
-                yield return PlayerMoveOnOpponent(move);
+                yield return PlayerMoveOnOpponent(move); 
+                if (_currentOpponentPetrmon.CurrentHP <= 0)
+                    yield return FaintedOpponent();
             }
 
             _menuPanel.gameObject.SetActive(true);
@@ -271,38 +285,27 @@ namespace ProjectPetrmon
 
             yield return WaitSeconds(1.5f);
 
+            string battleText = move.Execute(_currentPlayerPetrmon, _currentOpponentPetrmon);
             // move animations here
             _opponentPetrAnim.SetTrigger("tookDamage");
 
-            string battleText = move.Execute(_currentPlayerPetrmon, _currentOpponentPetrmon);
-
             UpdateCurrentPetrPanels();
 
-            yield return WaitSeconds(1.5f);
-
-            if(_currentOpponentPetrmon.CurrentHP <= 0)
-            {
-                // opponent faint animations here
-                _opponentPetrAnim.SetTrigger("dies");
-
-                _battlePrompts.DisplayFaintedText(_currentOpponentPetrmon.Name);
-
-                yield return WaitSeconds(2f);
-                yield return PlayerWins();
-            }
-            else if (battleText != string.Empty)
+            if (battleText != string.Empty)
             {
                 _battlePrompts.DisplayCustomText(battleText);
-                yield return WaitSeconds(2f);
             }
+            yield return WaitSeconds(2f);
         }
 
         private IEnumerator PlayerWins()
         {
+            _battlePrompts.DisplayNoMorePetrText(_opponentName);
+            yield return WaitSeconds(2f);
             // start happy win music here
             AudioManager.Instance.StopClip(_battleBGMSound);
             AudioManager.Instance.PlayClip(_playerWinSound, false, true, GlobalSettings.VolumeSetting);
-            _battlePrompts.DisplayExpGainText(_currentPlayerPetrmon.Name);
+            _battlePrompts.DisplayWinText(_opponentName);
             yield return WaitSeconds(4f);
 
             _currentNPC.Defeated = true;
@@ -311,14 +314,15 @@ namespace ProjectPetrmon
 
         private IEnumerator OpponentMoveOnPlayer()
         {
-            _battlePrompts.DisplayMoveUsedText(_currentOpponentPetrmon.Name, _currentOpponentPetrmon.MoveSet.Set[0].MoveName);
+            int move2do = new System.Random().Next(_currentOpponentPetrmon.MoveSet.MoveSetAmount);
+            _battlePrompts.DisplayMoveUsedText(_currentOpponentPetrmon.Name, _currentOpponentPetrmon.MoveSet.Set[move2do].MoveName);
 
             yield return WaitSeconds(1.5f);
 
             // move animations here
             _playerPetrAnim.SetTrigger("tookDamage");
 
-            string battleText = _currentOpponentPetrmon.MoveSet.Set[0].Execute(_currentOpponentPetrmon, _currentPlayerPetrmon);
+            string battleText = _currentOpponentPetrmon.MoveSet.Set[move2do].Execute(_currentOpponentPetrmon, _currentPlayerPetrmon);
 
             UpdateCurrentPetrPanels();
 
@@ -338,6 +342,40 @@ namespace ProjectPetrmon
             {
                 _battlePrompts.DisplayCustomText(battleText);
                 yield return WaitSeconds(2f);
+            }
+        }
+
+        private IEnumerator FaintedOpponent()
+        {
+            // opponent faint animations here
+            _opponentPetrAnim.SetTrigger("dies");
+
+            _battlePrompts.DisplayFaintedText(_currentOpponentPetrmon.Name);
+
+            yield return WaitSeconds(2f);
+
+            foreach (PetrmonObject petr in _opponentParty.Party)
+            {
+                if (petr.CurrentHP > 0)
+                {
+                    _currentOpponentPetrmon = petr;
+                    break;
+                }
+            }
+
+            if (_currentOpponentPetrmon.CurrentHP <= 0)
+                yield return PlayerWins();
+            else
+            {
+                // update change to UI
+                _currentOpponentPetrImage.sprite = _currentOpponentPetrmon.Sprite;
+                _opponentPetrPanel.UpdatePanel(_currentOpponentPetrmon);
+
+                _battlePrompts.DisplaySentOutPetrmonText(_opponentName, _currentOpponentPetrmon.Name);
+                yield return WaitSeconds(1.5f);
+
+                _opponentPetrAnim.SetTrigger("spawn");
+                yield return WaitSeconds(1.5f);
             }
         }
 

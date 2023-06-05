@@ -15,11 +15,11 @@ MonoBehaviour:
   _name: Bulbasr
   _type: 1
   _sprite: {fileID: 21300000, guid: 663f498b385d0164aa1176bc63347b34, type: 3}
-  _baseMaxHp: 19
-  _baseAttack: 17
-  _baseDefense: 14
-  _baseSpeed: 15
-  _currentHp: 0
+  _baseMaxHp: 46
+  _baseAttack: 43
+  _baseDefense: 47
+  _baseSpeed: 41
+  _currentHp: -1
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
