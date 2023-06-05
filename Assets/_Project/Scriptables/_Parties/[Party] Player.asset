@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '[Party] Player'
   m_EditorClassIdentifier: 
   _party:
+  - {fileID: 11400000, guid: 0a1e5478c9130b74baeacad3c46936c6, type: 2}
   - {fileID: 11400000, guid: 1f6a02e5ed19afa4faba4256c80dfc49, type: 2}
   - {fileID: 11400000, guid: a82c4624480cb4b4ca14feb94b4b440b, type: 2}
   - {fileID: 11400000, guid: d8b892f04fe8f634596fe271840a51cc, type: 2}

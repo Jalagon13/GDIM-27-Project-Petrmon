@@ -12,6 +12,8 @@ namespace ProjectPetrmon
         {
 
             toPetrmon.CurrentHP -= CalculateDamage(fromPetrmon, toPetrmon);
+            if (toPetrmon.CurrentHP < 0)
+                toPetrmon.CurrentHP = 0;
             if (_moveSFX) AudioManager.Instance.PlayClip(_moveSFX, false, true, GlobalSettings.VolumeSetting); 
             return string.Empty;
         }

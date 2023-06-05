@@ -31,6 +31,11 @@ namespace ProjectPetrmon
             StartCoroutine(TypeText($"You have won against {opponentName}!"));
             PlayDialogueSound();
         }
+        public void DisplayLoseText(string opponentName)
+        {
+            StartCoroutine(TypeText($"You have lost against {opponentName}!"));
+            PlayDialogueSound();
+        }
 
         public void DisplayWhatWillPetrmonDoText(string petrmonName)
         {
