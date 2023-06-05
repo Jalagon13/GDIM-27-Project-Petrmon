@@ -39,7 +39,7 @@ namespace ProjectPetrmon
         private PetrPanel _opponentPetrPanel;
         private PetrmonObject _currentPlayerPetrmon;
         private PetrmonObject _currentOpponentPetrmon;
-        private NPCInteractable _currentNPC;
+        private NPCTrainer _currentNPC;
         private WaitForSeconds _wait;
         private bool _inBattle;
 
@@ -61,7 +61,7 @@ namespace ProjectPetrmon
             ShowBattleCanvas(false);
         }
 
-        public void StartBattle(NPCInteractable currentNPC) // Hooked up to Start Battle Button
+        public void StartBattle(NPCTrainer currentNPC) // Hooked up to Start Battle Button
         {
             _playerPartyRef = new List<int>() { 0, 1, 2, 3, 4, 5 };
             _currentNPC = currentNPC;

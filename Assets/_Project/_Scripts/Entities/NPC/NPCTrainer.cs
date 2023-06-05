@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectPetrmon
 {
-    public class NPCInteractable : MonoBehaviour, IInteractable
+    public class NPCTrainer : MonoBehaviour, IInteractable
     {
         [SerializeField] private string _interactText;
         [SerializeField] private float _gpaAwarded;

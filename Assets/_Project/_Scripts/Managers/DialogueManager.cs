@@ -17,7 +17,7 @@ namespace ProjectPetrmon
 
         private DialogueObject _currentDialogue;
         private DefaultInputActions _input;
-        private NPCInteractable _currentNPC;
+        private NPCTrainer _currentNPC;
         private bool _inDialogue;
         private bool _isTyping;
         private int _dialogueIndex;
@@ -61,7 +61,7 @@ namespace ProjectPetrmon
             PopulateText(_currentDialogue.Lines[_dialogueIndex]);
         }
         
-        public void StartDialogue(DialogueObject dialogue, NPCInteractable npcInteractable = null)
+        public void StartDialogue(DialogueObject dialogue, NPCTrainer npcInteractable = null)
         {
             if (_inDialogue || BattleManager.Instance.InBattle) return;
 
