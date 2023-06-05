@@ -60,7 +60,7 @@ namespace ProjectPetrmon
             _dialogueIndex++;
             PopulateText(_currentDialogue.Lines[_dialogueIndex]);
         }
-
+        
         public void StartDialogue(DialogueObject dialogue, NPCInteractable npcInteractable = null)
         {
             if (_inDialogue || BattleManager.Instance.InBattle) return;
