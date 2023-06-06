@@ -678,7 +678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34874
+  m_Name: pb_Mesh62970
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -957,7 +957,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34946
+  m_Name: pb_Mesh63042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1683,7 +1683,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35010
+  m_Name: pb_Mesh63106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3606,7 +3606,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35278
+  m_Name: pb_Mesh63374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3828,7 +3828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368861263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 1.51, z: -55}
+  m_LocalPosition: {x: -55.87, y: 1.51, z: -35.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4352,6 +4352,10 @@ MonoBehaviour:
     - Let me take care of your Petrmon for you.
     - Your Petrmon have been healed!
     - You can find me around UTC if you ever need your Petrs healed.
+    - Also watch out for Kevin the Supreme Petrmon Champ.
+    - If you manage to beat him in battle,
+    - You'll become the greatest Petrmon trainer alive!!
+    - Watch out and good luck out there!
     - I hope to see you again!
 --- !u!136 &458700467
 CapsuleCollider:
@@ -4375,7 +4379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458700465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -67.64, y: 1.07, z: -48.89}
+  m_LocalPosition: {x: -66.12, y: 1.07, z: -48.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4435,7 +4439,8 @@ MonoBehaviour:
   _npcPetrmonParty: {fileID: 11400000, guid: 662890412b4afaf4297d11ac75d27e3b, type: 2}
   _undefeatedDialogue:
     _lines:
-    - BATTLE ME :D
+    - IT IS I
+    - 
   _defeatedDialogue:
     _lines:
     - 'I LOST D:'
@@ -5746,7 +5751,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35068
+  m_Name: pb_Mesh63164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6363,7 +6368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35044
+  m_Name: pb_Mesh63140
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7722,7 +7727,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34806
+  m_Name: pb_Mesh62902
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10127,7 +10132,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34752
+  m_Name: pb_Mesh62848
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12296,7 +12301,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34668
+  m_Name: pb_Mesh62764
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12874,7 +12879,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35214
+  m_Name: pb_Mesh63310
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13628,7 +13633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607097763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -13689,7 +13694,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1006392663, guid: d1fdf00d255e2d942a949c35bbb7ace1, type: 3}
+  m_Sprite: {fileID: -959580908, guid: 3976c26a3f06d4c4384fbcfb8b88cd94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14222,7 +14227,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34976
+  m_Name: pb_Mesh63072
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16450,7 +16455,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34710
+  m_Name: pb_Mesh62806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17836,7 +17841,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35024
+  m_Name: pb_Mesh63120
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18091,7 +18096,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35168
+  m_Name: pb_Mesh63264
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19052,7 +19057,15 @@ MonoBehaviour:
   _npcPetrmonParty: {fileID: 11400000, guid: 662890412b4afaf4297d11ac75d27e3b, type: 2}
   _undefeatedDialogue:
     _lines:
-    - BATTLE ME :D
+    - Hello there silly student!
+    - You think you can beat me?
+    - BEAT ME?!?!
+    - IN BATTLE?!
+    - HHAHAHHAHAHAHAHAHAHAHAHAHAHAHAAHAHAAHHAHAHAHAHAHAHAHAHAHAAHAHAHAHAHAHAHAHAHAHAHAHAAHAHAHA
+    - try me
   _defeatedDialogue:
     _lines:
-    - 'I LOST D:'
+    - 'I LOST '
+    - T_T
+    - Enjoy your extra credit..
+    - Cya around campus!
