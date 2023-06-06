@@ -31,6 +31,19 @@ namespace ProjectPetrmon
             StartCoroutine(TypeText($"You have won against {opponentName}!"));
             PlayDialogueSound();
         }
+
+        public void DisplayGpaText(float gpa)
+        {
+            StartCoroutine(TypeText($"You have been awarded +{gpa:0.0#} to your GPA!"));
+            PlayDialogueSound();
+        }
+
+        public void DisplayCurrentGPA()
+        {
+            StartCoroutine(TypeText($"Your current GPA: {GPAManager.Instance.CurrentGPA:0.0#}"));
+            PlayDialogueSound();
+        }
+
         public void DisplayLoseText(string opponentName)
         {
             StartCoroutine(TypeText($"You have lost against {opponentName}!"));

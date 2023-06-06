@@ -20,6 +20,7 @@ namespace ProjectPetrmon
         public string NPCName { get { return _npcName; } }
         public PartyObject NPCParty { get { return _npcPetrmonParty; } }
         public Vector3 Position { get { return transform.position; } }
+        public float GpaAwarded { get { return _gpaAwarded; } }
 
         public void Interact()
         {

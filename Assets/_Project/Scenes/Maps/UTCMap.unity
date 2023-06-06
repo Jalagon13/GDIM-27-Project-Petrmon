@@ -12913,6 +12913,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gpaText: {fileID: 1703523155}
+  _1GpaColor: {r: 1, g: 0, b: 0, a: 1}
+  _2GpaColor: {r: 1, g: 0.3869033, b: 0, a: 1}
+  _3GpaColor: {r: 0.9348153, g: 1, b: 0, a: 1}
+  _4GpaColor: {r: 0.24798441, g: 1, b: 0, a: 1}
 --- !u!1 &1625148815
 GameObject:
   m_ObjectHideFlags: 0
@@ -18072,7 +18076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactText: Talk with Prof. Constance
-  _gpaAwarded: 0
+  _gpaAwarded: 1
   _npcName: Constance
   _npcPetrmonParty: {fileID: 11400000, guid: 662890412b4afaf4297d11ac75d27e3b, type: 2}
   _undefeatedDialogue:

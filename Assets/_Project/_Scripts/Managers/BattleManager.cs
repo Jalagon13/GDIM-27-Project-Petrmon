@@ -402,12 +402,24 @@ namespace ProjectPetrmon
         private IEnumerator PlayerWins()
         {
             _battlePrompts.DisplayNoMorePetrText(_opponentName);
+
             yield return WaitSeconds(2f);
-            // start happy win music here
-            AudioManager.Instance.PlayClip(_playerWinSound, false, true, GlobalSettings.VolumeSetting);
+
             _battlePrompts.DisplayWinText(_opponentName);
-            yield return WaitSeconds(4f);
+
+            yield return WaitSeconds(3.5f);
+
             AudioManager.Instance.StopClip(_battleBGMSound);
+            AudioManager.Instance.PlayClip(_playerWinSound, false, true, GlobalSettings.VolumeSetting);
+
+            GPAManager.Instance.AwardGPA(_currentNPC.GpaAwarded);
+            _battlePrompts.DisplayGpaText(_currentNPC.GpaAwarded);
+
+            yield return WaitSeconds(3.25f);
+
+            _battlePrompts.DisplayCurrentGPA();
+
+            yield return WaitSeconds(2.5f);
 
             _currentNPC.Defeated = true;
             ExitBattle();
