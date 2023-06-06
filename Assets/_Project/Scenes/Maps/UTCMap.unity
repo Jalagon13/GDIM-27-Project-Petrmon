@@ -3795,7 +3795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactText: Talk with Kevin
-  _gpaAwarded: 4
+  _gpaAwarded: 9999
   _npcName: Supreme Petr Champion Kevin
   _npcPetrmonParty: {fileID: 11400000, guid: 5a85e6d9b0467214c8fa04cc526107aa, type: 2}
   _undefeatedDialogue:
