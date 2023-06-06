@@ -1229,7 +1229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164584255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -120.62, y: 6.53, z: -79.48}
+  m_LocalPosition: {x: -129.94, y: 6.53, z: -85.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2919,10 +2919,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 541102639247564617, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
+        type: 3}
+      propertyPath: _worldBGMSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8eaa9411c3e8fe3468fa0b56352a4da1, type: 3}
     - target: {fileID: 541102639247564622, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 541102639247564622, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
         type: 3}
@@ -6362,7 +6367,7 @@ MonoBehaviour:
   _interactText: Talk with Henry
   _dialogue:
     _lines:
-    - sup dawg
+    - Hey there welcome to UTC!
 --- !u!136 &771307616
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6385,7 +6390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771307614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -131.88, y: 6.53, z: -86.22}
+  m_LocalPosition: {x: -120.85, y: 6.53, z: -79.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12641,7 +12646,7 @@ PrefabInstance:
     - target: {fileID: 6829859888110613191, guid: 28a2a71e7c40d77498294de0af019e2d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6829859888110613191, guid: 28a2a71e7c40d77498294de0af019e2d,
         type: 3}
@@ -17728,7 +17733,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1954864448
 PrefabInstance:
@@ -18301,6 +18306,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5468023234926158417, guid: 03a687167f63442c3872e31944a42938,
+        type: 3}
+      propertyPath: _utcMusicSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8eaa9411c3e8fe3468fa0b56352a4da1, type: 3}
     - target: {fileID: 5468023234926158418, guid: 03a687167f63442c3872e31944a42938,
         type: 3}
       propertyPath: m_RootOrder

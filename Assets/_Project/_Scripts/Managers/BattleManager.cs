@@ -28,6 +28,7 @@ namespace ProjectPetrmon
         [SerializeField] private AudioClip _playerLoseSound;
         [SerializeField] private AudioClip _playerWinSound;
         [SerializeField] private AudioClip _battleBGMSound;
+        [SerializeField] private AudioClip _worldBGMSound;
 
         private List<int> _playerPartyRef;
         private string _opponentName;
@@ -58,11 +59,14 @@ namespace ProjectPetrmon
 
         private void Start()
         {
+            AudioManager.Instance.PlayClip(_worldBGMSound, true, false, GlobalSettings.MusicSetting);
             ShowBattleCanvas(false);
         }
 
         public void StartBattle(NPCTrainer currentNPC) // Hooked up to Start Battle Button
         {
+            AudioManager.Instance.StopClip(_worldBGMSound);
+
             _playerPartyRef = new List<int>() { 0, 1, 2, 3, 4, 5 };
             _currentNPC = currentNPC;
             _opponentParty = currentNPC.NPCParty;
@@ -136,6 +140,7 @@ namespace ProjectPetrmon
         public void ExitBattle() // Hooked up to Run Button
         {
             AudioManager.Instance.StopClip(_battleBGMSound);
+            AudioManager.Instance.PlayClip(_worldBGMSound, true, false, GlobalSettings.MusicSetting);
             _inBattle = false;
             InitializePetrmonBattleStats();
             StopAllCoroutines();
