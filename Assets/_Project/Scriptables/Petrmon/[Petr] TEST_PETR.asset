@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
-  m_Name: '[Petr] U_Magikrp'
+  m_Name: '[Petr] TEST_PETR'
   m_EditorClassIdentifier: 
-  _name: Ultimate_Magikrp
+  _name: Golden Boi
   _type: 3
-  _sprite: {fileID: 21300000, guid: e9a2ed1b2aecc5849bd3f4f8f4ba06a6, type: 3}
+  _sprite: {fileID: 21300000, guid: bd9bb9cc8192e124d8e0d639ba4790c8, type: 3}
   _baseMaxHp: 100
   _baseAttack: 100
   _baseDefense: 100
   _baseSpeed: 100
-  _currentHp: 98
+  _currentHp: 100
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: 0785fcd3e32e63948ad4cce59b3db489, type: 2}
+    - {fileID: 11400000, guid: e8ee4ce374db1864788600a49e507b4e, type: 2}

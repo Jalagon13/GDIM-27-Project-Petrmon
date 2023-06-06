@@ -16,7 +16,7 @@ MonoBehaviour:
   _type: 0
   _sprite: {fileID: 21300000, guid: a07409dc364a3054daf748e1ae37380c, type: 3}
   _baseMaxHp: 50
-  _baseAttack: 9999
+  _baseAttack: 50
   _baseDefense: 50
   _baseSpeed: 50
   _currentHp: 50

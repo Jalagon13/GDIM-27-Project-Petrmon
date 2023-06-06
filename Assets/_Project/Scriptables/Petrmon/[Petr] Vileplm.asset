@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
   m_Name: '[Petr] Vileplm'
   m_EditorClassIdentifier: 
-  _name: Tangla
+  _name: Vileplm
   _type: 1
-  _sprite: {fileID: 21300000, guid: da2d89bb6bc6c0f4e921353cd0b79b59, type: 3}
-  _baseMaxHp: 65
-  _baseAttack: 55
-  _baseDefense: 115
-  _baseSpeed: 60
+  _sprite: {fileID: 21300000, guid: 070f79dcb0b911148a60800b729ab6cb, type: 3}
+  _baseMaxHp: 75
+  _baseAttack: 80
+  _baseDefense: 85
+  _baseSpeed: 50
   _currentHp: 0
   _moveSet:
     _moves:
+    - {fileID: 11400000, guid: b6fba147bb039e8478cc8378bd3b03ad, type: 2}
+    - {fileID: 11400000, guid: cb29219da77462e4cb2954e9562e8a38, type: 2}
     - {fileID: 11400000, guid: 9e8e31c011efe824fb6bf2ed0deba736, type: 2}
-    - {fileID: 11400000, guid: d9ae3097938362b4682e42fc730bbfec, type: 2}
-    - {fileID: 11400000, guid: fde3c010be35ffa409772ac787553e8a, type: 2}
     - {fileID: 11400000, guid: 912a9037cb9a0544682c841fb63fd06a, type: 2}

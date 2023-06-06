@@ -106,7 +106,7 @@ namespace ProjectPetrmon
             else
             {
                 _battlePrompts.DisplayChallengeText(_opponentName);
-                yield return WaitSeconds(1.5f);
+                yield return WaitSeconds(2.5f);
                 _battlePrompts.DisplaySentOutPetrmonText(_opponentName, _currentOpponentPetrmon.Name);
             }
 
@@ -114,13 +114,13 @@ namespace ProjectPetrmon
             _currentOpponentPetrImage.gameObject.SetActive(true);
             _opponentPetrAnim.SetTrigger("spawn");
 
-            yield return WaitSeconds(1.5f);
+            yield return WaitSeconds(2.5f);
 
             _currentPlayerPetrImage.gameObject.SetActive(true);
             _playerPetrAnim.SetTrigger("spawn");
             _battlePrompts.DisplayGoPetrmonText(_currentPlayerPetrmon.Name);
 
-            yield return WaitSeconds(1f);
+            yield return WaitSeconds(1.5f);
 
             _playerPanel.gameObject.SetActive(true);
             _menuPanel.gameObject.SetActive(true);
@@ -369,7 +369,7 @@ namespace ProjectPetrmon
                 _opponentPetrPanel.UpdatePanel(_currentOpponentPetrmon);
 
                 _battlePrompts.DisplaySentOutPetrmonText(_opponentName, _currentOpponentPetrmon.Name);
-                yield return WaitSeconds(1.5f);
+                yield return WaitSeconds(2.5f);
 
                 _opponentPetrAnim.SetTrigger("spawn");
                 yield return WaitSeconds(1.5f);
@@ -403,7 +403,7 @@ namespace ProjectPetrmon
         {
             _battlePrompts.DisplayNoMorePetrText(_opponentName);
 
-            yield return WaitSeconds(2f);
+            yield return WaitSeconds(2.5f);
 
             _battlePrompts.DisplayWinText(_opponentName);
 
@@ -432,7 +432,7 @@ namespace ProjectPetrmon
             _battlePrompts.DisplayNoMorePetrText("You");
             yield return WaitSeconds(2f);
             _battlePrompts.DisplayLoseText(_opponentName);
-            yield return WaitSeconds(2f);
+            yield return WaitSeconds(3f);
             _battlePrompts.DisplayCustomText("Better luck next time!");
             yield return WaitSeconds(4f);
             AudioManager.Instance.StopClip(_battleBGMSound);

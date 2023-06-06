@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
   m_Name: '[Petr] Tentacrl'
   m_EditorClassIdentifier: 
-  _name: 
-  _type: 0
-  _sprite: {fileID: 0}
-  _baseMaxHp: 0
-  _baseAttack: 0
-  _baseDefense: 0
-  _baseSpeed: 0
-  _currentHp: 0
+  _name: Tentacrl
+  _type: 3
+  _sprite: {fileID: 21300000, guid: 3ad9d5d50a3d0d846b2c2a6a755874fe, type: 3}
+  _baseMaxHp: 80
+  _baseAttack: 70
+  _baseDefense: 65
+  _baseSpeed: 100
+  _currentHp: 80
   _moveSet:
-    _moves: []
+    _moves:
+    - {fileID: 11400000, guid: 89ae04a986541ff478818c41b509f39b, type: 2}
+    - {fileID: 11400000, guid: e6623cf748f5c7944b27a18bcb54f1c0, type: 2}
+    - {fileID: 11400000, guid: 64e8ca926c9b7cd4d949c912c1493cdd, type: 2}
+    - {fileID: 11400000, guid: 7459309b3f00db44e9adf065e5dea1da, type: 2}

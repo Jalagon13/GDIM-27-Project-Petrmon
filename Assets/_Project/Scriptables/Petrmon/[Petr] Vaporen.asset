@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
   m_Name: '[Petr] Vaporen'
   m_EditorClassIdentifier: 
-  _name: 
-  _type: 0
-  _sprite: {fileID: 0}
-  _baseMaxHp: 0
-  _baseAttack: 0
-  _baseDefense: 0
-  _baseSpeed: 0
-  _currentHp: 0
+  _name: Vaporen
+  _type: 3
+  _sprite: {fileID: 21300000, guid: ca4eed1e53e740540bf92bb8ba76d3bb, type: 3}
+  _baseMaxHp: 130
+  _baseAttack: 65
+  _baseDefense: 60
+  _baseSpeed: 65
+  _currentHp: 130
   _moveSet:
-    _moves: []
+    _moves:
+    - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}
+    - {fileID: 11400000, guid: 9015c933342d23e4ebd5add587f75af9, type: 2}
+    - {fileID: 11400000, guid: 2f13631d4324c0e4cafc87f5b3f99b7b, type: 2}
+    - {fileID: 11400000, guid: 7459309b3f00db44e9adf065e5dea1da, type: 2}
