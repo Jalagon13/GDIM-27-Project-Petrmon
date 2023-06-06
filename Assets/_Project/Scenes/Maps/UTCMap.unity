@@ -678,7 +678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74506
+  m_Name: pb_Mesh34874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -957,7 +957,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74578
+  m_Name: pb_Mesh34946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1683,7 +1683,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74638
+  m_Name: pb_Mesh35010
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3606,7 +3606,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74906
+  m_Name: pb_Mesh35278
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5746,7 +5746,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74696
+  m_Name: pb_Mesh35068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6198,15 +6198,21 @@ MonoBehaviour:
   _interactText: Talk with Henry
   _dialogue:
     _lines:
-    - Hey there welcome to UTC!
-    - My name is Henry.
+    - Hey, Hey, Hey, welcome to UTC !!
+    - My name is Henry >:)
+    - Oh man...
     - Looks like your GPA has seen better days...
-    - 'Word is that if you manage to beat any of the GDIM professors, '
-    - they will award you with extra credit!
-    - Look out for Toby, Constance, and Squire for these extra credit opportunities.
-    - Also if you see Justin out there, feel free to talk to him to restore your
-      Petrmon!
-    - Good luck and have fun!
+    - I hear some of the GDIM professors are offering extra credit
+    - 'But only to student who can beat them in a Petrmon Battle ! '
+    - Look out for Toby, Constance, and Squire if you think you've got what it takes
+    - Do you ??
+    - Sorry that was rhetorical
+    - Don't answer that
+    - Also lookout for my buddy Justin, he told me he's healing people's Petrmon
+      for free
+    - 'For FREE !! '
+    - Well anyways, dont be a stranger, and talk to everyone you find
+    - See ya out there !
 --- !u!136 &771307616
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6357,7 +6363,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74672
+  m_Name: pb_Mesh35044
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7716,7 +7722,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74438
+  m_Name: pb_Mesh34806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10121,7 +10127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74384
+  m_Name: pb_Mesh34752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12290,7 +12296,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74300
+  m_Name: pb_Mesh34668
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12868,7 +12874,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74842
+  m_Name: pb_Mesh35214
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14216,7 +14222,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74608
+  m_Name: pb_Mesh34976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16444,7 +16450,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74342
+  m_Name: pb_Mesh34710
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17830,7 +17836,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74652
+  m_Name: pb_Mesh35024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18085,7 +18091,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh74796
+  m_Name: pb_Mesh35168
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
