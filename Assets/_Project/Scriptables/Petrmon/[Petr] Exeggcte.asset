@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: '[Petr] Exeggcte'
   m_EditorClassIdentifier: 
   _name: Exeggcte
-  _type: 0
+  _type: 1
   _sprite: {fileID: 21300000, guid: a301976c40778a848b9c3ea043002d82, type: 3}
-  _baseMaxHp: 1000
-  _baseAttack: 1000
-  _baseDefense: 1000
-  _baseSpeed: 1000
-  _currentHp: 1000
+  _baseMaxHp: 60
+  _baseAttack: 40
+  _baseDefense: 80
+  _baseSpeed: 40
+  _currentHp: 60
   _moveSet:
-    _moves: []
+    _moves:
+    - {fileID: 11400000, guid: e6623cf748f5c7944b27a18bcb54f1c0, type: 2}
+    - {fileID: 11400000, guid: cb29219da77462e4cb2954e9562e8a38, type: 2}
+    - {fileID: 11400000, guid: 92167e35c51ca1c42814d82ae326070c, type: 2}
+    - {fileID: 11400000, guid: 028eae8cf1cfc4b4a896deef89268288, type: 2}

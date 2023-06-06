@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd40dcd0d1e4e845acbd03702ebea71, type: 3}
+  m_Name: '[Petr] Ponyt'
+  m_EditorClassIdentifier: 
+  _name: Ponyt
+  _type: 2
+  _sprite: {fileID: 21300000, guid: f3d3cb0521c499c42b8b6a2c3a9dd0fc, type: 3}
+  _baseMaxHp: 50
+  _baseAttack: 85
+  _baseDefense: 55
+  _baseSpeed: 90
+  _currentHp: 50
+  _moveSet:
+    _moves:
+    - {fileID: 11400000, guid: 2e203dda13ff3034fa3a72fd5089c5ea, type: 2}
+    - {fileID: 11400000, guid: 56c1f303ed1b2ec4d9da3f4028b5ca6c, type: 2}
+    - {fileID: 11400000, guid: fde3c010be35ffa409772ac787553e8a, type: 2}
+    - {fileID: 11400000, guid: 2d048ea523bce854a8d4eeeba6fbb3f3, type: 2}
