@@ -16,6 +16,7 @@ namespace ProjectPetrmon
             if(_playerInteract.GetInteractableObject() != null)
             {
                 Show(_playerInteract.GetInteractableObject());
+                _container.SetActive(!DialogueManager.Instance.InDialogue);
             }
             else
             {

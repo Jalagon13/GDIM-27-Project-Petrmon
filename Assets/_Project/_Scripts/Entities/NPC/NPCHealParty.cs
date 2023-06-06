@@ -7,6 +7,7 @@ namespace ProjectPetrmon
     public class NPCHealParty : MonoBehaviour, IInteractable
     {
         [SerializeField] private string _interactText;
+        [SerializeField] private AudioClip _healSound;
         [SerializeField] private PartyObject _playerParty;
         [SerializeField] private DialogueObject _dialogue;
 
@@ -15,9 +16,12 @@ namespace ProjectPetrmon
 
         public void Interact()
         {
+            if (DialogueManager.Instance.InDialogue) return;
+
             foreach (PetrmonObject petr in _playerParty.Party)
                 petr.RefreshPetrmon();
 
+            AudioManager.Instance.PlayClip(_healSound, false, false);
             DialogueManager.Instance.StartDialogue(_dialogue);
         }
     }
