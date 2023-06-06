@@ -151,9 +151,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 292214639}
-  - {fileID: 1356794884}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1125,7 +1123,7 @@ Transform:
   m_Children:
   - {fileID: 1435662427}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &164584259
 MonoBehaviour:
@@ -1142,8 +1140,8 @@ MonoBehaviour:
   _interactText: Talk with Alaina
   _dialogue:
     _lines:
-    - Welcome to UTC :D
-    - This is da tutorial messages
+    - hi im alaina
+    - blahblahbhlbahalablah
     - someone edit this to tell the player da objective
 --- !u!1 &173127942
 GameObject:
@@ -1949,7 +1947,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &269738026
 PrefabInstance:
@@ -2651,7 +2649,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 19492431}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 541102638153702142, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
         type: 3}
@@ -2786,7 +2784,7 @@ PrefabInstance:
     - target: {fileID: 541102639247564622, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 541102639247564622, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
         type: 3}
@@ -2965,12 +2963,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34, type: 3}
---- !u!4 &292214639 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 541102639247564622, guid: 8a6c9d1d77ad29744a80c7e61f9c0a34,
-    type: 3}
-  m_PrefabInstance: {fileID: 292214638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &299461248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4180,7 +4172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275b10610e5cd5344967c4442a2f34c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactText: Restore your Petrmon
+  _interactText: Talk to da Nurse
   _playerParty: {fileID: 11400000, guid: a7c9fa8017653c047b805be305fa0c20, type: 2}
   _dialogue:
     _lines:
@@ -4214,7 +4206,7 @@ Transform:
   m_Children:
   - {fileID: 1796869314}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &490748760
 GameObject:
@@ -4245,7 +4237,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &507862411
 PrefabInstance:
@@ -4578,7 +4570,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -5760,7 +5752,7 @@ RectTransform:
   m_Children:
   - {fileID: 1709858058}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7584,7 +7576,7 @@ PrefabInstance:
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -7654,7 +7646,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -8501,7 +8493,7 @@ Transform:
   - {fileID: 1981117382}
   - {fileID: 354164274}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107366155
 GameObject:
@@ -12141,7 +12133,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 19492431}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 549137503, guid: 28a2a71e7c40d77498294de0af019e2d, type: 3}
       propertyPath: m_text
@@ -12170,7 +12162,7 @@ PrefabInstance:
     - target: {fileID: 6829859888110613191, guid: 28a2a71e7c40d77498294de0af019e2d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6829859888110613191, guid: 28a2a71e7c40d77498294de0af019e2d,
         type: 3}
@@ -12224,12 +12216,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a2a71e7c40d77498294de0af019e2d, type: 3}
---- !u!4 &1356794884 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6829859888110613191, guid: 28a2a71e7c40d77498294de0af019e2d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1356794883}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1382534142
 GameObject:
   m_ObjectHideFlags: 0
@@ -12912,7 +12898,7 @@ Transform:
   m_Children:
   - {fileID: 1848659777}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1605494022
 MonoBehaviour:
@@ -12926,6 +12912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e0be683a70a044f85ac520004120e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gpaText: {fileID: 1703523155}
 --- !u!1 &1625148815
 GameObject:
   m_ObjectHideFlags: 0
@@ -15558,7 +15545,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2135302109, guid: 2289fec6c2f614f47a0c20f6bd0a30ee, type: 3}
+  m_Sprite: {fileID: 1972779758, guid: fc9686230e1552545a1006363187e357, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15663,7 +15650,7 @@ RectTransform:
   m_Children:
   - {fileID: 1775123280}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16805,7 +16792,7 @@ Transform:
   - {fileID: 1865309943}
   - {fileID: 575018530}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1953653412
 GameObject:
@@ -16894,7 +16881,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1954864448
 PrefabInstance:
@@ -17470,7 +17457,7 @@ PrefabInstance:
     - target: {fileID: 5468023234926158418, guid: 03a687167f63442c3872e31944a42938,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5468023234926158418, guid: 03a687167f63442c3872e31944a42938,
         type: 3}
@@ -18056,7 +18043,7 @@ Transform:
   m_Children:
   - {fileID: 2120720632906425036}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &7015503370019169734
 CapsuleCollider:
@@ -18084,9 +18071,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa81595160547a12645ba400a575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactText: Talk with Alaina
+  _interactText: Talk with Prof. Constance
   _gpaAwarded: 0
-  _npcName: Alaina
+  _npcName: Constance
   _npcPetrmonParty: {fileID: 11400000, guid: 662890412b4afaf4297d11ac75d27e3b, type: 2}
   _undefeatedDialogue:
     _lines:
