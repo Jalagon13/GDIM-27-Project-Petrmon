@@ -15,11 +15,11 @@ MonoBehaviour:
   _name: Sqrtle
   _type: 3
   _sprite: {fileID: 21300000, guid: 293d773d9f1b1d9489732a80c358d6d6, type: 3}
-  _baseMaxHp: 44
-  _baseAttack: 48
-  _baseDefense: 65
-  _baseSpeed: 43
-  _currentHp: 40
+  _baseMaxHp: 64
+  _baseAttack: 150
+  _baseDefense: 75
+  _baseSpeed: 63
+  _currentHp: 64
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: e5d8d3beef3f9134597061695aec748e, type: 2}

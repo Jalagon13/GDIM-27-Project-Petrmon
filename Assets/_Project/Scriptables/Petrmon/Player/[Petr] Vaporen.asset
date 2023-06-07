@@ -15,11 +15,11 @@ MonoBehaviour:
   _name: Vaporen
   _type: 3
   _sprite: {fileID: 21300000, guid: ca4eed1e53e740540bf92bb8ba76d3bb, type: 3}
-  _baseMaxHp: 130
-  _baseAttack: 65
-  _baseDefense: 60
-  _baseSpeed: 65
-  _currentHp: 128
+  _baseMaxHp: 150
+  _baseAttack: 150
+  _baseDefense: 70
+  _baseSpeed: 85
+  _currentHp: 150
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: 9015c933342d23e4ebd5add587f75af9, type: 2}

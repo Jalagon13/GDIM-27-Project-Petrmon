@@ -15,11 +15,11 @@ MonoBehaviour:
   _name: Charmandr
   _type: 2
   _sprite: {fileID: 21300000, guid: 2d7c19d994b796641a535eadc6a59b57, type: 3}
-  _baseMaxHp: 39
-  _baseAttack: 52
-  _baseDefense: 43
-  _baseSpeed: 65
-  _currentHp: 39
+  _baseMaxHp: 59
+  _baseAttack: 150
+  _baseDefense: 48
+  _baseSpeed: 85
+  _currentHp: 59
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: 71bb66a6228c09d4fb6a4a313696b3ce, type: 2}
