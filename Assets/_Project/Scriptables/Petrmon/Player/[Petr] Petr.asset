@@ -15,11 +15,11 @@ MonoBehaviour:
   _name: Petr
   _type: 0
   _sprite: {fileID: 21300000, guid: a07409dc364a3054daf748e1ae37380c, type: 3}
-  _baseMaxHp: 50
-  _baseAttack: 50
-  _baseDefense: 50
-  _baseSpeed: 50
-  _currentHp: 50
+  _baseMaxHp: 70
+  _baseAttack: 150
+  _baseDefense: 60
+  _baseSpeed: 70
+  _currentHp: 70
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: 9867cb9487912d24b908e97dc275295e, type: 2}

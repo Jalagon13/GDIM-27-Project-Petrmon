@@ -13847,9 +13847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa81595160547a12645ba400a575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactText: Talk with Prof. Do
+  _interactText: Talk with Prof. Doh
   _gpaAwarded: 1
-  _npcName: Prof. Do
+  _npcName: Prof. Doh
   _npcPetrmonParty: {fileID: 11400000, guid: 662890412b4afaf4297d11ac75d27e3b, type: 2}
   _undefeatedDialogue:
     _lines:

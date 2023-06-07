@@ -15,11 +15,11 @@ MonoBehaviour:
   _name: Boobr
   _type: 2
   _sprite: {fileID: 21300000, guid: 8c9665534c523b54487cc03833021cd2, type: 3}
-  _baseMaxHp: 62
-  _baseAttack: 94
-  _baseDefense: 59
+  _baseMaxHp: 82
+  _baseAttack: 150
+  _baseDefense: 49
   _baseSpeed: 89
-  _currentHp: 62
+  _currentHp: 82
   _moveSet:
     _moves:
     - {fileID: 11400000, guid: 2e203dda13ff3034fa3a72fd5089c5ea, type: 2}
