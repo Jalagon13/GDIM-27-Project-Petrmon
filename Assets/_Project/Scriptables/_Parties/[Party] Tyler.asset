@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee7701b11e476364d94ca77ec60d3856, type: 3}
-  m_Name: '[Party] Test Party'
+  m_Name: '[Party] Tyler'
   m_EditorClassIdentifier: 
   _party:
-  - {fileID: 11400000, guid: 5bb9d73100283c846b48c7206bf1d8b7, type: 2}
-  - {fileID: 11400000, guid: d314977fe9d794741ad47fb8ea5800c8, type: 2}
-  - {fileID: 11400000, guid: 49588b346bca3954a985a437514bb6ce, type: 2}
-  - {fileID: 11400000, guid: 5ee0206d6c412584585ab08aae33f759, type: 2}
+  - {fileID: 11400000, guid: e3b5750bdecdabe4d91c388a50a92d8c, type: 2}
   - {fileID: 11400000, guid: 61dc831958b5ab443b2534416ad2eae0, type: 2}
-  - {fileID: 11400000, guid: e77e854b17a32d441a10b4381099be28, type: 2}
+  - {fileID: 11400000, guid: 0a1e5478c9130b74baeacad3c46936c6, type: 2}
