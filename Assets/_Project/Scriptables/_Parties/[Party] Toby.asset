@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: '[Party] Toby'
   m_EditorClassIdentifier: 
   _party:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c1ee198b80f9b5641969a13ac47a55b6, type: 2}
+  - {fileID: 11400000, guid: d3252cbf7be717146b3cf35c9eeb3659, type: 2}
+  - {fileID: 11400000, guid: 5dd39fb2265709d46b0f9f710637dc06, type: 2}
+  - {fileID: 11400000, guid: e77e854b17a32d441a10b4381099be28, type: 2}
+  - {fileID: 11400000, guid: 5bb9d73100283c846b48c7206bf1d8b7, type: 2}

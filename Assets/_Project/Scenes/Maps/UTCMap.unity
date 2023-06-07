@@ -3883,7 +3883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa81595160547a12645ba400a575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactText: Talk with Kevin
+  _interactText: Talk with Supreme Petr Champion Kevin
   _gpaAwarded: 9999
   _npcName: Supreme Petr Champion Kevin
   _npcPetrmonParty: {fileID: 11400000, guid: 5a85e6d9b0467214c8fa04cc526107aa, type: 2}
@@ -4303,25 +4303,18 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &429806568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+--- !u!114 &429806577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 429806577, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
     type: 3}
   m_PrefabInstance: {fileID: 928215186}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &429806577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429806568}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5726e34c987e036458edbafc1c6c0e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactRange: 4
 --- !u!1001 &451559304
 PrefabInstance:
   m_ObjectHideFlags: 0
