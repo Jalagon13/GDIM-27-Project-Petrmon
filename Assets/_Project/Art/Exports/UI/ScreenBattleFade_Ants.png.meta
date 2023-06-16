@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -33,27 +33,27 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -101,20 +101,736 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_0
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bacdaaf23b85e64b8594e926c22d849
+      internalID: -420626054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3613d2c15b77a32438142e53d70f1951
+      internalID: 1802058888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_2
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90e0829937438b4797fe7af6accd3a0
+      internalID: -964065897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9317db2e2e526c248ba8fd7c8dafc7ce
+      internalID: 1641108959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_4
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03048286ef5c9ea4f890b0d7f4feeb7d
+      internalID: -1716350038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_5
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c030923022930a4cb29082a1127deba
+      internalID: 459064908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_6
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322583dbfa13e8e488ae4f28ba818a6b
+      internalID: -804691477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_7
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329146429fc88a6438805c353df51821
+      internalID: 105660850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_8
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae781667287799468bd67e83d8b7e24
+      internalID: -718316000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_9
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c799f5754c4c2314b841f1b6f7c4c404
+      internalID: -1145969416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_10
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e616e819e2d6f741a590d64af8c6477
+      internalID: 1875157222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_11
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dfc557d3ab5d841bb15881c301450c
+      internalID: -1497048546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_12
+      rect:
+        serializedVersion: 2
+        x: 2524
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06c4a350ca41034db51377475386f3c
+      internalID: 301592240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_13
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf48880cddf5ede4eb1d95b686fd12ca
+      internalID: -2011777124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_14
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58d1a01371c9eb45afd076f730330c0
+      internalID: -1517844596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_15
+      rect:
+        serializedVersion: 2
+        x: 3106
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3bc470524d6744aa75b4a7452a4411
+      internalID: -1101202996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_16
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78049b12f7087c548a3164073f22ddb4
+      internalID: -59393601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_17
+      rect:
+        serializedVersion: 2
+        x: 3494
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16413e53cdfce84ebb861982d6d28f1
+      internalID: 1369193301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_18
+      rect:
+        serializedVersion: 2
+        x: 3688
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1950d08f00dcf4f4ab4770cd47325b8a
+      internalID: 289624531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_19
+      rect:
+        serializedVersion: 2
+        x: 3882
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3742aaa051ae3c49b7220a2b7ac090a
+      internalID: 338549600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_20
+      rect:
+        serializedVersion: 2
+        x: 4076
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5727300270a7e624ca108953733399d1
+      internalID: -1931194851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_21
+      rect:
+        serializedVersion: 2
+        x: 4270
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70d09f011351564ab1967d5098e53b1
+      internalID: 1277350327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_22
+      rect:
+        serializedVersion: 2
+        x: 4464
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe71a555d9e94fd45a32cbd532386cae
+      internalID: 611556356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_23
+      rect:
+        serializedVersion: 2
+        x: 4658
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6786adcbcd28940af0747027961ec5
+      internalID: 1425076192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_24
+      rect:
+        serializedVersion: 2
+        x: 4852
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441199a51e8412845a3abfe6efe9c208
+      internalID: 189998042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_25
+      rect:
+        serializedVersion: 2
+        x: 5046
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6033ebf3ba9904791a1bc1b6e4cd28
+      internalID: 1555051377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_26
+      rect:
+        serializedVersion: 2
+        x: 5240
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d134b38d88ec5547b7d760bd0d652bf
+      internalID: 1351749379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_27
+      rect:
+        serializedVersion: 2
+        x: 5434
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b19de3e28b07e34eb2fc21a25e51d9b
+      internalID: -409338041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_28
+      rect:
+        serializedVersion: 2
+        x: 5628
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830d75590b76dee4b891655f73b72e8a
+      internalID: -1853849008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_29
+      rect:
+        serializedVersion: 2
+        x: 5822
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e169b4213c6c0f40b31ced45a43889e
+      internalID: 453978988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_30
+      rect:
+        serializedVersion: 2
+        x: 6016
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91633cdd41e4d244cafcb5ed2d0c21f1
+      internalID: 43673519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScreenBattleFade_Ants_00
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 192
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebdc0bc6ed70e24aa9fee183e442ec9
+      internalID: 1405196023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0336a9a185e0a4442a456882741a1bf1
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ScreenBattleFade_Ants_0: -420626054
+      ScreenBattleFade_Ants_00: 1405196023
+      ScreenBattleFade_Ants_1: 1802058888
+      ScreenBattleFade_Ants_10: 1875157222
+      ScreenBattleFade_Ants_11: -1497048546
+      ScreenBattleFade_Ants_12: 301592240
+      ScreenBattleFade_Ants_13: -2011777124
+      ScreenBattleFade_Ants_14: -1517844596
+      ScreenBattleFade_Ants_15: -1101202996
+      ScreenBattleFade_Ants_16: -59393601
+      ScreenBattleFade_Ants_17: 1369193301
+      ScreenBattleFade_Ants_18: 289624531
+      ScreenBattleFade_Ants_19: 338549600
+      ScreenBattleFade_Ants_2: -964065897
+      ScreenBattleFade_Ants_20: -1931194851
+      ScreenBattleFade_Ants_21: 1277350327
+      ScreenBattleFade_Ants_22: 611556356
+      ScreenBattleFade_Ants_23: 1425076192
+      ScreenBattleFade_Ants_24: 189998042
+      ScreenBattleFade_Ants_25: 1555051377
+      ScreenBattleFade_Ants_26: 1351749379
+      ScreenBattleFade_Ants_27: -409338041
+      ScreenBattleFade_Ants_28: -1853849008
+      ScreenBattleFade_Ants_29: 453978988
+      ScreenBattleFade_Ants_3: 1641108959
+      ScreenBattleFade_Ants_30: 43673519
+      ScreenBattleFade_Ants_4: -1716350038
+      ScreenBattleFade_Ants_5: 459064908
+      ScreenBattleFade_Ants_6: -804691477
+      ScreenBattleFade_Ants_7: 105660850
+      ScreenBattleFade_Ants_8: -718316000
+      ScreenBattleFade_Ants_9: -1145969416
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

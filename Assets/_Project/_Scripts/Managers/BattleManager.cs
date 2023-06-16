@@ -12,13 +12,17 @@ namespace ProjectPetrmon
         public event Action OnBattleEnd;
 
         [SerializeField] private PartyObject _playerParty;
+        [SerializeField] private Canvas _transitionCanvas;
         [SerializeField] private Canvas _battleCanvas;
         [Header("Menu Panel Stuff")]
+        [SerializeField] private RectTransform _battleAssets;
         [SerializeField] private RectTransform _playerPanel;
         [SerializeField] private RectTransform _opponentPanel;
         [SerializeField] private RectTransform _fightPanel;
         [SerializeField] private RectTransform _menuPanel;
         [SerializeField] private RectTransform _fightButtons;
+        [SerializeField] private RectTransform _battleFadeAnimationLeft;
+        [SerializeField] private RectTransform _battleFadeAnimationRight;
         [Header("Battle Assets")]
         [SerializeField] private Image _currentPlayerPetrImage;
         [SerializeField] private Image _currentOpponentPetrImage;
@@ -60,6 +64,7 @@ namespace ProjectPetrmon
         private void Start()
         {
             AudioManager.Instance.PlayClip(_worldBGMSound, true, false, GlobalSettings.MusicSetting);
+            _transitionCanvas.gameObject.SetActive(false);
             ShowBattleCanvas(false);
         }
 
@@ -95,13 +100,35 @@ namespace ProjectPetrmon
 
         private IEnumerator BeginningSequence()
         {
+            _battleAssets.gameObject.SetActive(false);
             _menuPanel.gameObject.SetActive(false);
             _fightPanel.gameObject.SetActive(false);
             _playerPanel.gameObject.SetActive(false);
             _opponentPanel.gameObject.SetActive(false);
             _currentPlayerPetrImage.gameObject.SetActive(false);
             _currentOpponentPetrImage.gameObject.SetActive(false);
+
+            _transitionCanvas.gameObject.SetActive(true);
+            _battleFadeAnimationLeft.gameObject.SetActive(true);
+            _battleFadeAnimationRight.gameObject.SetActive(true);
+            Animator _battleFadeAnimatorLeft = _battleFadeAnimationLeft.GetComponent<Animator>();
+            Animator _battleFadeAnimatorRight = _battleFadeAnimationRight.GetComponent<Animator>();
+            _battleFadeAnimatorLeft.SetBool("StartTransition", true);
+            _battleFadeAnimatorRight.SetBool("StartTransition", true);
+            yield return WaitSeconds(1f);
+            _battleFadeAnimatorLeft.SetBool("StartTransition", false);
+            _battleFadeAnimatorRight.SetBool("StartTransition", false);
+
+            _battleAssets.gameObject.SetActive(true);
+
+            yield return WaitSeconds(1.0f);
+
             AudioManager.Instance.PlayClip(_battleBGMSound, true, false, GlobalSettings.MusicSetting);
+
+            yield return WaitSeconds(0.5f);
+            _battleFadeAnimationLeft.gameObject.SetActive(false);
+            _battleFadeAnimationRight.gameObject.SetActive(false);
+            _transitionCanvas.gameObject.SetActive(false);
 
             yield return WaitSeconds(0.5f);
 
