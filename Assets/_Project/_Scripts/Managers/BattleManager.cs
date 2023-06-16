@@ -31,6 +31,7 @@ namespace ProjectPetrmon
         [SerializeField] private AudioClip _buttonClickSound;
         [SerializeField] private AudioClip _playerLoseSound;
         [SerializeField] private AudioClip _playerWinSound;
+        [SerializeField] private AudioClip _battleStartSound;
         [SerializeField] private AudioClip _battleBGMSound;
         [SerializeField] private AudioClip _worldBGMSound;
 
@@ -115,17 +116,16 @@ namespace ProjectPetrmon
             Animator _battleFadeAnimatorRight = _battleFadeAnimationRight.GetComponent<Animator>();
             _battleFadeAnimatorLeft.SetBool("StartTransition", true);
             _battleFadeAnimatorRight.SetBool("StartTransition", true);
+            AudioManager.Instance.PlayClip(_battleStartSound, false, false, GlobalSettings.VolumeSetting);
             yield return WaitSeconds(1f);
             _battleFadeAnimatorLeft.SetBool("StartTransition", false);
             _battleFadeAnimatorRight.SetBool("StartTransition", false);
 
             _battleAssets.gameObject.SetActive(true);
 
-            yield return WaitSeconds(1.0f);
+            yield return WaitSeconds(1.4f);
 
             AudioManager.Instance.PlayClip(_battleBGMSound, true, false, GlobalSettings.MusicSetting);
-
-            yield return WaitSeconds(0.5f);
             _battleFadeAnimationLeft.gameObject.SetActive(false);
             _battleFadeAnimationRight.gameObject.SetActive(false);
             _transitionCanvas.gameObject.SetActive(false);

@@ -3002,7 +3002,8 @@ MonoBehaviour:
   _buttonClickSound: {fileID: 8300000, guid: b51135be2cb8cdc468ad36353c22db85, type: 3}
   _playerLoseSound: {fileID: 8300000, guid: fe99afe61d42339479e321d1a97be54f, type: 3}
   _playerWinSound: {fileID: 8300000, guid: 60099848b167f0a4797b27b23527c768, type: 3}
-  _battleBGMSound: {fileID: 8300000, guid: b84ab8e6fa66dd643a8342327292ec54, type: 3}
+  _battleStartSound: {fileID: 8300000, guid: 1aec7f0714580ba4ba79e465c50f22a7, type: 3}
+  _battleBGMSound: {fileID: 8300000, guid: ce9bee6881b6fd8488ad0d87755133bb, type: 3}
   _worldBGMSound: {fileID: 8300000, guid: 96241b7bc9af08f4f89fef7c045d6fbb, type: 3}
 --- !u!114 &541102639247564623
 MonoBehaviour:
